@@ -1,0 +1,110 @@
+/* ===================== 
+Start: COLUMNS      
+======================== */
+@include make-column(xs,"not-push","not-pull","not-offset");
+@include resp-min(sm){
+  @include make-column(sm,"push","pull","offset");
+}
+@include resp-min(md){
+  @include make-column(md,"push","pull","offset");
+}
+@include resp-min(lg){
+  @include make-column(lg,"push","pull","offset");
+}
+@include resp-min(tp){
+  @include resp-max(sm){
+    @include make-column(tp, "not-push", "not-pull", "not-offset");
+  }
+}
+/* =====================
+End:  COLUMNS
+======================== */
+
+/* ===================== 
+Start: HIDDEN AND VISIBLE UTILITIES      
+======================== */
+@include resp-min(lg){
+  @include visibility-utility(lg);
+}
+@include resp-min(md){
+  @include resp-max(lg){
+    @include visibility-utility(md);  
+  }
+}
+@include resp-min(sm){
+  @include resp-max(md){
+    @include visibility-utility(sm);
+  }
+}
+@include resp-max(sm){
+  @include visibility-utility(xs);
+}
+/* =====================
+End:  HIDDEN AND VISIBLE UTILITIES
+======================== */
+%relative{
+  position: relative;
+}
+%global-block{
+  min-height: 1px;
+  @include resp-min(sm){
+    padding-left: $gutter;
+    padding-right: $gutter; 
+  }
+  @include resp-max(sm){
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2; 
+  }
+  @extend %relative;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cf{
+  @include default-after();
+  @extend %relative;
+}
+.row{
+  @extend .cf;
+}
+[class*="col-"] {
+  @extend %global-block;
+  float: left;
+  .h3{
+    text-align: left;
+    margin-bottom: 15px;
+  }
+}
+
+.container, .container-inner{
+  @extend %global-block;
+  @extend .cf;
+  @extend .center-block;
+}
+.container{
+  @include resp-min(lg){
+    width: $container;
+  }
+}
+section{
+  @extend .cf;
+  @extend %relative;
+}
+.section{
+  padding-top: 20px;
+  @include resp-min(sm){
+    padding-top: 30px;
+  }
+}
+// @each $breakpoint-name, $breakpoint-value in $breakpoints{
+//   @include resp-min(#{$breakpoint-name}){
+//     .pull-#{$breakpoint-name}-right{
+//       float: right;
+//     }
+//     .pull-#{$breakpoint-name}-left{
+//       float: left;
+//     }
+//   }
+// }

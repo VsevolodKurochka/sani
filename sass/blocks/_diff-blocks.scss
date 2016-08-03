@@ -1,0 +1,1300 @@
+/* ===================== 
+Start: BUTTON      
+======================== */
+.btn {
+  border: none;
+  border-radius: 3px;
+  max-width: 100%;
+  padding: 10px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s;
+  text-decoration: none;
+  z-index: 2;
+  @extend .block-inline;
+  @extend .bold;
+  @include size(text_default);
+  @include color("white");
+  &-effect{
+   &:before{
+      content: "";
+      position: absolute;
+      transition: all .3s;
+      z-index: -1;
+      width: 100%;
+      height: 0;
+      top: 50%;
+      left: 50%; 
+      opacity: 0;
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }   
+    &:hover{
+      &:before{
+        height: calc(450% - 40px);
+        opacity: 1;
+      }
+    }
+  }
+}
+/* =====================
+End:  BUTTON
+======================== */  
+.link-def{
+  display: inline-block;
+  text-decoration: none;
+  @extend .dark-blue;
+  border-bottom: 1px dashed map-get($colors, "very-l-blue");
+}
+.bg{
+  &-grey{
+    background-color: #f8f9fb;
+  }
+} 
+.search-circle{
+  @extend .relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: none;
+  &:after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 15px;
+    height: 16px;
+    margin-left: -7.5px;
+    margin-top: -8px;
+    @extend .sprite;
+    background-position: -15px -110px;
+  }
+}
+    
+/* ===================== 
+Start: NEWS      
+======================== */
+.news{
+  // @include resp-min(md){
+  //   &-wrap{
+  //     margin-left: -15px;
+  //     margin-right: -15px;
+  //   }
+  // }
+
+  &-even{
+    .news-b{
+      @include resp-min(md){
+        
+      }
+      &-img{
+        top: 0;
+      }
+      &-text{
+        bottom: 0;
+      }
+      &-text{
+        background-color: map-get($colors, "light-blue");
+        @extend .white;
+      }
+    }
+  }
+  &-odd{
+    .news-b{  
+      &-img{
+        bottom: 0;
+      }
+      &-text{
+        top: 0;
+      } 
+
+      &-text{
+        background-color: map-get($colors, "light-grey");
+        &--text{
+          color: #282828;
+        }
+        &--time{
+          color: #999999;
+        }
+      }
+    }
+  }
+  &-b{
+    @extend .relative;
+    @include resp-max(md){
+      margin-bottom: 15px;
+      min-height: 400px;
+    }
+    @include resp-max(sm){
+      position: relative;
+      min-height: 398px;
+      width: 270px;
+      margin-left: auto;
+      margin-right: auto;
+      &-img{
+        bottom: 0;
+        position: absolute;
+        height: 180px;
+        width: 100%;
+      }
+    }
+    &-text,
+    &-img{
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+    @include resp-min(md){
+      @include resp-max(lg){
+        min-height: 300px;
+        &-img{
+          height: 125px;
+        }
+      }
+    }
+    @include resp-min(lg){
+      min-height: 400px;
+      &-img{
+        height: 200px;
+      }
+    }
+    &-img{
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+      }
+      @include resp-max(sm){
+        height: 200px;
+      }
+    }
+    &-text{
+      @include resp-min(tp){
+        min-height: 200px;
+      }
+      padding: 15px;
+      &--title{
+        @extend .bold;
+        font-size: 16px;
+        max-height: 66px;
+      }
+      &--title,
+      &--text{
+        margin-bottom: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &--text{
+        max-height: 55px;
+      }
+      &--time,
+      &--text{
+        @extend .light;
+      }
+    }
+    a{
+      display: block;
+      color: inherit;
+      height: 100%;
+    }
+  }
+}
+/* =====================
+End:  NEWS
+======================== */
+    
+/* ===================== 
+Start: SHOW MORE      
+======================== */
+%show-more{
+  @extend .link-def;
+  &:hover{
+    cursor: pointer;
+    @extend .pink;
+    border-bottom-color: transparent;
+  }
+}
+.show-more{
+  &-big,
+  &-small{
+    @extend %show-more;
+  }
+  &-big{
+    font-size: 18px;
+  }
+  &-wrap{
+    margin-top: 35px;
+    @extend .text-center;
+  }
+}
+/* =====================
+End:  SHOW MORE
+======================== */
+    
+/* ===================== 
+Start: LEADER      
+======================== */
+.hover-blue{
+  &:hover{
+    background-color: map-get($colors, "darker-blue");
+    @extend .white;
+  }
+}
+.leader{
+  background-color: map-get($colors, "light-blue");
+  padding: 15px 7.5px;
+  @include resp-max(sm){
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+  }
+  @include resp-min(sm){
+    padding: 25px 0;
+  }
+  &-wrap{
+    @include resp-max(xs){
+      padding: 0;
+    }
+  }
+  &-inf{
+    &-text{
+      @include color("white");
+      &--name{
+        font-size: 16px;
+      }
+      &--pos{
+        font-size: 14px;
+        @extend .light;
+      }
+    }
+  }
+  @include resp-min(xs){
+    @include resp-max(sm){
+      &-inf, &-text{
+        text-align: center;
+      }
+      &-text{
+        &-title{
+          font-size: 25px;
+        }
+        &-act{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  @include resp-max(xs){
+    &-inf{
+      &-img{
+        margin-right: 15px;
+        img{
+          width: 50px;
+        }
+      }
+      &-img, &-text{
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+    &-text{
+      &-title{
+        font-size: 21px;
+        line-height: 1;
+      }
+      &-act{
+        font-size: 14px;
+      }
+    }
+  }
+  &-text{
+    @include color("white");   
+    &-title{
+      @extend .bold;
+      margin-bottom: 10px;
+    }
+    &-act{
+      @extend .light;
+    }
+    @include resp-min(sm){
+      &-title{
+        font-size: 36px;
+      }
+      &-act{
+        font-size: 18px;
+      }
+    }
+    &-img{
+      display: inline-block;
+      width: 109px;
+      height: 9px;
+      margin: 15px 0;
+      @extend .sprite;
+      background-position: -140px -238px;
+    }
+    &-form{
+      &-input-wrap{
+        display: inline-block;
+        @extend .relative;
+        &:after{
+          content: "";
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          margin-top: -10px;
+          width: 13px;
+          height: 20px;
+          @extend .sprite;
+          background-position-y: -200px;
+          background-position-x: -140px;
+        }
+        &-active{
+          &:after{
+            background-position-x: -159px;
+          }
+        }
+      }
+      input,button{
+        -webkit-box-shadow: 1px 2px 2px rgba(0,0,1,.26);
+        -moz-box-shadow: 1px 2px 2px rgba(0,0,1,.26);
+        box-shadow: 1px 2px 2px rgba(0,0,1,.26);
+        border: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        @include resp-min(xs){
+          min-width: 200px;
+        }
+
+      }
+      input{
+        background-color: map-get($colors, "white");
+        padding-left: 35px;
+        height: 38px;
+        margin-right: 10px;
+        font-size: 14px;
+        
+        
+        @include resp-min(xs){
+          position: relative;
+          top: -1px;
+          font-weight: 700;
+        }
+        @include resp-max(xs){
+          max-width: 140px;
+          font-weight: 500;
+        }
+      }
+      button{
+        display: inline-block;
+        background-color: map-get($colors, "yellow");
+        text-align: center;
+        font-size: 16px;
+        @extend .bold;
+        @extend .hover-blue;
+        @include resp-max(xs){
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &-shape{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    @include resp-max(sm){
+      display: none;
+    }
+  }
+  @include resp-min(sm){
+    @include resp-max(md){
+      &-inf,
+      &-text{
+        text-align: center;
+      }
+      &-shape{
+        width: 140px;
+      }
+    }
+  }
+}
+/* =====================
+End:  LEADER
+======================== */
+    
+/* ===================== 
+Start: BOX      
+======================== */
+.delivery-payment-wrap{
+  @include resp-max(sm){
+    > .container{
+      padding: 0;
+      > .row {
+        > .col-xs-12 {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+.box{
+  padding: 5px;
+  // @include resp-max(xs){
+  //   margin-bottom: 10px;
+  // }
+  &-grey{
+   @extend .bg-grey;
+  }
+  &-inner{
+    @include resp-min(sm){
+      &-d-p{
+        min-height: 200px;
+      }
+    }
+    @include resp-max(sm){
+      &-d-p{
+        padding: 15px 5px;
+      }
+    }
+    @include resp-min(xs){
+      border: 5px solid #fff;
+      padding: 7.5px;
+    }
+  }
+  @include resp-min(lg){
+    padding: 10px;  
+    &-inner{
+      padding: 15px;
+    }
+  }
+  &-title{
+    @extend .text-center;
+    @extend .bold;
+    margin-bottom: 25px;
+    @include resp-min(xs){
+      font-size: 20px;
+    }
+    @include resp-max(xs){
+      font-size: 18px;
+    }
+  }
+  &-deliv, &-pay{
+    @extend .relative;  
+    &:after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      @extend .sprite;
+    }
+    p{
+      font-size: 14px;
+    }
+  }
+  &-deliv{
+    padding-left: 30px;
+    &-city{
+      &:after{
+        width: 22px;
+        height: 22px;
+        background-position: -106px -44px;
+      }
+    }
+    &-mail{
+      &:after{
+        width: 23px;
+        height: 22px;
+        background-position: -151px -46px;
+      }
+    }
+  }
+  &-pay{
+    margin-bottom: 10px;
+    padding-left: 25px;
+    &-cour{
+      &:after{
+        width: 13px;
+        height: 22px;
+        background-position: -17px -44px;
+      }
+    }
+    &-sber{
+      &:after{
+        width: 15px;
+        height: 15px;
+        background-position: -15px -84px;
+      }
+    }
+    &-money{
+      &:after{
+        width: 13px;
+        height: 12px;
+        background-position: -75px -48px;
+      }
+    }
+    &-pay{
+      &:after{
+        width: 14px;
+        height: 11px;
+        background-position: -45px -49px;
+      }
+    }
+    &-card{
+      &:after{
+        width: 14px;
+        height: 10px;
+        background-position: -45px -87px;
+      }
+    }
+  }
+}
+/* =====================
+End:  BOX
+======================== */
+
+    
+/* ===================== 
+Start: PRODUCT      
+======================== */
+    
+/* ===================== 
+Start: FILTER      
+======================== */
+
+.sort{
+  &-block{
+    @extend .cf;
+    margin-bottom: 15px;
+    &-list{
+      text-align: left;
+      min-height: 40px;
+      li{
+        display: inline-block;
+        margin: 0 5px;
+        padding: 5px 15px;
+        background-color: #f8f9fb;
+        -webkit-border-radius: 14px;
+        -moz-border-radius: 14px;
+        border-radius: 14px;
+        &:first-child{
+          padding-left: 0;
+        }
+        a{
+          @extend .link-def;
+        }
+        &.active{
+          background-color: transparent;
+          a{
+            font-size: 20px;
+            @extend .grey;
+            border-bottom-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+/* =====================
+End:  FILTER
+======================== */
+    
+/* ===================== 
+Start: ITEM      
+======================== */
+.item{
+  &-b{
+    border: 1px solid #fbfbfb;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
+    min-height: 350px;
+    @extend .relative;
+    &-tag{
+      text-align: center;
+      position: relative;
+      display: block;
+      margin-bottom: 35px;
+      text-align: center;
+      @include color("white");
+      &-wrap{
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        z-index: 2;
+      }
+      span{
+        display: block;
+        position: relative;
+        top: 5px;
+        left: 10px; 
+        text-align: left;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        @extend .sprite;
+        min-height: 46px;
+        z-index: -1;
+      }
+      &-rec{
+        &:after{
+          width: 106px;
+          background-position:  0 -260px;
+        }
+      }
+      &-pop{
+        &:after{
+          width: 89px;
+          background-position: -115px -260px;
+        }
+      }
+      &-new{
+        &:after{
+          width: 89px;
+          background-position: -113px -319px;
+        }
+      }
+      &-akciya{
+        &:after{
+          width: 76px;
+          background-position: -3px -319px;
+        }
+      }
+    }
+    &-img{
+      height: 175px;
+      text-align: center;
+      img{
+        max-height: 100%;
+      }
+    }
+    &-link{
+      display: block;
+      font-size: 16px;
+      @extend .bold;
+      @extend .grey;
+      text-decoration: none;
+      height: 45px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 15px;
+    }
+  }
+  &-footer{
+    @extend .cf;
+    padding-top: 20px;
+  }
+  &-price,
+  &-btn{
+    float: left;
+    width: 50%;
+  }
+  &-price{
+    &--old{
+      @extend .dark-grey;
+      @extend .relative;
+      display: inline-block;
+      &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: #ffaaaa;
+      }
+    }
+    &--new{
+      font-size: 18px;
+    }
+  }
+  &-shop{
+    display: inline-block;
+    padding: 7px 15px;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #f60;
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.23);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,.23);
+    box-shadow: 1px 1px 1px rgba(0,0,0,.23);
+    @extend .white;
+    @extend .roboto;
+    @extend .medium;
+    font-size: 14px;
+    text-align: center;
+  }
+  &-choose-color{
+    p{
+      margin-right: 5px;
+    }
+    ul, li, p, a{
+      display: inline-block;
+      vertical-align: top;
+    }
+    li{
+      a{
+        width: 19px;
+        height: 19px;
+        border: 1px solid #f4f4f4;
+      }
+    }
+  }
+}
+/* =====================
+End:  ITEM
+======================== */
+/* ===================== 
+Start: SLIDER      
+======================== */
+.slider-main{
+  border: 8px solid map-get($colors, "light-blue");
+  @include resp-min(sm){
+    height: 280px;
+    &-text{
+      padding: 30px;
+    }
+    &-text,
+    &-img{
+      height: 265px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  @include resp-max(sm){
+    margin-bottom: 20px;
+  }
+  &-text,
+  &-img{
+    width: 50%;
+    float: left;
+  }
+  &-text{
+    @include resp-max(sm){
+      padding: 20px 0 30px 30px;
+    }
+    &-title{
+      @extend .bold;
+      font-size: 16px;
+      @include resp-min(tp){
+        @include resp-max(sm){
+          font-size: 30px;
+        }
+      }
+      @include resp-min(sm){
+        font-size: 36px;
+      }
+    }
+  }
+  &-img{
+    border-left: 8px solid map-get($colors, "light-blue");
+    position: relative;
+    @include resp-max(sm){
+      overflow: hidden;
+      min-height: 180px;
+      img{
+        position: absolute;
+        max-width: none;
+        left: -100px;
+        top: 0;
+      }
+    }
+    
+  }
+  .owl{
+    &-pagination{
+      position: absolute;
+      bottom: 0px;
+      left: 10px;
+      @include resp-min(sm){
+        bottom: 15px;
+        left: 25px;
+      }
+    }
+    &-buttons{
+      position: absolute;
+      top: 50%;
+      margin-top: -17.5px;
+      left: 0;
+      width: 100%;
+    }
+    &-page{
+      span{
+        border: 3px solid map-get($colors, "orange");
+        background-color: transparent;
+      }
+      &.active{
+        span{
+          border-color: transparent;
+          background-color: map-get($colors, "light-blue");
+        }
+      }
+    }
+    &-prev,
+    &-next{
+      position: absolute;
+      background-color: map-get($colors, "light-blue");
+      @include resp-min(sm){
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        &:after{
+          margin-left: -6px;
+          margin-top: -10.5px;
+          width: 12px;
+          height: 21px;
+          background-position: -196px -46px;
+        }
+      }
+      @include resp-max(sm){
+        width: 17px;
+        height: 38px;
+        &:after{
+          width: 10px;
+          height: 14px;
+          margin-top: -7px;
+          margin-left: -5px;
+          background-position: -213px -50px;
+        }
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @extend .sprite;
+      }
+    }
+    &-prev{
+      &:after{
+        transform: rotate(-180deg);
+      }
+    }
+    @include resp-min(sm){
+      &-prev{
+        left: -19px;
+      }
+      &-next{
+        right: -19px;
+        left: auto;
+      }
+    }
+    @include resp-max(sm){
+      &-prev{
+        left: 0;
+        border-radius: 0 10px 10px 0;
+      }
+      &-next{
+        border-radius: 10px 0 0 10px;
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+}
+/* ===================== 
+End: SLIDER      
+======================== */
+
+/* ===================== 
+Start: OFFER      
+======================== */
+.offer{
+  &-b{
+    &-wrap{
+
+    }
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    &-i{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    &-title{
+      text-align: center;
+      font-size: 16px;
+      @include resp-min(lg){
+        font-size: 19px;  
+      }
+      line-height: 1;
+      margin-bottom: 10px;
+      @extend .bold;
+    }
+   @include resp-min(tp){
+    padding: 15px;
+    margin-left: -0.5em;
+    @include resp-max(sm){
+      width: 50%;
+      &-wrap{
+        text-align: center;
+      }
+      .box-inner{
+        min-height: 210px;
+      }
+    }
+   }
+   @include resp-min(sm){
+      
+      width: 33.33333%;
+      
+      &-title,
+      &-i{
+        margin-bottom: 20px;
+      }
+      &-title{
+        min-height: 38px;
+      }
+      &-text{
+        min-height: 72px;
+      }
+    }
+    @include resp-max(sm){
+      margin-bottom: 10px;
+      .box{
+        padding: 10px;
+      }
+    }
+    @include resp-max(xs){
+      &-title{
+        text-align: left;
+      }
+      &-i{
+        float: left;
+        width: 33px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+/* =====================
+End:  OFFER
+======================== */
+/* =====================
+Start:  VIDEO AND REVIEW MAIN
+======================== */
+@include resp-max(md){
+  .max-sm-no-p{
+    padding: 0 !important;
+  }
+  .r-v-wrap{
+    margin-top: 25px;
+    .small-title{
+      margin-left: 15px;
+    }
+  }
+}
+@include resp-max(sm){
+  .max-xs-negative{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+%border-r-v{
+  border-style: solid;
+  border-color: #e2e2e2;
+  @include resp-min(sm){
+    border-width: 10px;
+  }
+  @include resp-max(sm){
+    border-top-width: 10px;
+    border-right-width: 15px;
+    border-bottom-width: 10px;
+    border-left-width: 15px;
+  }
+
+}
+.main{
+  &-review{
+    &-wrap{
+      @extend %border-r-v;
+    }
+  }
+  &-video{
+    @extend %border-r-v;
+    @extend .relative;
+    // @include bg("../img/main-video.png", center top, no-repeat, cover);
+    img{
+      height: 100%;
+      width: 100%;
+    }
+    &-btn{
+      @include after_center(80px,80px);
+      border: 5px solid #fff;
+      border-radius: 100%;
+      background-color: rgba(0, 172, 224, 0.65);
+      &:after{
+        @include after_center(20px,23px);
+        @extend .sprite;
+        background-position: -89px -111px;
+      }
+    }
+  }
+
+  @include resp-min(md){
+    &-video{
+      border-right-width: 5px;
+    }
+    &-review{
+      &-wrap{
+        border-left-width: 5px;
+      }
+    }
+    &-review{
+      &-text{
+        height: 220px;
+        overflow: hidden;
+      }
+    }
+  }
+  @include resp-min(sm){
+    &-video{
+      min-height: 350px;
+      img{
+        position: absolute;
+      }
+    }
+    &-review{
+      &-wrap{
+        min-height: 350px;
+      }
+    }
+  }
+  &-review{
+    &-link{
+      font-size: 14px;
+      position: relative;
+      margin-left: 15px;
+      @extend .dark-blue;
+      &:after{
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: -6px;
+        width: 1px;
+        height: 27px;
+        background-color: #e2e2e2;
+      }
+    }
+    &-header{
+      @extend .relative;
+      padding-left: 50px;
+      margin-bottom: 10px;
+      &--title{
+        font-size: 16px;
+        @extend .bold;
+      }
+      &--city{
+        font-size: 14px;
+        @extend .light;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        @extend .sprite;
+        width: 34px;
+        height: 32px; 
+        background-position: -106px -82px;
+      }
+    }
+    &-text{
+      font-size: 14px;
+      @extend .light;
+      
+      p{
+        text-overflow: ellipsis;
+      }
+    }
+    &-wrap{
+      padding: 25px;
+      position: relative;
+      .owl{
+        &-carousel{
+          position: static;
+        }
+        &-controls{
+          display: block !important;
+          position: absolute;
+          top: -50px;
+          right: 0;
+          @include resp-min(sm){
+            right: -10px;
+          }
+        }
+        &-prev,
+        &-next{
+          width: 40px;
+          height: 40px;
+          position: relative;
+          background-color: map-get($colors, "light-blue");
+          &:hover{
+            background-color: #0084ac;
+          }
+          &:after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -6px;
+            margin-top: -10.5px;
+            width: 12px;
+            height: 21px;  
+            @extend .sprite;
+            background-position: -196px -46px; 
+          }
+        }
+        &-prev{
+          &:after{
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+  }
+}
+.review-no-p{
+  padding: 0 !important;
+}
+/* =====================
+End:  VIDEO AND REVIEW MAIN
+======================== */
+
+/* =====================
+End:  PRODUCT
+======================== */
+
+//ASIDE
+.aside{
+  &-menu{
+    > ul{
+      > li{
+        padding-left: 50px;
+        border-bottom: 1px solid #f4f4f4;
+        position: relative;
+      }
+    }
+    ul{
+      li{
+        margin-bottom: 5px;
+        &.opened-menu{
+          .child-list{
+            display: block;
+          }
+          &:after{
+            transform: rotate(90deg);
+          }
+        }
+        &.active{
+          
+        }
+        &.has-child{
+          &:after{
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 6px;
+            height: 10px; 
+            @extend .sprite;
+            background-position: -78px -117px;
+          }
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+        a{
+          display: block;
+          padding: 5px 0;
+          font-size: 16px;
+          @extend .grey;
+          text-decoration: none;
+        }
+
+      }
+      &.child-list{
+        display: none;
+        li{
+          padding-left: 10px;
+          a{
+            font-size: 14px;
+            @extend .light-blue;
+          }
+        }
+      }
+    }
+  }
+  &-img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    text-align: center;
+    @extend .vertical-image;
+  }
+  > div{
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ebebeb;
+    &:last-child{
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+  &-title{
+    @extend .bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  &-brand{
+    a{
+      display: inline-block;
+      width: 50%;
+      margin-left: -0.5em;
+      text-align: center;
+      min-height: 40px;
+      @extend .vertical-image;
+    }
+    img{
+      max-width: 100px;
+    }
+  }
+  &-pickup{
+    @extend .bg-grey;
+    padding: 15px;
+    &-block{
+      margin-bottom: 10px;
+      &-link{
+        @extend .link-def;
+        margin-bottom: 10px;
+        font-size: 14px;
+        @extend .relative;
+        &:after{
+          content: "";
+          position: absolute;
+          right: -20px;
+          top: 50%;
+          margin-top: -3px;
+          @extend .sprite;
+          width: 10px;
+          height: 6px;  
+          background-position: -65px -119px;  
+          transition: all ease .5s;
+        }
+        &.active{
+          &:after{
+            transform: rotate(180deg);
+          }
+        }
+      }
+      &-inner{
+        display: none;
+      }
+    }
+  }
+}

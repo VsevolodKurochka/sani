@@ -1,0 +1,293 @@
+/* ===================== 
+Start: HEADER      
+======================== */
+.header {
+	@extend .cf;
+	padding: 12px 0;
+	min-height: 50px;	
+	background-color: map-get($colors, "white");
+	z-index: 999;
+  	position: fixed;
+  	top: 0;
+	left: 0;
+	width: 100%;
+	&-logo{
+		@include resp-max(md){
+			text-align: center;
+		}
+		&-img{
+			float: left;
+			margin-right: 10px;
+			padding-top: 15px;
+		}
+		&-text{
+			overflow: hidden;
+			&--title{
+				@extend .orange;
+				@extend .text-u;
+				@extend .ultrabold;
+				font-size: 20px;
+			}
+			&--descr{
+				font-size: 13px;
+				line-height: 1;
+				@extend .dark-grey;
+			}
+		}
+	}	
+}
+// @include resp-max(md){
+// 	.header{
+// 		&-menu{
+// 		    display: block;
+// 		    width: 200px;
+// 		    position: fixed;
+// 		    right: -200px;
+// 		    top: 30px;
+// 		    background-color: #ddd;
+// 		    z-index: 10;
+// 		    &-open{
+// 		    	right: 0;
+// 		    	left: auto;
+// 		    	overflow-y: auto;
+// 			}
+// 		}
+// 		&-phone, &-menu{
+// 			@include resp-max(md){
+// 				text-align: center;
+// 			}
+// 		}
+// 	}
+// 	.navbar-toggle{
+// 		position: fixed;
+// 		top: 0;
+// 		right: 0;
+// 		z-index: 11;		
+// 	}
+// }
+.navbar-toggle{
+	position: relative;
+    float: left;
+    padding: 3px 10px 6px 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    &-open{
+    	.icon-bar-1{
+		    transform: rotate(45deg) translate(5px,5px);
+    	}
+    	.icon-bar-2{
+			opacity: 0;
+    	}
+    	.icon-bar-3{
+			transform: rotate(-45deg) translate(4px, -3px);
+    	}
+    }
+	.icon-bar{
+	    display: block;
+	    width: 22px;
+	    height: 2px;
+	    border-radius: 1px;
+        background-color: #fff;
+        transition: all ease .25s;
+        transform-origin: 50% 100%;
+	}
+	.icon-bar:not(.icon-bar-1){
+		margin-top: 4px;
+	}
+	&-text{
+	  position: absolute;
+	  left: 100%;
+	  top: 50%;
+	  margin-top: -11.5px;
+	  font-size: 20px;
+	  color: #fff;
+	  @extend .bold;
+	}
+}
+.hover-link-menu{
+	position: relative;
+	text-decoration: none;
+	&:after{
+		content: "";
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: map-get($colors,"white");
+		transition: all ease .5s;
+		border-radius: 10px;
+	}
+	&:hover{
+		&:after{
+			width: 0;
+		}
+	}
+}
+.top-nav{
+	@extend .cf;
+	padding: 15px 0;
+	background-color: map-get($colors, "light-blue");
+	&-menu{
+		& *{
+			@include color("white");
+		}
+		transition: all ease .5s;
+		ul{
+			li{
+				display: inline-block;
+       			vertical-align: middle;
+				padding: 2px 15px;
+				&:first-child{
+					padding: 2px 17.5px 2px 0;
+				}
+				a{
+					font-size: 15px;
+					@extend .hover-link-menu;
+				}
+			}
+		}
+	}
+}
+.entry-reg-block{
+	padding-top: 3px;
+	@extend .relative;
+	a{
+		@extend .bold;
+	}
+	&:after{
+		content: "";
+		position: absolute;
+		left: -5px;
+		top: 2px;
+		width: 14px;
+		height: 21px;
+		@extend .sprite;
+		background-position: -160px -84px;
+	}
+	p,a{
+		text-align: right;
+		@extend .white;
+	}
+	
+}	
+/* ===================== 
+Start: TOP FIXED      
+======================== */
+.sprite{
+	background-image: url("../img/sprite.png");
+	background-repeat: no-repeat;
+}
+.share-block{
+	margin: 5px 0 10px;
+	a{
+		display: inline-block;
+		padding-left: 25px;
+		@extend .relative;
+		text-decoration: none;
+		&:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+.email-block{
+	a{	
+		@extend .grey;
+		@extend .medium;	
+		&:before{
+			width: 18px;
+			height: 14px;
+			@extend .sprite;
+			background-position: -14px -4px;
+		}
+	}
+}
+.social-block{
+	a{
+		&:before{
+			width: 20px;
+			height: 19px;
+			@extend .sprite;
+			background-position: -192px -92px;
+		}
+	}
+}
+.phone-block{
+	a{
+		display: block;
+		padding-left: 25px;
+	}
+	&--phone{
+		font-size: 17px;
+		margin-bottom: 5px;
+		@extend .grey;
+		@extend .bold;
+		@extend .text-dn;
+		@extend .relative;
+		&:after{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 2px;
+			width: 17px;
+			height: 18px;
+			@extend .sprite;
+			background-position: -43px -3px;
+		}
+	}
+	&--recall{
+		@extend .medium;
+	}
+}
+.cart-block{
+	@extend .relative;
+	&:after{
+		content: "";
+		position: absolute;
+		left: -50px;
+		top: 50%;
+		margin-top: -15px;
+		width: 38px;
+		height: 30px;
+		@extend .sprite;
+		background-position: -79px 0;
+	}
+	&-items{
+		margin-bottom: 10px;
+	}
+}
+.header-search-block{
+	@extend .text-right;
+	@extend .relative;
+	padding-top: 15px;
+	input{
+	  position: absolute;
+	  right: 50px;
+	  top: -100px;
+	  border-radius: 5px;
+	  border: 1px solid #ddd;
+	  padding: 5px;
+	  transition: all ease .5s;
+	  z-index: 1;
+	}
+	button{
+		background-color: map-get($colors, "orange");
+		@extend .search-circle;
+	}
+	&:hover{
+		input{
+			top: 17px;
+		}
+	}
+}
+/* =====================
+End:  TOP FIXED
+======================== */
+
+/* =====================
+End:  HEADER
+======================== */

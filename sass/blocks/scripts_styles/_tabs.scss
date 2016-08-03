@@ -1,0 +1,126 @@
+/*===================== 
+Start: TAB STYLES      
+======================== */
+.nav-tabs {
+  text-align: center;
+}
+@media (min-width: 992px){
+  .nav-tabs > li {
+    display: inline-block;
+  } 
+}
+@media (max-width: 991px){
+  .nav-tabs > li{
+    display: block;
+    margin-bottom: 15px;
+  }
+}
+.nav-tabs > li > a {
+  margin-right: 2px;
+  // line-height: 1.42857143;
+  // border: 1px solid transparent;
+  // border-radius: 4px 4px 0 0;
+}
+// .nav-tabs > li > a:hover {
+//   border-color: #eee #eee #ddd;
+// }
+// .nav-tabs > li.active > a,
+// .nav-tabs > li.active > a:hover,
+// .nav-tabs > li.active > a:focus {
+//   color: #555;
+//   cursor: default;
+//   background-color: #fff;
+//   border: 1px solid #ddd;
+//   border-bottom-color: transparent;
+// }
+.nav-tabs{
+  &-registration{
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    li{
+      width: 100%;
+      border-bottom: 2px solid transparent;
+      @include resp-min(sm){
+        width: 50%;
+        margin-left: -0.5em;
+        position: relative;
+        top: 1px;
+      }
+      &.active{
+        border-bottom-color: map-get($colors, "light-blue");
+        a{
+          border: none;
+          
+        }
+      }
+      a{
+        text-decoration: none;
+        font-size: 18px;
+        @extend .light-blue;
+      }
+    }    
+  }
+  &-social{
+    text-align: left; 
+    li{
+      float: left;
+      width: 33.3333%;
+      height: 55px;
+      border: 1px solid #fbfbfb;
+      position: relative;
+      z-index: 1;
+      &.active{
+        background-color: #ddd;
+      }
+      &.social-tab{
+        &-vk,
+        &-fb,
+        &-tw{
+          &:after{
+            @extend .after_d;
+            left: 50%;
+            top: 50%;
+            @extend .sprite;
+          }
+        }
+        &-vk{
+          &:after{
+            @include centerWidthHeight(16px,20px);
+            background-position: -194px -7px;
+          }
+          background-color: #4e759d;
+        }
+        &-fb{
+          &:after{
+            @include centerWidthHeight(11px,23px);   
+            background-position: -139px -4px;
+          }
+        }
+        &-tw{
+          &:after{
+            @include centerWidthHeight(14px,20px);
+            background-position: -167px -7px;
+          }  
+        }
+      }
+      a{
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+}
+.social-tabs{
+  margin-top: 56px;
+}
+.tab-content > .tab-pane {
+  display: none;
+}
+.tab-content > .active {
+  display: block;
+}
+/* =====================
+End:  TAB STYLES
+========================*/
