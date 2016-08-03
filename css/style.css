@@ -1681,69 +1681,31 @@ Start: NEWS
 .news-odd .news-b-text--time {
   color: #999999;
 }
-@media (max-width: 991px) {
-  .news-b {
-    margin-bottom: 15px;
-    min-height: 400px;
-  }
-}
-@media (max-width: 767px) {
-  .news-b {
-    position: relative;
-    min-height: 398px;
-    width: 270px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .news-b-img {
-    bottom: 0;
-    position: absolute;
-    height: 180px;
-    width: 100%;
-  }
+.news-b {
+  position: relative;
+  min-height: 398px;
+  width: 270px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .news-b-text, .news-b-img {
   position: absolute;
   left: 0;
   width: 100%;
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .news-b {
-    min-height: 300px;
-  }
-  .news-b-img {
-    height: 125px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .news-b {
-    min-height: 400px;
-  }
-  .news-b-img {
-    height: 200px;
-  }
+  height: 200px;
 }
 .news-b-img {
   overflow: hidden;
 }
 .news-b-img img {
-  width: 100%;
   height: 100%;
   max-height: 100%;
-}
-@media (max-width: 767px) {
-  .news-b-img {
-    height: 200px;
-  }
+  width: 280px;
+  max-width: none;
+  margin-left: -5px;
 }
 .news-b-text {
   padding: 15px;
-}
-@media (min-width: 601px) {
-  .news-b-text {
-    min-height: 200px;
-  }
 }
 .news-b-text--title {
   font-size: 16px;
@@ -1761,6 +1723,33 @@ Start: NEWS
   display: block;
   color: inherit;
   height: 100%;
+}
+@media (max-width: 991px) {
+  .news-b {
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .news-b {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .news-b {
+    min-height: 300px;
+  }
+  .news-b-img {
+    height: 125px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .news-b {
+    min-height: 400px;
+  }
+  .news-b-img {
+    height: 200px;
+  }
 }
 
 /* =====================
@@ -2719,6 +2708,9 @@ End:  PRODUCT
 .aside-pickup-block-link {
   margin-bottom: 10px;
   font-size: 14px;
+}
+.aside-pickup-block-link:hover {
+  cursor: pointer;
 }
 .aside-pickup-block-link:after {
   content: "";

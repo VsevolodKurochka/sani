@@ -123,58 +123,31 @@ Start: NEWS
   }
   &-b{
     @extend .relative;
-    @include resp-max(md){
-      margin-bottom: 15px;
-      min-height: 400px;
-    }
-    @include resp-max(sm){
-      position: relative;
-      min-height: 398px;
-      width: 270px;
-      margin-left: auto;
-      margin-right: auto;
-      &-img{
-        bottom: 0;
-        position: absolute;
-        height: 180px;
-        width: 100%;
-      }
-    }
+    position: relative;
+    min-height: 398px;
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
     &-text,
     &-img{
       position: absolute;
       left: 0;
       width: 100%;
+      height: 200px;
     }
-    @include resp-min(md){
-      @include resp-max(lg){
-        min-height: 300px;
-        &-img{
-          height: 125px;
-        }
-      }
-    }
-    @include resp-min(lg){
-      min-height: 400px;
-      &-img{
-        height: 200px;
-      }
-    }
-    &-img{
+    
+    &-img{      
       overflow: hidden;
       img{
-        width: 100%;
         height: 100%;
         max-height: 100%;
-      }
-      @include resp-max(sm){
-        height: 200px;
+        
+        width: 280px;
+        max-width: none;
+        margin-left: -5px;
       }
     }
     &-text{
-      @include resp-min(tp){
-        min-height: 200px;
-      }
       padding: 15px;
       &--title{
         @extend .bold;
@@ -199,6 +172,27 @@ Start: NEWS
       display: block;
       color: inherit;
       height: 100%;
+    }
+    @include resp-max(md){
+      margin-bottom: 15px;
+    }
+    @include resp-min(md){
+      width: 100%;
+      @include resp-max(lg){
+        min-height: 300px;
+        &-img{
+          height: 125px;
+        }
+      }
+    }
+    @include resp-min(lg){
+      min-height: 400px;
+      &-img{
+        height: 200px;
+        img{
+          
+        }
+      }
     }
   }
 }
@@ -1276,6 +1270,9 @@ End:  PRODUCT
         margin-bottom: 10px;
         font-size: 14px;
         @extend .relative;
+        &:hover{
+          cursor: pointer;
+        }
         &:after{
           content: "";
           position: absolute;

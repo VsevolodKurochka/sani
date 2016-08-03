@@ -95,5 +95,12 @@ $(document).ready(function(){
 		  	$(this).toggleClass("active");
 		  	$(this).next().slideToggle("slow");
 		  });
+
+		$("#totop").click(function(){
+			$("body,html").animate({
+				scrollTop: 0
+			}, 400);
+			return false;
+		});
 		
 });	
