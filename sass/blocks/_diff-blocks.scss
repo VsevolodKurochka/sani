@@ -246,10 +246,6 @@ Start: LEADER
 .leader{
   background-color: map-get($colors, "light-blue");
   padding: 15px 7.5px;
-  @include resp-max(sm){
-    margin-left: -7.5px;
-    margin-right: -7.5px;
-  }
   @include resp-min(sm){
     padding: 25px 0;
   }
@@ -426,18 +422,18 @@ End:  LEADER
 /* ===================== 
 Start: BOX      
 ======================== */
-.delivery-payment-wrap{
-  @include resp-max(sm){
-    > .container{
-      padding: 0;
-      > .row {
-        > .col-xs-12 {
-          padding: 0;
-        }
-      }
-    }
-  }
-}
+// .delivery-payment-wrap{
+//   @include resp-max(sm){
+//     > .container{
+//       padding: 0;
+//       > .row {
+//         > .col-xs-12 {
+//           padding: 0;
+//         }
+//       }
+//     }
+//   }
+// }
 .box{
   padding: 5px;
   // @include resp-max(xs){
@@ -906,9 +902,6 @@ Start: OFFER
 ======================== */
 .offer{
   &-b{
-    &-wrap{
-
-    }
     width: 100%;
     display: inline-block;
     vertical-align: top;
@@ -928,9 +921,9 @@ Start: OFFER
     }
    @include resp-min(tp){
     padding: 15px;
-    margin-left: -0.5em;
     @include resp-max(sm){
       width: 50%;
+      margin-left: -0.5em;
       &-wrap{
         text-align: center;
       }
@@ -940,9 +933,8 @@ Start: OFFER
     }
    }
    @include resp-min(sm){
-      
+      float: left;
       width: 33.33333%;
-      
       &-title,
       &-i{
         margin-bottom: 20px;
@@ -956,6 +948,8 @@ Start: OFFER
     }
     @include resp-max(sm){
       margin-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
       .box{
         padding: 10px;
       }
