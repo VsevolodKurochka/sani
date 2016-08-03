@@ -2103,7 +2103,6 @@ Start: ITEM
   min-height: 350px;
 }
 .item-b-tag {
-  text-align: center;
   position: relative;
   display: block;
   margin-bottom: 35px;
@@ -2441,7 +2440,7 @@ Start: OFFER
   }
 }
 @media (max-width: 479px) {
-  .offer-b-title {
+  .offer-b-text, .offer-b-title {
     text-align: left;
   }
   .offer-b-i {

@@ -604,7 +604,6 @@ Start: ITEM
     min-height: 350px;
     @extend .relative;
     &-tag{
-      text-align: center;
       position: relative;
       display: block;
       margin-bottom: 35px;
@@ -675,6 +674,7 @@ Start: ITEM
       text-overflow: ellipsis;
       margin-bottom: 15px;
     }
+
   }
   &-footer{
     @extend .cf;
@@ -921,20 +921,20 @@ Start: OFFER
       margin-bottom: 10px;
       @extend .bold;
     }
-   @include resp-min(tp){
-    padding: 15px;
-    @include resp-max(sm){
-      width: 50%;
-      margin-left: -0.5em;
-      &-wrap{
-        text-align: center;
-      }
-      .box-inner{
-        min-height: 210px;
+    @include resp-min(tp){
+      padding: 15px;
+      @include resp-max(sm){
+        width: 50%;
+        margin-left: -0.5em;
+        &-wrap{
+          text-align: center;
+        }
+        .box-inner{
+          min-height: 210px;
+        }
       }
     }
-   }
-   @include resp-min(sm){
+    @include resp-min(sm){
       float: left;
       width: 33.33333%;
       &-title,
@@ -957,6 +957,7 @@ Start: OFFER
       }
     }
     @include resp-max(xs){
+      &-text,
       &-title{
         text-align: left;
       }
