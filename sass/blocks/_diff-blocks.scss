@@ -422,18 +422,15 @@ End:  LEADER
 /* ===================== 
 Start: BOX      
 ======================== */
-// .delivery-payment-wrap{
-//   @include resp-max(sm){
-//     > .container{
-//       padding: 0;
-//       > .row {
-//         > .col-xs-12 {
-//           padding: 0;
-//         }
-//       }
-//     }
-//   }
-// }
+.delivery-payment-wrap{
+  @include resp-max(sm){
+    .box{
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-bottom: 15px;
+    }
+  }
+}
 .box{
   padding: 5px;
   // @include resp-max(xs){
@@ -901,6 +898,11 @@ End: SLIDER
 Start: OFFER      
 ======================== */
 .offer{
+  &-w{
+    @include resp-max(sm){
+      text-align: center;
+    }
+  }
   &-b{
     width: 100%;
     display: inline-block;
@@ -973,7 +975,7 @@ End:  OFFER
 Start:  VIDEO AND REVIEW MAIN
 ======================== */
 @include resp-max(md){
-  .max-sm-no-p{
+  .max-md-no-p{
     padding: 0 !important;
   }
   .r-v-wrap{
@@ -984,6 +986,9 @@ Start:  VIDEO AND REVIEW MAIN
   }
 }
 @include resp-max(sm){
+  .max-sm-no-p{
+    padding: 0 !important;
+  }
   .max-xs-negative{
     margin-left: -15px;
     margin-right: -15px;
@@ -1000,6 +1005,8 @@ Start:  VIDEO AND REVIEW MAIN
     border-right-width: 15px;
     border-bottom-width: 10px;
     border-left-width: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
   }
 
 }

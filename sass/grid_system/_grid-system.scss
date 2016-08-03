@@ -68,9 +68,14 @@ section{
   @extend %relative;
 }
 .section{
+
   padding-top: 20px;
   @include resp-min(sm){
     padding-top: 30px;
+  }
+  @include resp-max(lg){
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 // @each $breakpoint-name, $breakpoint-value in $breakpoints{
