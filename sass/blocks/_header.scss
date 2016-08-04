@@ -149,6 +149,7 @@ Start: HEADER
 				a{
 					font-size: 15px;
 					@extend .hover-link-menu;
+					@extend .light;
 				}
 			}
 		}

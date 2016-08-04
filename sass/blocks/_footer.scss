@@ -3,7 +3,7 @@ Start: START FOOTER
 ======================== */
 .footer{
 	@extend .cf;
-	margin-top: 40px;
+	margin-top: 20px;
 	padding: 0 0 20px;
 	@include resp-min(sm){
 		padding: 30px 0 70px;
