@@ -33,6 +33,9 @@ Start: TAB STYLES
 //   border: 1px solid #ddd;
 //   border-bottom-color: transparent;
 // }
+.border-default{
+  border: 1px solid #ededed;
+}
 .nav-tabs{
   &-registration{
     width: 100%;
@@ -111,6 +114,46 @@ Start: TAB STYLES
       }
     }
   }
+  &-product{
+    text-align: left;
+    li{
+      padding: 15px 20px;
+      @extend .border-default;
+      
+      background-color: #f8f9fb;
+      @include resp-min(sm){
+        border-bottom: none;
+      }
+      a{
+        display: inline-block;
+        font-size: 18px;
+        margin-right: 0;
+        text-decoration: none;
+        color: #1584cd;
+        border-bottom: 2px dashed #1584cd;
+        transition: none;
+      }
+      &.active {
+        background-color: transparent;
+        a{
+          border-bottom: none;
+          @extend .orange;
+        }
+      }
+    }
+  }
+}
+
+.tab-content-product{
+  padding: 15px;
+  @include resp-min(sm){
+    padding: 25px;
+  }
+  @extend .border-default;
+  font-size: 14px;
+  ul,p{
+    margin-bottom: 20px;
+  }
 }
 .social-tabs{
   margin-top: 56px;
@@ -120,6 +163,12 @@ Start: TAB STYLES
 }
 .tab-content > .active {
   display: block;
+}
+.collapse.in {
+  display: block;
+}
+.collapse {
+  display: none;
 }
 /* =====================
 End:  TAB STYLES

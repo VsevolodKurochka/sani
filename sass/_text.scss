@@ -30,12 +30,7 @@ span.small-title{
   @extend .grey;
   @extend .bold;
   &-page{
-  	@include resp-min(sm){
-  		margin-bottom: 25px;
-  	}
-  	@include resp-max(sm){
-  		margin: 25px 0;
-  	}
+  	margin: 25px 0;
   	&-main{
   		margin-bottom: 25px;
   	}

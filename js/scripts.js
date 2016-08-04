@@ -122,4 +122,13 @@ $(document).ready(function(){
 			input.val( parseInt(input.val() ) + 1 );
 			return false;
 		});
+		//PRODUCT
+		$(".product-image-carousel").jCarouselLite({
+		    btnNext: ".product-image-carousel-wrap .next",
+		    btnPrev: ".product-image-carousel-wrap .prev"
+		});
+
+		$(".product-image-carousel img").click(function() {
+		    $(".product-image-big img").attr("src", $(this).attr("src"));
+		});
 });	
