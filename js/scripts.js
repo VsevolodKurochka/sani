@@ -42,7 +42,13 @@ $(document).ready(function(){
 			navigation: true,
 			pagination: true
 		});
-
+		$(".default-pr-c").owlCarousel({
+			items: 3,
+			itemsDesktop: [1199, 3],
+			navigation: true,
+			navigationText: ["",""],
+			pagination: false
+		});
 		//NAVIGATION ENTRY AND REGISTER
 		$(".modal-toggle").click(function(e){
 			var tab = e.target.hash;
@@ -115,18 +121,5 @@ $(document).ready(function(){
 			var input = $(this).parent().prev();
 			input.val( parseInt(input.val() ) + 1 );
 			return false;
-		});
-		$(".radio input").each(function(){
-			$(this).click(function(){
-				$(this).parent().toggleClass("radio-input-parent-active");
-				
-			});
-			if( $(this).attr("checked") ) {
-				//$(this).attr("checked", "checked");
-				$(this).parent().toggleClass("radio-input-parent-active");
-			}else{
-				$(this).removeAttr("checked");
-				$(this).parent().removeClass("radio-input-parent-active");
-			}
 		});
 });	

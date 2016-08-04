@@ -35,6 +35,10 @@ Start: BUTTON
       }
     }
   }
+  &-small{
+    padding: 10px 25px;
+    font-size: 14px;
+  }
   &-big{
     @extend .medium;
     @include resp-min(xs){
@@ -1360,9 +1364,7 @@ Start: BREADCRUMBS
 /* =====================
 End:  BREADCRUMBS
 ======================== */
-.title-page{
-  margin-bottom: 25px;
-}
+
     
 /* ===================== 
 Start: CART PAGE      
@@ -1535,6 +1537,13 @@ Start: CART PAGE
       }
     }
   }
+  &-box{
+    @include resp-min(lg){
+      .box-inner{
+        min-height: 520px;
+      }
+    }
+  }
 }
 /* =====================
 End:  CART PAGE
@@ -1636,5 +1645,185 @@ input{
   }
   textarea{
     resize: none;
+  }
+}
+.delivery-p-wrap{
+  @include resp-min(sm){
+    margin-bottom: 15px;
+  }
+}
+.product{
+  &-carousel{
+    margin-bottom: 40px;
+    .owl{
+      &-buttons{
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+      
+      &-prev,
+      &-next{
+        position: absolute;
+        top: 0;
+        &:after{
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          @extend .sprite;
+        }
+      }
+      &-prev{
+        transform: rotate(-180deg);
+      }
+      &-next{
+        right: 0;
+        left: auto;
+        
+      }
+      @include resp-min(tl){
+        @include resp-max(lg){
+          &-buttons{
+            top: -25px;
+          }
+          &-prev{
+            right: 40px;
+            left: auto;
+          }
+        }
+        &-prev,
+        &-next{
+          &:after{
+            width: 24px;
+            height: 40px;
+            margin-left: -12px;
+            margin-top: -20px;
+            background-position: -179px -190px;
+          }
+        }
+      }
+      @include resp-max(tl){
+        &-buttons{
+          top: 50%;
+          margin-top: -40px;
+        }
+        &-prev{
+          left: 0;
+        }
+        &-prev,
+        &-next{
+          border-radius: 10px 0px 0px 10px;
+          width: 15px;
+          height: 40px;
+          background-color: map-get($colors, "light-blue");
+          &:after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 10px;
+            height: 14px;
+            margin-top: -7px;
+            margin-left: -5px;
+            background-position: -213px -50px;
+          }
+        }
+      }
+      @include resp-min(lg){
+        &-buttons{
+          top: 50%;
+          margin-top: -20px;         
+        }
+        &-prev{
+          left: -50px;
+        }
+      } 
+    }
+  }
+}
+.product{
+  &-image-info{
+    border: 1px solid #fafafa;
+  }
+  &-info,&-image{
+    width: 50%;
+    float: left;
+    min-height: 1px;
+  }
+  &-info{
+    border-left: 1px solid #fafafa;
+    &-header{
+
+    }
+    > div{
+      padding: 15px;
+      @extend .cf;
+      border-bottom: 1px solid #fafafa;
+    }
+    &-value{
+      &-b{
+        border-radius: 11px;
+        background-color: #f8f9fb;
+        padding: 3px;
+      }
+    }
+    &-price{
+      .item-price{
+        width: 100%;
+        &--old{
+          font-size: 16px;
+        }
+        &--new{
+          font-size: 28px;
+        }
+      }
+      .input-group-value{
+        margin-top: 15px;
+      }
+      .btn-to-cart{
+        margin-top: 10px;
+      }
+      .btn{
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+.availability{
+  position: relative;
+  padding-left: 30px;
+  div{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -11px;
+    width: 22px;
+    height: 22px;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    &:before{
+      content: "";
+      position: absolute;
+      @extend .sprite;
+      width: 12px;
+      height: 10px;
+      left: 50%;
+      top: 50%;
+      margin-left: -6px;
+      margin-top: -4px;
+      background-position: -141px -119px;
+    }
+  }
+
+  &.has-item{
+    color: #3bc565;
+    div{
+      background-color: #3bc565;
+    }
+  }
+  &.no-item{
+    color: #f00;
   }
 }
