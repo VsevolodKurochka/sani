@@ -25,3 +25,16 @@ span.small-title{
 		}
 	}
 }
+.h1{
+  font-size: 20px;
+  @extend .grey;
+  @extend .bold;
+}
+.big-title{
+	font-size: 20px;
+	margin: 10px 0;
+	@include resp-min(xs){
+		font-size: 24px;
+	}
+	@extend .bold;
+}

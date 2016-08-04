@@ -35,6 +35,22 @@ Start: BUTTON
       }
     }
   }
+  &-big{
+    @extend .medium;
+    @include resp-min(xs){
+      font-size: 23px;
+      padding: 15px 35px;
+    }
+  }
+  &-orange{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: map-get($colors, "orange");
+      -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.23);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,.23);
+    box-shadow: 1px 1px 1px rgba(0,0,0,.23);
+  }
 }
 /* =====================
 End:  BUTTON
@@ -253,6 +269,7 @@ Start: LEADER
       @include color("white");
       &--name{
         font-size: 16px;
+        @extend .medium;
       }
       &--pos{
         font-size: 14px;
@@ -398,6 +415,9 @@ Start: LEADER
     }
   }
   @include resp-min(sm){
+    &-inf{
+      text-align: center;
+    }
     @include resp-max(md){
       &-inf,
       &-text{
@@ -430,6 +450,9 @@ Start: BOX
   // @include resp-max(xs){
   //   margin-bottom: 10px;
   // }
+  &-padding{
+    padding: 15px;
+  }
   &-grey{
    @extend .bg-grey;
   }
@@ -464,6 +487,11 @@ Start: BOX
     }
     @include resp-max(xs){
       font-size: 18px;
+    }
+    &.small{
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 15px;
     }
   }
   &-deliv, &-pay{
@@ -517,7 +545,7 @@ Start: BOX
       &:after{
         width: 13px;
         height: 12px;
-        background-position: -75px -48px;
+        background-position: -73px -48px;
       }
     }
     &-pay{
@@ -1295,5 +1323,263 @@ End:  PRODUCT
         display: none;
       }
     }
+  }
+}
+    
+/* ===================== 
+Start: BREADCRUMBS      
+======================== */
+.breadcrumbs{
+  margin-bottom: 25px;
+  li{
+    display: inline-block;
+    padding-right: 20px;
+    @extend %relative;
+    a{
+      @include color("br");
+      text-decoration: underline;
+      font-size: 12px;
+    }
+    &:after{
+      content: ">";
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      margin-top: -8.5px;
+      @extend .roboto;
+      @include color("br");
+      font-size: 12px;
+    }
+    &:last-child{
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+/* =====================
+End:  BREADCRUMBS
+======================== */
+.title-page{
+  margin-bottom: 25px;
+}
+    
+/* ===================== 
+Start: CART PAGE      
+======================== */
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+}
+.table-bordered {
+  border: 1px solid #ededed;
+  tr{
+    border-bottom: 1px solid #ededed;
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding: 8px;
+  line-height: 1.42857143;
+}
+.input-group{
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 70px;
+  text-align: center;
+  &-btn{
+    vertical-align: middle;
+    .minus,
+    .plus{
+      display: inline-block;
+      width: 7px;
+      height: 11px;
+      @extend .sprite;
+      background-position: -112px -117px;
+    }
+    .minus{
+      transform: rotate(-180deg);
+    }
+  }
+}
+.cart{
+  &-table{
+    @include resp-max(sm){
+      td{
+        width: 100%;
+        float: left;
+        text-align: center;
+      }
+    }
+  }
+  &-image{
+    width: 100px;
+    img{
+      max-width: 74px;
+      max-height: 55px;
+    }
+  }
+  &-name{
+    font-size: 16px;
+    width: 250px;
+    min-width: 250px;
+    vertical-align: top;
+    @extend .medium;
+  }
+  &-price{
+    min-width: 100px;
+    font-size: 18px;
+    @extend .bold;
+  }
+  &-count{
+    min-width: 190px;
+    &-q{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+      @extend .bold;
+      margin-left: 50px;
+    }
+  }
+  &-quantity{
+    display: inline-block;
+    vertical-align: middle;
+    width: 29px;
+    height: 27px;
+    margin: 0 5px;
+    border: 1px solid #f9f9f9;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 2px 2px rgba(0,0,1,.26);
+    -moz-box-shadow: 1px 2px 2px rgba(0,0,1,.26);
+    box-shadow: 1px 2px 2px rgba(0,0,1,.26);
+  }
+  &-delete{
+    &-btn{
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      @extend .sprite;
+      background-position: -124px -117px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  &-summary{
+    padding: 23.5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    @extend .bold;
+    &-total{
+      
+    }
+  }
+  &-info-b{
+    margin-bottom: 35px;
+  }
+}
+/* =====================
+End:  CART PAGE
+======================== */
+.radio{
+  label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    font-size: 14px;
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-right: 1px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -7.5px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+    }
+    &.box-deliv{
+      padding-left: 55px;
+      &:after{
+        left: 25px;
+      }
+    }
+    span{
+      display: none;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -2.5px;
+      
+      width: 5px;
+      height: 5px;
+      -webkit-border-radius: 2px 3px 3px 2px/2px 2px 3px 3px;
+      -moz-border-radius: 2px 3px 3px 2px/2px 2px 3px 3px;
+      border-radius: 2px 3px 3px 2px/2px 2px 3px 3px;
+      background-color: #1584cc;
+    }
+  }
+  input[type=radio] {
+    display: none;
+    &:checked + label:before{
+      border-color: #00ace0;
+    }
+    &:checked + label span{
+      display: inline-block;
+    }
+  }
+  &-input-parent{
+    padding: 5.5px 15px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    display: inline-block;
+    &-active{
+      border-color: #7ad1d7;
+    }
+  }
+}
+input{
+  max-width: 100%;
+}
+.required{
+  color: #ff0000;
+}
+.def-form{
+  &-row{
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  textarea,
+  input{
+    background-color: #fff;
+    border: 1px solid #f2f2f3;
+    padding: 15px;
+    color: #999999;
+    width: 100%;
+    @extend .roboto;
+  }
+  textarea{
+    resize: none;
   }
 }

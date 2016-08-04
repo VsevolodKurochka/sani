@@ -102,5 +102,31 @@ $(document).ready(function(){
 			}, 400);
 			return false;
 		});
-		
+		//CART
+		$(".cart-count .minus").click(function(){
+			var input = $(this).parent().next();
+			input.val( parseInt(input.val() ) - 1 );
+			if( input.val() < 1 ){
+				input.val(1);
+			}
+			return false;
+		});
+		$(".cart-count .plus").click(function(){
+			var input = $(this).parent().prev();
+			input.val( parseInt(input.val() ) + 1 );
+			return false;
+		});
+		$(".radio input").each(function(){
+			$(this).click(function(){
+				$(this).parent().toggleClass("radio-input-parent-active");
+				
+			});
+			if( $(this).attr("checked") ) {
+				//$(this).attr("checked", "checked");
+				$(this).parent().toggleClass("radio-input-parent-active");
+			}else{
+				$(this).removeAttr("checked");
+				$(this).parent().removeClass("radio-input-parent-active");
+			}
+		});
 });	
