@@ -109,7 +109,7 @@ $(document).ready(function(){
 			return false;
 		});
 		//CART
-		$(".cart-count .minus").click(function(){
+		$(".input-group-value .minus").click(function(){
 			var input = $(this).parent().next();
 			input.val( parseInt(input.val() ) - 1 );
 			if( input.val() < 1 ){
@@ -117,7 +117,7 @@ $(document).ready(function(){
 			}
 			return false;
 		});
-		$(".cart-count .plus").click(function(){
+		$(".input-group-value .plus").click(function(){
 			var input = $(this).parent().prev();
 			input.val( parseInt(input.val() ) + 1 );
 			return false;
