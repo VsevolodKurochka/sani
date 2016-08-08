@@ -392,6 +392,13 @@ Start: LEADER
           }
         }
       }
+      &.big{
+        input, button{
+          @include resp-min(xs){
+            min-width: 200px;
+          }
+        }
+      }
       input,button{
         -webkit-box-shadow: 1px 2px 2px rgba(0,0,1,.26);
         -moz-box-shadow: 1px 2px 2px rgba(0,0,1,.26);
@@ -399,9 +406,7 @@ Start: LEADER
         border: none;
         padding-top: 10px;
         padding-bottom: 10px;
-        @include resp-min(xs){
-          min-width: 200px;
-        }
+        
 
       }
       input{
@@ -2070,4 +2075,156 @@ input{
       }
     }
   }
+}
+    
+/* ===================== 
+Start: SORTING SIMILIAR      
+======================== */
+.sorting-similiar{
+  @include resp-min(xs){
+    display: inline-block;
+    
+  }
+  @include resp-max(xs){
+    margin-top: 20px;
+    li{
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+  li{
+    @extend .block-inline;
+    padding-left: 25px;
+    margin-left: 25px;
+    @extend .relative;
+    &:after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      @extend .sprite;
+      width: 16px;
+      height: 16px;
+      background-position: -231px -205px;
+    }
+    &.expensive{
+      &:after{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .ss-link{
+    font-size: 14px;
+    color: #1584cd;
+    text-decoration: underline;
+    @extend .bold;
+  }
+}
+/* =====================
+End:  SORTING SIMILIAR
+======================== */
+.p-i-b{
+  background-color: #3bbdc5;
+  @include resp-min(sm){
+    background-color: #1584cd; 
+  }
+  @include resp-max(sm){
+    &.product-info-banner{
+      padding-left: 15px;  
+    }
+  }
+  &-i-t{
+    @include resp-min(tp){
+      @include resp-max(sm){
+        text-align: center;
+      }
+    }
+  }
+  @include resp-max(tp){
+    &-img{
+      float: left;
+      margin-right: 15px;
+    }
+    &-inf{
+      margin-top: 10px;
+      overflow: hidden;
+    }
+  }
+  &-img{
+    img{
+      max-width: 57px;
+    }
+  }
+  &-name{
+    font-size: 16px;
+  }
+  &-pos{
+  
+  }
+  &-title,
+  &-subtitle{
+    margin-bottom: 7.5px;
+  }
+  &-title{
+    font-size: 20px;
+    @include resp-min(sm){
+      @include resp-max(lg){
+        font-size: 18px;
+      }
+    }
+  }
+  &-subtitle{
+    font-size: 14px;
+  }
+  .leader-text-form{
+    &-input-wrap{
+      @include resp-max(lg){
+        @include resp-min(sm){
+          max-width: 70%;  
+        }
+      }
+    }
+    input{
+      margin-right: 0;
+      @include resp-max(xs){
+        max-width: 190px;
+      }
+    }
+    input, button{
+
+    }
+    button{
+      min-height: 38px;
+      min-width: 44px;
+      position: relative;
+      right: 4px;
+      top: 4px;
+      @include resp-min(xs){
+        top: 3px;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 17px;
+        height: 14px;
+        margin-top: -7px;
+        margin-left: -8.5px;
+        @extend .sprite;
+        background-position: -253px -206px;
+      }
+    }
+  }
+}
+.form-anonimus{
+  width: 124px;
+  height: 27px;
+  @extend .sprite;
+  background-position: -218px -259px;
+  padding: 5px;
+  @extend .white;
+  @extend .relative;
+  top: 3px;
 }

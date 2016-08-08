@@ -16,6 +16,9 @@ Start: COLUMNS
     @include make-column(tp, "not-push", "not-pull", "not-offset");
   }
 }
+@include resp-min(tp){
+  @include make-column(tp-big, "not-push", "not-pull", "not-offset");
+}
 /* =====================
 End:  COLUMNS
 ======================== */
