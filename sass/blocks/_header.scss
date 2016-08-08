@@ -1,23 +1,31 @@
 /* ===================== 
 Start: HEADER      
 ======================== */
+
 .header {
 	@extend .cf;
-	padding: 12px 0;
-	min-height: 50px;	
-	background-color: map-get($colors, "white");
 	z-index: 999;
   	position: fixed;
   	top: 0;
 	left: 0;
 	width: 100%;
+	padding: 9.5px 0;
+	background-color: #f8f9fb;
+	@include resp-min(md){
+		background-color: map-get($colors, "white");
+		padding: 12px 0;
+		min-height: 50px;
+	}
+	&-wrapper{
+		@include resp-max(md){
+			margin-bottom: 28px;
+		}
+	}
+	&-title{}
 	&-logo{
 		a{
 			text-decoration: none;
 			color: inherit;
-		}
-		@include resp-max(md){
-			text-align: center;
 		}
 		&-img{
 			float: left;
@@ -39,37 +47,197 @@ Start: HEADER
 			}
 		}
 	}	
+	&-resp{
+		&-inner{
+			> div{
+				@extend .block-inline;
+				vertical-align: middle;
+				padding: 0 7.5px;
+				@extend .relative;
+				&:first-child{
+					padding-left: 0;
+				}
+				&:last-child{
+					padding-right: 0;
+				}
+			}
+		}
+		&-logo{
+			padding: 0 15px !important; 
+		}
+		&-btn-menu{
+			button{
+				width: 14px;
+				height: 12px;
+				@extend .sprite;
+				background-position: -303px -13px;
+				border: none;
+				background-color: transparent;
+				outline: none;
+			}
+		}
+		&-login{
+			span{
+				@extend .block-inline;
+				width: 12px;
+				height: 12px;
+				@extend .sprite;
+				background-position: -305px -34px;
+			}
+		}
+		&-search{
+			span{
+				@extend .block-inline;
+				width: 24px;
+				height: 24px;
+				@extend .sprite;
+				background-position: -299px -54px;
+			}
+		}
+		&-cart{
+			&-image{
+				@extend .block-inline;
+				width: 18px;
+				height: 19px;
+				@extend .sprite;
+				background-position: -303px -86px;
+			}
+			&-number{
+				position: absolute;
+				right: -7.5px;
+				bottom: 0px;
+				display: inline-block;
+				padding: 0 4px;
+				min-width: 13px;
+				height: 13px;
+				background-color: #f60;
+				-webkit-border-radius: 6.5px;
+				-moz-border-radius: 6.5px;
+				border-radius: 6.5px;
+				color: #fff;
+				font-size: 10px;
+			}
+		}
+	}
+	&-resp{
+		&-toggler{
+		  	margin-left: -15px;
+		  	margin-right: -15px;
+		  	background-color: #fff;
+	  	  	position: relative;
+  			top: 9.5px;
+			&-menu{
+				.top-nav-menu{
+					li{
+						float: left;
+						width: 33.33333%;
+						margin-bottom: 10px;
+						a{
+
+						}
+					}
+				}
+				
+			}
+			.menu{
+				margin: 15px -10px 0;
+				
+			  	overflow-y: scroll;
+  				height: 200px;
+  				ul{
+  					li{
+						border-color: #f3f3f3;
+
+					}
+  				}
+  				> ul{
+					
+					> li{
+						min-height: 40px;
+						&:first-child{
+						  border-top: 1px solid #f3f3f3;
+						}
+					}
+				}
+			}
+			&-form{
+				background-color: #00ace0;
+				.header-resp-title{
+					display: inline-block;
+					padding-left: 25px;
+					margin-bottom: 10px;
+					&:after{
+						content: "";
+						position: absolute;
+						left: 0;
+						top: -2px;
+						width: 14px;
+						height: 21px;
+						@extend .sprite;
+						background-position: -160px -84px;
+					}		
+				}
+				.def-form{
+					margin-bottom: 10px;
+				}
+				label{
+					color: #fff;
+				}
+			}
+			&-search{
+				background-color: #0095c2;
+				&-inner{
+					width: 280px;
+					margin-left: auto;
+					margin-right: auto;
+					@extend .relative;
+				}
+				input{
+					display: inline-block;
+					width: 100%;
+					height: 32px;
+					border: none;
+					padding-left: 15px;
+					-webkit-border-radius: 16px;
+					-moz-border-radius: 16px;
+					border-radius: 16px;
+					background-color: #fff;
+				}
+				button{
+					@extend .search-circle;
+					background-color: #007ca1;
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+				input,button{
+					vertical-align: top;
+				}
+			}
+		}
+		&-title{
+			@extend .relative;
+			@extend .white;
+		}
+	}
 }
-// @include resp-max(md){
-// 	.header{
-// 		&-menu{
-// 		    display: block;
-// 		    width: 200px;
-// 		    position: fixed;
-// 		    right: -200px;
-// 		    top: 30px;
-// 		    background-color: #ddd;
-// 		    z-index: 10;
-// 		    &-open{
-// 		    	right: 0;
-// 		    	left: auto;
-// 		    	overflow-y: auto;
-// 			}
-// 		}
-// 		&-phone, &-menu{
-// 			@include resp-max(md){
-// 				text-align: center;
-// 			}
-// 		}
-// 	}
-// 	.navbar-toggle{
-// 		position: fixed;
-// 		top: 0;
-// 		right: 0;
-// 		z-index: 11;		
-// 	}
-// }
-.navbar-toggle{
+.h-r-t-b{
+	padding: 25px 10px;
+}
+.h-r-t-dn{
+	display: none;
+}
+.h-r-t-db{
+	display: block;
+}
+.dn{
+	display: none;
+}
+.db{
+	display: block;
+}
+
+.navbar-toggle-menu{
 	position: relative;
     float: left;
     padding: 3px 10px 6px 0;
@@ -107,6 +275,9 @@ Start: HEADER
 	  font-size: 20px;
 	  color: #fff;
 	  @extend .bold;
+	  @include resp-max(tp){
+	  	display: none;
+	  }
 	}
 }
 .hover-link-menu{
@@ -119,44 +290,59 @@ Start: HEADER
 		left: 0;
 		width: 100%;
 		height: 1px;
-		background-color: map-get($colors,"white");
+		background-color: #000;
 		transition: all ease .5s;
 		border-radius: 10px;
+	}
+	&-default{
+		@extend .hover-link-menu;
+		&:after{
+			background-color: map-get($colors,"white");
+		}
 	}
 	&:hover{
 		&:after{
 			width: 0;
 		}
 	}
+	
 }
 .top-nav{
 	@extend .cf;
 	padding: 15px 0;
 	background-color: map-get($colors, "light-blue");
-	&-menu{
-		& *{
-			@include color("white");
-		}
-		transition: all ease .5s;
-		ul{
-			li{
-				display: inline-block;
-       			vertical-align: middle;
+	@include resp-min(sm){
+		margin-top: 85px;
+	}
+	&.big{
+		li{
+			padding: 2px 7.5px;
+			@include resp-min(lg){
 				padding: 2px 15px;
-				&:first-child{
-					padding: 2px 17.5px 2px 0;
-				}
-				a{
-					font-size: 15px;
-					@extend .hover-link-menu;
-					@extend .light;
-				}
 			}
+			display: inline-block;
+   			vertical-align: middle;
+			&:first-child{
+				padding-left: 0;
+			}
+			a{
+				@extend .hover-link-menu-default;
+				font-size: 15px;
+			}
+		}
+	}
+	&-menu{
+		transition: all ease .5s;
+		a{
+			@extend .hover-link-menu;
+			@extend .light;
+			color: inherit;
 		}
 	}
 }
 .entry-reg-block{
 	padding-top: 3px;
+	padding-left: 20px;
 	@extend .relative;
 	a{
 		@extend .bold;
@@ -164,15 +350,18 @@ Start: HEADER
 	&:after{
 		content: "";
 		position: absolute;
-		left: -5px;
+		left: 0;
 		top: 2px;
 		width: 14px;
 		height: 21px;
 		@extend .sprite;
 		background-position: -160px -84px;
+
 	}
 	p,a{
-		text-align: right;
+		@include resp-min(lg){
+			text-align: right;
+		}
 		@extend .white;
 	}
 	

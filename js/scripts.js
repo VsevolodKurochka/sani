@@ -63,7 +63,34 @@ $(document).ready(function(){
 		}
 		toggleBlock("#btn-catalog", "#catalog .footer-block");
 		toggleBlock("#btn-menu", "#menu .footer-block");
-		
+		toggleBlock(".header-resp-btn-menu .navbar-toggle", "#header-resp-toggler-menu");
+		toggleBlock("#header-resp-login-btn", "#header-resp-toggler-form");
+		toggleBlock("#header-resp-search-btn", "#header-resp-toggler-search");
+		$(".menu ul > li").each(function(){
+			$(this).children("a").click(function(e){
+				$(this).parent().toggleClass("opened-menu");
+				$(this).next().slideToggle("slow");
+				e.preventDefault();
+				//return false;
+			});
+		});
+		function hideShow(clickEl, hideEl, showEl){
+			$(clickEl).click(function(){
+				//$(hideEl).toggleClass("dn");
+				if( $(showEl).hasClass("dn") ){
+					$(showEl).removeClass("dn").addClass("db");
+				}
+				if( $(hideEl).hasClass("db") ){
+					$(hideEl).removeClass("db").addClass("dn");
+				}
+				//$(showEl).toggleClass("db");
+			});
+		}
+		// $(".header-resp-toggler-form-btn").click(function(){
+		// 	$(this).parent().hide().next().show();
+		// });
+		hideShow(".entry-btn", "#head-resp-re", "#head-resp-entry");
+		hideShow(".reg-btn", "#head-resp-entry", "#head-resp-reg");
 		//MAIN SEO TEXT
 		$("#showseotext").click(function(){
 			$(".seo-text-p").toggleClass("seo-text-p-hidden seo-text-opened");
@@ -91,9 +118,9 @@ $(document).ready(function(){
 				$(this).toggleClass("active");
 			});
 		});
-		$(".top-nav").css({
-			'margin-top' : $(".header").outerHeight() + "px"
-		});
+		// $(".top-nav").css({
+		// 	'margin-top' : $(".header").outerHeight() + "px"
+		// });
 
 		//ASIDE
 		  //PICKUP

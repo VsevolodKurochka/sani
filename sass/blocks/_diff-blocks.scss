@@ -1238,67 +1238,74 @@ End:  VIDEO AND REVIEW MAIN
 /* =====================
 End:  PRODUCT
 ======================== */
-
-//ASIDE
-.aside{
-  &-menu{
-    > ul{
-      > li{
-        padding-left: 50px;
-        border-bottom: 1px solid #f4f4f4;
-        position: relative;
-      }
+.menu{
+  > ul{
+    > li{
+      padding-left: 50px;
+      border-bottom: 1px solid #f4f4f4;
+      position: relative;
     }
-    ul{
-      li{
-        margin-bottom: 5px;
-        &.opened-menu{
-          .child-list{
-            display: block;
-          }
-          &:after{
-            transform: rotate(90deg);
-          }
+  }
+  ul{
+    li{
+      margin-bottom: 5px;
+      &.opened-menu{
+        // .child-list{
+        //   display: block;
+        // }
+        
+        &:after{
+          transform: rotate(-180deg);
         }
-        &.active{
-          
-        }
-        &.has-child{
-          &:after{
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 10px;
+      }
+      &.active{
+        
+      }
+      &.has-child{
+        &:after{
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 10px;
+          @extend .sprite;
+          @include resp-min(md){
             width: 6px;
             height: 10px; 
-            @extend .sprite;
             background-position: -78px -117px;
           }
-        }
-        &:last-child{
-          border-bottom: none;
-        }
-        a{
-          display: block;
-          padding: 5px 0;
-          font-size: 16px;
-          @extend .grey;
-          text-decoration: none;
-        }
-
-      }
-      &.child-list{
-        display: none;
-        li{
-          padding-left: 10px;
-          a{
-            font-size: 14px;
-            @extend .light-blue;
+          @include resp-max(md){
+            width: 17px;
+            height: 17px;
+            background-position: -43px -111px;
           }
+        }
+      }
+      &:last-child{
+        border-bottom: none;
+      }
+      a{
+        display: block;
+        padding: 5px 0;
+        font-size: 16px;
+        @extend .grey;
+        text-decoration: none;
+      }
+
+    }
+    &.child-list{
+      display: none;
+      li{
+        padding-left: 10px;
+        a{
+          font-size: 14px;
         }
       }
     }
   }
+}
+//ASIDE
+.aside{
+  
   &-img{
     position: absolute;
     left: 0;
@@ -1375,10 +1382,22 @@ End:  PRODUCT
 Start: BREADCRUMBS      
 ======================== */
 .breadcrumbs{
+  height: 20px;
+  overflow: hidden;
   li{
     display: inline-block;
     padding-right: 20px;
     @extend %relative;
+    @include resp-max(sm){
+      &:nth-child(n+3){
+        display: none;
+      }
+      &:nth-child(2){
+        &:after{
+          display: none;
+        }
+      }
+    }
     a{
       @include color("br");
       text-decoration: underline;
