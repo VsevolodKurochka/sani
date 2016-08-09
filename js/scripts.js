@@ -163,4 +163,7 @@ $(document).ready(function(){
 		for(var i = 0; i < divs.length; i+=3) {
 		  divs.slice(i, i+3).wrapAll("<div class='cf'></div>");
 		}
+		$(".show-sort-block-list").click(function(){
+			$(this).parent().next().slideToggle("slow");
+		});
 });	

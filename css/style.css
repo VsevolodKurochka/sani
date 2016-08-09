@@ -1929,6 +1929,13 @@ Start: BUTTON
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.23);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.23);
 }
+.btn-yellow {
+  background-color: #ffdb2b;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 1, 0.26);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 1, 0.26);
+  box-shadow: 0 2px 2px rgba(0, 0, 1, 0.26);
+  color: #000;
+}
 
 /* =====================
 End:  BUTTON
@@ -2411,12 +2418,20 @@ Start: PRODUCT
 /* ===================== 
 Start: FILTER      
 ======================== */
+.show-sort-block-list {
+  margin-top: 15px;
+}
+
 .sort-block {
   margin-bottom: 15px;
 }
 .sort-block-list {
   text-align: left;
-  min-height: 40px;
+}
+@media (max-width: 767px) {
+  .sort-block-list {
+    display: none;
+  }
 }
 .sort-block-list li {
   display: inline-block;
@@ -2426,6 +2441,12 @@ Start: FILTER
   -webkit-border-radius: 14px;
   -moz-border-radius: 14px;
   border-radius: 14px;
+}
+@media (max-width: 767px) {
+  .sort-block-list li {
+    margin: 15px 5px;
+    display: block;
+  }
 }
 .sort-block-list li.active {
   background-color: transparent;
