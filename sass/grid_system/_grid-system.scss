@@ -113,3 +113,10 @@ Start: HIDDEN AND VISIBLE UTILITIES
 /* =====================
 End:  HIDDEN AND VISIBLE UTILITIES
 ======================== */
+@each $br-name, $br-value in $breakpoints{
+  @include resp-min($br-name){
+    .min-#{$br-name}-inline{
+      display: inline-block;
+    }
+  }
+}

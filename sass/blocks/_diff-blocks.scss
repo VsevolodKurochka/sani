@@ -289,6 +289,12 @@ Start: LEADER
   @include resp-min(sm){
     padding: 25px 0;
   }
+  &-category{
+    margin: 30px 0;
+    @include resp-max(sm){
+      background-color: #3bbdc5;
+    }
+  }
   &-wrap{
     @include resp-max(xs){
       padding: 0;
@@ -366,7 +372,7 @@ Start: LEADER
       display: inline-block;
       width: 109px;
       height: 9px;
-      margin: 15px 0;
+      margin: 15px 0 7.5px;
       @extend .sprite;
       background-position: -140px -238px;
     }
@@ -393,9 +399,10 @@ Start: LEADER
         }
       }
       &.big{
+        margin-top: 7.5px;
         input, button{
           @include resp-min(xs){
-            min-width: 200px;
+            min-width: 195px;
           }
         }
       }
@@ -423,7 +430,7 @@ Start: LEADER
           font-weight: 700;
         }
         @include resp-max(xs){
-          max-width: 140px;
+          max-width: 134px;
           font-weight: 500;
         }
       }
@@ -627,9 +634,9 @@ Start: FILTER
         -webkit-border-radius: 14px;
         -moz-border-radius: 14px;
         border-radius: 14px;
-        &:first-child{
-          padding-left: 0;
-        }
+        // &:first-child{
+        //   padding-left: 0;
+        // }
         a{
           @extend .link-def;
         }
@@ -735,12 +742,15 @@ Start: ITEM
   }
   &-footer{
     @extend .cf;
-    padding-top: 20px;
+    
   }
   &-price,
   &-btn{
     float: left;
     width: 50%;
+  }
+  &-btn{
+    @extend .text-center;
   }
   &-price{
     &--old{
@@ -777,8 +787,10 @@ Start: ITEM
     @extend .medium;
     font-size: 14px;
     text-align: center;
+    min-width: 125px;
   }
   &-choose-color{
+    padding-bottom: 20px;
     p{
       margin-right: 5px;
     }
@@ -1603,6 +1615,26 @@ Start: CART PAGE
       }
     }
   }
+  &-buttons{
+    .btn{
+      padding: 10px 25px;
+      font-weight: 100;
+      font-size: 14px;
+    }
+  }
+}
+.go-buy{
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  @include resp-min(xs){
+    margin-left: 25px;
+  }
+  @include resp-max(xs){
+    margin-top: 10px;
+  }
+  @extend .dark-blue;
+  border-bottom: 1px solid map-get($colors, "dark-blue");
 }
 /* =====================
 End:  CART PAGE
@@ -2246,4 +2278,60 @@ End:  SORTING SIMILIAR
   @extend .white;
   @extend .relative;
   top: 3px;
+}
+//MODAL
+.modal{
+  &-border{
+    .close{
+      width: 24px;
+      height: 24px;
+      
+      @include resp-min(sm){
+        top: 15px !important;
+        right: 15px !important;  
+      }
+      font-size: 0 !important;
+      @extend .sprite;
+      background-position: -278px -202px;
+    }
+    .modal-content{
+      border-radius: 0;
+      border: 7px solid map-get($colors, "light-blue");
+    }
+  }
+  .title{
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .cart-summary{
+    margin-top: 20px;
+  }
+}
+//CHANGE VIEW
+.change-view{
+  @include resp-min(sm){
+    margin: 0 12.5px;
+  }
+  @include resp-min(md){
+    margin: 0 25px;
+  }
+  &-grid,
+  &-list{
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    margin: 0 7.5px;
+    @extend .sprite;
+  }
+  &-grid{
+    background-position: -289px -232px;
+  }
+  &-list{
+    background-position: -264px -232px;
+  }
+}
+.change-view,
+.category-inline{
+  position: relative;
+  top: 2px;
 }

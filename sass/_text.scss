@@ -32,7 +32,10 @@ span.small-title{
 	}
 }
 .title{
-  font-size: 20px;
+	font-size: 18px;
+  @include resp-min(xs){
+  	font-size: 20px;
+  }
   @extend .grey;
   @extend .bold;
   &-page{

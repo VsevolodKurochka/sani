@@ -158,4 +158,9 @@ $(document).ready(function(){
 		$(".product-image-carousel img").click(function() {
 		    $(".product-image-big img").attr("src", $(this).attr("src"));
 		});
+
+		var divs = $(".category-product-box > .col-md-4");
+		for(var i = 0; i < divs.length; i+=3) {
+		  divs.slice(i, i+3).wrapAll("<div class='cf'></div>");
+		}
 });	

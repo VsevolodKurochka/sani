@@ -136,13 +136,16 @@ Start: MODAL
     width: 600px;
     margin: 30px auto;
   }
+  .modal-dialog--big{
+    width: 700px;
+  }
   .modal-sm {
     width: 300px;
   }
 }
 @media (min-width: 992px) {
-  .modal-lg {
-    width: 900px;
+  .modal-dialog--big {
+    width: 850px;
   }
 }
 .modal-header,
