@@ -674,13 +674,113 @@ End:  FILTER
 /* ===================== 
 Start: ITEM      
 ======================== */
+.product-box{
+  &-grid{
+    .item{
+      &-b{
+        @include resp-min(tp){
+          min-height: 350px;
+        }
+        &-wrap{
+          @extend .col-md-4;
+          @extend .col-tp-6;
+          @extend .col-sm-6;
+        }
+        &-img{
+          height: 175px;
+        }
+        &-link{
+          margin-bottom: 15px;
+        }
+        &-manufacturer{
+          display: none;
+        }
+        &-footer{
+          @extend .cf;
+        }
+      }
+    }
+  }
+  &-list{
+    .item{
+      &-b{
+        @extend .cf;
+        &-img{
+          height: 75px;
+        }
+        
+        @include resp-min(lg){
+          &-name{
+            width: 240px;
+            .item-b-link{
+              width: 180px;
+            }
+          }
+          &-manufacturer{
+            width: 225px;
+          }
+        }
+        @include resp-min(tp){
+          &-img,
+          &-name,
+          &-manufacturer,
+          &-footer{
+            display: inline-block;
+            padding: 0 15px;
+            margin-left: -0.5em;
+            vertical-align: middle;
+          }
+          @include resp-max(sm){
+            &-name,
+            &-footer{
+              width: 40%;
+            } 
+          }
+          @include resp-max(lg){
+            &-name,
+            &-manufacturer,
+            &-footer{
+              width: 28%;
+            }
+          }
+        }
+        @include resp-max(sm){
+          &-wrap{
+            padding: 0;
+          }
+          &-manufacturer{
+            display: none;
+          } 
+
+          .item-price{
+            text-align: center;
+          }
+        }
+        @include resp-max(tp){
+          &-img,
+          &-name,
+          &-footer{
+            float: left;
+          }
+          &-img,
+          &-name{
+            width: 50%;
+          }
+          &-footer{
+            width: 100%;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
 .item{
   &-b{
     border: 1px solid #fbfbfb;
+    padding: 15px;
     margin-left: -15px;
     margin-right: -15px;
-    padding: 15px;
-    min-height: 350px;
     @extend .relative;
     &-tag{
       position: relative;
@@ -736,7 +836,6 @@ Start: ITEM
       }
     }
     &-img{
-      height: 175px;
       text-align: center;
       img{
         max-height: 100%;
@@ -751,14 +850,17 @@ Start: ITEM
       height: 45px;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-bottom: 15px;
+      
     }
+    &-wrap{
+      float: left;
+      padding-left: 15px;
+      padding-right: 15px;
 
+      @extend .col-xs-12;
+    }
   }
-  &-footer{
-    @extend .cf;
-    
-  }
+  
   &-price,
   &-btn{
     float: left;
@@ -2335,7 +2437,7 @@ End:  SORTING SIMILIAR
     display: inline-block;
     width: 18px;
     height: 16px;
-    margin: 0 7.5px;
+    margin: 0 4px;
     @extend .sprite;
   }
   &-grid{
