@@ -2452,3 +2452,33 @@ End:  SORTING SIMILIAR
   position: relative;
   top: 2px;
 }
+.filter-block{
+  .fbt{
+    margin-bottom: 10px;
+    @extend .bold;
+  }
+  select{
+    background: transparent;
+    border: 1px solid #f4f4f4;
+    border-radius: 10px;
+    font-size: 14px;
+    height: 29px;
+    padding: 5px;
+    width: 210px;
+    margin-bottom: 20px;
+  }
+  input[type="checkbox" i]{
+    margin: 0 15px 0 0;
+  }
+  label{
+    font-size: 14px;
+  }
+  .counter{
+    @extend .dark-blue;
+  }
+}
+.fb{
+  &-row{
+    margin-bottom: 5px;
+  }
+}

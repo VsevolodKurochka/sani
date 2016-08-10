@@ -32,7 +32,7 @@
 				<div class="row">
 					<div class="hidden-xs hidden-sm col-md-3">
 						<aside class="aside">
-							<div class="menu">
+							<!-- <div class="menu">
 								<ul>
 									<li class="has-child active opened-menu">
 										<a href="">
@@ -102,14 +102,29 @@
 										</a>
 									</li>
 								</ul>
-							</div>
-							<div class="aside-brand">
-								<a href=""><img src="img/br_kick.png" alt=""></a>
-								<a href=""><img src="img/br_razor.png" alt=""></a>
-								<a href=""><img src="img/br_esla.png" alt=""></a>
-								<a href=""><img src="img/br_sxs.png" alt=""></a>
-								<a href=""><img src="img/br_weez.png" alt=""></a>
-								<a href=""><img src="img/br_xotr.png" alt=""></a>
+							</div> -->
+							<div class="filter-block fb">
+								<p class="fbt">Средство для похудения:</p>
+								<select>
+							    <option selected disabled>Выберите подкатегорию</option>
+							    <option value="Чебурашка">Чебурашка</option>
+							    <option  value="Крокодил Гена">Крокодил Гена</option>
+							    <option value="Шапокляк">Шапокляк</option>
+							    <option value="Крыса Лариса">Крыса Лариса</option>
+							  </select>
+							  <p class="fbt">Производитель:</p>
+							  <div class="cf manufacturer fb-row">
+							  	<input id="man1" type="checkbox" name="manufacturer" value="man1">
+							  	<label for="man1">Билайт <span class="counter">(50)</span></label>
+							  </div>
+							  <div class="cf manufacturer fb-row">
+							  	<input id="man2" type="checkbox" name="manufacturer" value="man2">
+							  	<label for="man2">Acai <span class="counter">(10)</span></label>
+							  </div>
+							  <div class="cf manufacturer fb-row">
+							  	<input id="man3" type="checkbox" name="manufacturer" value="man3">
+							  	<label for="man3">Puritan <span class="counter">(10)</span></label>
+							  </div>
 							</div>
 							<div class="aside-pickup">
 								<p class="aside-title">Пункты самовывоза</p>
@@ -405,9 +420,139 @@
 						<div class="cf show-more-wrap">
 							<a id="show-more-btn" href="#" class="show-more-big">Показать ещё 8 товаров</a>
 						</div><!-- /.show-more-wrap -->
+						<div class="cf">
+							<div class="title-page">
+								<p class="title">Просмотренные товары</p>
+							</div>
+							<div id="viewed-products" class="default-pr-c product-box-grid">
+								<div class="item">
+									<div class="col-xs-12">
+										<div class="item-b">
+											<div class="item-b-tag-wrap">
+												<span class="item-b-tag item-b-tag-akciya">
+													<span>Акция</span>
+												</span>
+											</div>
+					    				<div class="item-b-img">
+					    					<a href="#">
+					    						<img src="img/item1.png" alt="">
+					    					</a>
+					    				</div><!-- /.item-b-img -->
+					    				<div>
+					    					<a href="#" class="item-b-link">Финские сани ESLA compact (компактные для взрослых...</a>
+					    				</div>
+					    				<div class="item-footer">
+					    					<div class="item-price">
+					    						<p class="item-price--old">9 996 р.</p>
+					    						<p class="item-price--new">6 950 р.</p>
+					    					</div>
+					    					<div class="item-btn">
+					    						<button class="item-shop">В корзину</button>
+					    					</div>
+					    				</div><!-- /.item-footer -->
+				    				</div><!-- /.item-b -->
+			    				</div>
+								</div>
+								<div class="item">
+									<div class="col-xs-12">
+										<div class="item-b">
+											<div class="item-b-tag-wrap">
+												<span class="item-b-tag item-b-tag-rec">
+													<span>Рекомендуем</span>
+												</span>
+											</div>
+					    				<div class="item-b-img">
+					    					<a href="#">
+					    						<img src="img/item1.png" alt="">
+					    					</a>
+					    				</div><!-- /.item-b-img -->
+					    				<div>
+					    					<a href="#" class="item-b-link">Ананас для похудения таблетки</a>
+					    				</div>
+					    				<div class="item-footer">
+					    					<div class="item-price">
+					    						<p class="item-price--old">9 996 р.</p>
+					    						<p class="item-price--new">6 950 р.</p>
+					    					</div>
+					    					<div class="item-btn">
+					    						<button class="item-shop">В корзину</button>
+					    					</div>
+					    				</div><!-- /.item-footer -->
+				    				</div><!-- /.item-b -->
+			    				</div>
+								</div>
+								<div class="item">
+									<div class="col-xs-12">
+										<div class="item-b">
+											<div class="item-b-tag-wrap">
+												<span class="item-b-tag item-b-tag-rec">
+													<span>Рекомендуем</span>
+												</span>
+											</div>
+					    				<div class="item-b-img">
+					    					<a href="#">
+					    						<img src="img/item1.png" alt="">
+					    					</a>
+					    				</div><!-- /.item-b-img -->
+					    				<div>
+					    					<a href="#" class="item-b-link">Финские сани для взрослых</a>
+					    				</div>
+					    				<div class="item-footer">
+					    					<div class="item-price">
+					    						<p class="item-price--old">9 996 р.</p>
+					    						<p class="item-price--new">6 950 р.</p>
+					    					</div>
+					    					<div class="item-btn">
+					    						<button class="item-shop">В корзину</button>
+					    					</div>
+					    				</div><!-- /.item-footer -->
+				    				</div><!-- /.item-b -->
+			    				</div>
+								</div>
+								<div class="item">
+									<div class="col-xs-12">
+										<div class="item-b">
+											<div class="item-b-tag-wrap">
+												<span class="item-b-tag item-b-tag-rec">
+													<span>Рекомендуем</span>
+												</span>
+											</div>
+					    				<div class="item-b-img">
+					    					<a href="#">
+					    						<img src="img/item1.png" alt="">
+					    					</a>
+					    				</div><!-- /.item-b-img -->
+					    				<div>
+					    					<a href="#" class="item-b-link">Финские сани для взрослых</a>
+					    				</div>
+					    				<div class="item-footer">
+					    					<div class="item-price">
+					    						<p class="item-price--old">9 996 р.</p>
+					    						<p class="item-price--new">6 950 р.</p>
+					    					</div>
+					    					<div class="item-btn">
+					    						<button class="item-shop">В корзину</button>
+					    					</div>
+					    				</div><!-- /.item-footer -->
+				    				</div><!-- /.item-b -->
+			    				</div>
+								</div>
+							</div>
+						</div>
 					</div><!-- /.col-xs-12 col-md-9 -->
 				</div><!-- /.row -->
 			</div><!-- /.container -->
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="row seo-text">
+					<h1 class="title-site">Интернет-магазин <span class="orange text-u">Finsani.ru</span></h1>
+					<p class="seo-text-p seo-text-p-hidden">Все нижеперечисленные препараты для увеличения потенции не являются лекарственными. Их действие на потенцию мужчины носит скорее психологический характер. На практике доказано, что принимать их показано только при психогенных формах эректильной дисфункции, слабой потенции и как подсобное средство на фоне основного лечения. Очевидно, что для многих такая "панацея" явно противопоказана и может нанести непоправимый вред здоровью. Многие из нас, а вернее, большинство не любят лечиться. Некоторые из нас обращают свое внимание на широко рекламируемые препараты для увеличения потенции, надеясь в очередном купленном (весьма недешевом) якобы лекарстве найти панацею от всех своих. 
+					Все нижеперечисленные препараты для увеличения потенции не являются лекарственными. Их действие на потенцию мужчины носит скорее психологический характер. На практике доказано, что принимать их показано только при психогенных формах эректильной дисфункции, слабой потенции и как подсобное средство на фоне основного лечения. Очевидно, что для многих такая "панацея" явно противопоказана и может нанести непоправимый вред здоровью. Многие из нас, а вернее, большинство не любят лечиться. Некоторые из нас обращают свое внимание на широко рекламируемые препараты для увеличения потенции, надеясь в очередном купленном (весьма недешевом) якобы лекарстве найти панацею от всех своих. 
+					</p>
+					<span id="showseotext" class="show-more-small">Читать далее</span>
+				</div>
+			</div>
 		</section>
 		<footer class="footer" id="footer">
 			<div class="container hidden-sm hidden-lg hidden-md footer-btns">

@@ -124,7 +124,7 @@ Start: COLOR AND SIZE
   color: #00ace0;
 }
 
-.dark-blue, .link-def, .show-more-big, .show-more-small, .sort-block-list li a, .aside-pickup-block-link, .main-review-link, .go-buy {
+.dark-blue, .link-def, .show-more-big, .show-more-small, .sort-block-list li a, .aside-pickup-block-link, .main-review-link, .go-buy, .filter-block .counter {
   color: #1584cc;
 }
 
@@ -1110,7 +1110,7 @@ Start: Connect fonts
 }
 
 .bold, .title-site,
-.small-title, .title, .big-title, .navbar-toggle-menu-text, .entry-reg-block a, .phone-block--phone, .footer-cont-in--phone a, .footer-cont-in-title, .copyright, .btn, .news-b-text--title, .leader-text-title, .leader-text-form button, .box-title, .item-b-link, .slider-main-text-title, .offer-b-title, .main-review-header--title, .aside-title, .cart-price, .cart-count-q, .cart-summary, .sorting-similiar .ss-link {
+.small-title, .title, .big-title, .navbar-toggle-menu-text, .entry-reg-block a, .phone-block--phone, .footer-cont-in--phone a, .footer-cont-in-title, .copyright, .btn, .news-b-text--title, .leader-text-title, .leader-text-form button, .box-title, .item-b-link, .slider-main-text-title, .offer-b-title, .main-review-header--title, .aside-title, .cart-price, .cart-count-q, .cart-summary, .sorting-similiar .ss-link, .filter-block .fbt {
   font-weight: 700;
 }
 
@@ -4062,6 +4062,30 @@ End:  SORTING SIMILIAR
 .category-inline {
   position: relative;
   top: 2px;
+}
+
+.filter-block .fbt {
+  margin-bottom: 10px;
+}
+.filter-block select {
+  background: transparent;
+  border: 1px solid #f4f4f4;
+  border-radius: 10px;
+  font-size: 14px;
+  height: 29px;
+  padding: 5px;
+  width: 210px;
+  margin-bottom: 20px;
+}
+.filter-block input[type="checkbox" i] {
+  margin: 0 15px 0 0;
+}
+.filter-block label {
+  font-size: 14px;
+}
+
+.fb-row {
+  margin-bottom: 5px;
 }
 
 /* ===================== 
