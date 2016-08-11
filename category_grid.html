@@ -103,28 +103,55 @@
 									</li>
 								</ul>
 							</div> -->
-							<div class="filter-block fb">
-								<p class="fbt">Средство для похудения:</p>
-								<select>
-							    <option selected disabled>Выберите подкатегорию</option>
-							    <option value="Чебурашка">Чебурашка</option>
-							    <option  value="Крокодил Гена">Крокодил Гена</option>
-							    <option value="Шапокляк">Шапокляк</option>
-							    <option value="Крыса Лариса">Крыса Лариса</option>
-							  </select>
-							  <p class="fbt">Производитель:</p>
-							  <div class="cf manufacturer fb-row">
-							  	<input id="man1" type="checkbox" name="manufacturer" value="man1">
-							  	<label for="man1">Билайт <span class="counter">(50)</span></label>
-							  </div>
-							  <div class="cf manufacturer fb-row">
-							  	<input id="man2" type="checkbox" name="manufacturer" value="man2">
-							  	<label for="man2">Acai <span class="counter">(10)</span></label>
-							  </div>
-							  <div class="cf manufacturer fb-row">
-							  	<input id="man3" type="checkbox" name="manufacturer" value="man3">
-							  	<label for="man3">Puritan <span class="counter">(10)</span></label>
-							  </div>
+							<div class="cf filter-block-aside">
+								<div class="filter-block fb">
+									<div class="cf filter-block-inner ">
+										<p class="fbt">Средство для похудения:</p>
+										<select>
+									    <option selected disabled>Выберите подкатегорию</option>
+									    <option value="Чебурашка">Чебурашка</option>
+									    <option  value="Крокодил Гена">Крокодил Гена</option>
+									    <option value="Шапокляк">Шапокляк</option>
+									    <option value="Крыса Лариса">Крыса Лариса</option>
+									  </select>
+									  <p class="fbt">Производитель:</p>
+									  <div class="cf checkbox-def">
+										  <div class="cf manufacturer fb-row">
+										  	<input id="man1" type="checkbox" name="manufacturer" value="man1">
+										  	<label for="man1">Билайт <span class="counter">(50)</span></label>
+										  </div>
+										  <div class="cf manufacturer fb-row">
+										  	<input id="man2" type="checkbox" name="manufacturer" value="man2">
+										  	<label for="man2">Acai <span class="counter">(10)</span></label>
+										  </div>
+										  <div class="cf manufacturer fb-row">
+										  	<input id="man3" type="checkbox" name="manufacturer" value="man3">
+										  	<label for="man3">Puritan <span class="counter">(10)</span></label>
+										  </div>
+									  </div>
+								  </div>
+								  <div class="cf filter-block-inner filter-block-price">
+								  	<p class="fbt">Цена: </p>
+								  	<div class="cf price-choose">
+								  		<div class="price-choose-start pull-left">
+								  			от <input type="text" name="">
+								  		</div>
+								  		<div class="price-choose-end pull-right">
+								  			до <input type="text" name="">
+								  		</div>
+								  	</div>
+								  	<div class="cf price-range">
+									  	<input class="price-input left" type="text" id="minCost" value="0"/>
+											<input class="price-input right" type="text" id="maxCost" value="1000"/>
+										</div>
+										<div class="cf">
+								  		<div id="slider-price"></div>
+								  	</div>
+								  	<div class="cf text-center">
+								  		<button class="btn btn-orange price-btn">Сбросить фильтр</button>
+								  	</div>
+								  </div>
+								</div>
 							</div>
 							<div class="aside-pickup">
 								<p class="aside-title">Пункты самовывоза</p>
@@ -424,7 +451,7 @@
 							<div class="title-page">
 								<p class="title">Просмотренные товары</p>
 							</div>
-							<div id="viewed-products" class="default-pr-c product-box-grid">
+							<div id="viewed-products" class="default-pr-c product-carousel product-box-grid">
 								<div class="item">
 									<div class="col-xs-12">
 										<div class="item-b">

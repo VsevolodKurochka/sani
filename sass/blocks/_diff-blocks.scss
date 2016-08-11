@@ -5,7 +5,7 @@ Start: BUTTON
   border: none;
   border-radius: 3px;
   max-width: 100%;
-  padding: 10px 40px;
+  padding: 10px 15px;
   position: relative;
   overflow: hidden;
   transition: all .3s;
@@ -782,6 +782,12 @@ Start: ITEM
     margin-left: -15px;
     margin-right: -15px;
     @extend .relative;
+    transition: all ease .5s;
+    &:hover{
+      -webkit-box-shadow: 0 0 16px rgba(0,0,0,.16);
+      -moz-box-shadow: 0 0 16px rgba(0,0,0,.16);
+      box-shadow: 0 0 16px rgba(0,0,0,.16);
+    }
     &-tag{
       position: relative;
       display: block;
@@ -1445,7 +1451,7 @@ End:  PRODUCT
   }
   > div{
     margin-bottom: 30px;
-    border-bottom: 2px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
     &:last-child{
       border-bottom: none;
       margin-bottom: 0;
@@ -1860,9 +1866,12 @@ input{
     margin-bottom: 15px;
   }
 }
+.pr-c-margin{
+  margin-bottom: 40px;
+}
 .product{
   &-carousel{
-    margin-bottom: 40px;
+    
     .owl{
       &-buttons{
         position: absolute;
@@ -2452,7 +2461,60 @@ End:  SORTING SIMILIAR
   position: relative;
   top: 2px;
 }
+.checkbox-def{
+  input{
+    margin: 0;
+    display: none;
+    &:checked{
+      + label{
+
+        &:after{
+          display: block;
+        }
+      }
+    }
+  }
+  label{
+    font-size: 14px;
+    padding-left: 25px;
+    @extend .relative;
+    cursor: pointer;
+    &:after{
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 4px;
+      width: 10px;
+      height: 8px;
+      display: none;
+      @extend .sprite;
+      background-position: -313px -237px;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #cccccc;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background-color: #f8f8f8;
+
+    }
+  }
+}
 .filter-block{
+  border: 1px solid #f4f4f4;
+  &-inner{
+    padding: 20px 25px 25px;
+    border-bottom: 1px solid #f4f4f4;
+    &:last-child{
+      border-bottom: none;
+    }
+  }
   .fbt{
     margin-bottom: 10px;
     @extend .bold;
@@ -2467,12 +2529,6 @@ End:  SORTING SIMILIAR
     width: 210px;
     margin-bottom: 20px;
   }
-  input[type="checkbox" i]{
-    margin: 0 15px 0 0;
-  }
-  label{
-    font-size: 14px;
-  }
   .counter{
     @extend .dark-blue;
   }
@@ -2481,4 +2537,110 @@ End:  SORTING SIMILIAR
   &-row{
     margin-bottom: 5px;
   }
+}
+.price{
+  &-input{
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    width: 55px;
+    background: none;
+    border: none;
+    
+    &.left{
+      float: left;
+      text-align: left;
+    }
+    &.right{
+      float: right;
+      text-align: right;
+    }
+  }
+  &-btn{
+    margin-top: 25px;
+    font-size: 14px;
+    padding: 10px 25px;
+    font-weight: 100 !important;
+    &:hover{
+      background-color: #00ace0;
+    }
+  }
+  &-choose{
+    margin-bottom: 20px;
+    input{
+      display: inline-block;
+      width: 74px;
+      height: 24px;
+      margin-left: 5px;
+      padding-left: 10px;
+      border: 1px solid #cccccc;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      background-color: #fff;
+      outline: none;
+    }
+  }
+  &-range{
+    margin-bottom: 20px;
+  }
+}
+/* Ширина слайдера */
+#slider-price {
+  width: 200px;
+}
+/* Контейнер слайдера */
+.ui-slider {
+  position: relative;
+}
+/* Ползунок */
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  @extend .sprite;
+  background-position: -309px -202px;
+  outline: none;
+}
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  border: 0;
+  overflow: hidden;
+}
+/* горизонтальный слайдер (сама полоса по которой бегает ползунок) */
+.ui-slider-horizontal {
+   height: 5px; /* задаем высоту согласно дизайна */
+}
+/* позиционируем ползунки */
+.ui-slider-horizontal .ui-slider-handle { 
+  top: -10px;
+  margin-left: -6px;
+}
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min { 
+  left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0;
+}
+/* оформление полосы по которой ходит ползунок */
+.ui-widget-content {
+    background: #00ace0;
+}
+/* оформление активного участка (между двумя ползунками) */
+.ui-widget-header { 
+  background: #666666;
+}
+/* скругление для полосы слайдера */
+.ui-corner-all {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
