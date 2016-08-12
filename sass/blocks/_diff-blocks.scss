@@ -880,8 +880,10 @@ Start: ITEM
   
   &-price,
   &-btn{
-    float: left;
+    display: inline-block;
+    margin-left: -0.5em;
     width: 50%;
+    vertical-align: middle;
   }
   &-btn{
     @extend .text-center;
@@ -1188,9 +1190,9 @@ Start:  VIDEO AND REVIEW MAIN
   }
   .r-v-wrap{
     margin-top: 25px;
-    .small-title{
-      margin-left: 15px;
-    }
+    // .small-title{
+    //   margin-left: 15px;
+    // }
   }
 }
 @include resp-max(sm){
@@ -1231,6 +1233,14 @@ Start:  VIDEO AND REVIEW MAIN
     img{
       height: 100%;
       width: 100%;
+    }
+    @include resp-max(sm){
+      height: 200px;
+      overflow: hidden;
+      img{
+        position: absolute;
+        height: auto;
+      }
     }
     &-btn{
       @include after_center(80px,80px);
@@ -1403,6 +1413,10 @@ End:  PRODUCT
         
         &:after{
           transform: rotate(-180deg);
+          @include resp-min(md){
+              transform: rotate(90deg);
+          }
+          
         }
       }
       &.active{
@@ -1892,6 +1906,11 @@ input{
 }
 .pr-c-margin{
   margin-bottom: 40px;
+}
+.default-pr-c{
+  .item-b{
+    @extend .cf;
+  }
 }
 .product{
   &-carousel{

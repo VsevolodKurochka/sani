@@ -166,7 +166,7 @@ Start: MODAL
   &-registration{
     .modal-body{
       @include resp-min(xs){
-        padding: 50px;
+        padding: 25px 50px 50px 50px;
       }
     }
   }

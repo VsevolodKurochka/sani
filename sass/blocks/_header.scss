@@ -34,6 +34,9 @@ Start: HEADER
 		}
 		&-text{
 			overflow: hidden;
+			@extend .relative;
+			top: 3px;
+  		left: 4px;
 			&--title{
 				@extend .orange;
 				@extend .text-u;
@@ -67,13 +70,24 @@ Start: HEADER
 		}
 		&-btn-menu{
 			button{
-				width: 14px;
-				height: 12px;
 				@extend .sprite;
 				background-position: -303px -13px;
 				border: none;
 				background-color: transparent;
 				outline: none;
+				width: 14px;
+				height: 13px;
+				@include resp-max(md){
+					@include resp-min(tp){
+						height: 15px;
+						width: 80px;
+						span{
+							color: #00ace0;
+							top: 0;
+							left: 20px;
+						}
+					}
+				}
 			}
 		}
 		&-login{
@@ -146,9 +160,8 @@ Start: HEADER
   				height: 200px;
   				ul{
   					li{
-						border-color: #f3f3f3;
-
-					}
+							border-color: #f3f3f3;
+						}
   				}
   				> ul{
 					
@@ -202,6 +215,7 @@ Start: HEADER
 					-moz-border-radius: 16px;
 					border-radius: 16px;
 					background-color: #fff;
+
 				}
 				button{
 					@extend .search-circle;
@@ -268,13 +282,17 @@ Start: HEADER
 		margin-top: 4px;
 	}
 	&-text{
-	  position: absolute;
-	  left: 100%;
-	  top: 50%;
-	  margin-top: -11.5px;
-	  font-size: 20px;
-	  color: #fff;
 	  @extend .bold;
+	  
+		position: absolute;
+	  @include resp-min(md){
+	  	color: #fff;
+	  	
+		  left: 100%;
+		  top: 50%;
+		  margin-top: -11.5px;
+		  font-size: 20px;
+	  }
 	  @include resp-max(tp){
 	  	display: none;
 	  }
@@ -309,7 +327,7 @@ Start: HEADER
 }
 .top-nav{
 	@extend .cf;
-	padding: 15px 0;
+	padding: 9px 0;
 	background-color: map-get($colors, "light-blue");
 	@include resp-min(sm){
 		margin-top: 85px;
@@ -318,13 +336,10 @@ Start: HEADER
 		li{
 			padding: 2px 7.5px;
 			@include resp-min(lg){
-				padding: 2px 15px;
+				padding: 0 18px;
 			}
 			display: inline-block;
-   			vertical-align: middle;
-			&:first-child{
-				padding-left: 0;
-			}
+ 			vertical-align: middle;
 			a{
 				@extend .hover-link-menu-default;
 				font-size: 15px;
@@ -467,6 +482,8 @@ Start: TOP FIXED
 	  padding: 5px;
 	  transition: all ease .5s;
 	  z-index: 1;
+	  width: 150px;
+		max-width: none;
 	}
 	button{
 		background-color: map-get($colors, "orange");
