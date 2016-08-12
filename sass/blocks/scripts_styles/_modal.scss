@@ -163,6 +163,13 @@ Start: MODAL
       color: #fff;
     }
   }
+  &-registration{
+    .modal-body{
+      @include resp-min(xs){
+        padding: 50px;
+      }
+    }
+  }
 }
 /* =====================
 End:  MODAL

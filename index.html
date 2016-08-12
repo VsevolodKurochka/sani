@@ -1014,8 +1014,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-		<div class="cf">
-			<!-- Nav tabs -->
+				<!-- Nav tabs -->
 			  <ul class="nav nav-tabs nav-tabs-registration" role="tablist">
 			    <li role="presentation" class="active">
 			    	<a href="#modal-entry" aria-controls="modal-entry" role="tab" data-toggle="tab">Вход</a>
@@ -1027,13 +1026,58 @@
 			  <!-- Tab panes -->
 			  <div class="tab-content">
 			    <div role="tabpanel" class="tab-pane active" id="modal-entry">
-			    	<p>Вход</p>
+			    	<div class="form-modal small">
+			    		<form action="">
+			    			<div class="input-wrap">
+			    				<input type="text" class="default-input small" placeholder="Email">
+			    			</div>
+			    			<div class="input-wrap">
+			    				<input type="text" class="default-input small" placeholder="Пароль">
+			    			</div>
+			    			<div class="cf">
+			    				<div class="pull-left checkbox-def">
+			    					<input id="remember-me" type="checkbox" name="remember">
+			    					<label for="remember-me">Запомнить меня</label>
+			    				</div>
+			    				<div class="pull-right">
+			    					<a href="#" class="default-link">Забыли пароль?</a>
+			    				</div>
+			    			</div>
+			    			<div class="cf text-center">
+			    				<button class="btn btn-entry">Войти</button>
+			    			</div>
+			    		</form>
+			    	</div>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="modal-register">
-			    	<p>Регистрация</p>
+			    	<div class="form-modal small">
+				    	<form action="/signup/" method="post">
+								<div class="input-wrap">
+									<input type="text"  value="" placeholder="Фамилия">
+								</div>
+								<div class="input-wrap">
+									<input type="text"  value="" placeholder="Имя">
+								</div>
+								<div class="input-wrap">
+									<input type="text"  value="" placeholder="Отчество">
+								</div>
+								<div class="input-wrap">
+									<input type="text"  value="" placeholder="Телефон">
+								</div>
+								<div class="input-wrap">
+									<input type="text"  value="" placeholder="Email">
+								</div>
+								<div class="input-wrap">
+									<input type="password"  value="" placeholder="Пароль">
+								</div>
+								<div class="input-wrap">
+									<input type="password"  value="" placeholder="Подтвердите пароль">
+								</div>
+								<button class="btn btn-entry">Регистрация</button>
+	        		</form>
+        		</div>
 			    </div>
 			  </div><!-- /.tab-panes -->
-		</div><!-- /.fg -->
       </div><!-- /.modal-body -->
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

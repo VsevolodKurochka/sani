@@ -1105,11 +1105,11 @@ End:  GRID SYSTEM
 Start: Connect fonts      
 ======================== */
 .roboto, body, .item-shop, .breadcrumbs li:after, .default-input, .def-form textarea,
-.def-form input {
+.def-form input, .form-modal input {
   font-family: 'Roboto', sans-serif;
 }
 
-.light, .top-nav-menu a, .news-b-text--time, .news-b-text--text, .leader-inf-text--pos, .leader-text-act, .main-review-header--city, .main-review-text {
+.light, .top-nav-menu a, .btn-entry, .news-b-text--time, .news-b-text--text, .leader-inf-text--pos, .leader-text-act, .main-review-header--city, .main-review-text {
   font-weight: 100;
 }
 
@@ -1944,6 +1944,16 @@ Start: BUTTON
   box-shadow: 0 2px 2px rgba(0, 0, 1, 0.26);
   color: #000;
 }
+.btn-entry {
+  border: 1px solid #0b90cf;
+  background-color: #fff;
+  color: #0b90cf;
+  display: block;
+  margin: 35px auto 25px;
+  padding: 10px 0;
+  width: 220px;
+  font-size: 13px;
+}
 
 /* =====================
 End:  BUTTON
@@ -2700,7 +2710,7 @@ Start: SLIDER
 }
 @media (max-width: 767px) {
   .slider-main-text {
-    padding: 20px 0 30px 30px;
+    padding: 50px 0 0px 20px;
   }
 }
 .slider-main-text-title {
@@ -2810,12 +2820,12 @@ Start: SLIDER
 }
 @media (max-width: 767px) {
   .slider-main .owl-prev {
-    left: 0;
+    left: -5px;
     border-radius: 0 10px 10px 0;
   }
   .slider-main .owl-next {
     border-radius: 10px 0 0 10px;
-    right: 0;
+    right: -5px;
     left: auto;
   }
 }
@@ -2891,7 +2901,7 @@ Start: OFFER
     padding-right: 15px;
   }
   .offer-b .box {
-    padding: 10px;
+    padding: 10px 10px 10px 30px;
   }
 }
 @media (max-width: 479px) {
@@ -3113,7 +3123,7 @@ End:  PRODUCT
 .menu ul li.has-child:after {
   content: "";
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 10px;
 }
 @media (min-width: 992px) {
@@ -3498,16 +3508,25 @@ End:  CART PAGE
 }
 
 .default-input, .def-form textarea,
-.def-form input {
+.def-form input, .form-modal input {
   background-color: #fff;
   border: 1px solid #f2f2f3;
   padding: 15px;
   color: #999999;
   width: 100%;
 }
+.default-input.small, .def-form textarea.small,
+.def-form input.small, .form-modal input {
+  border-radius: 3px;
+  padding: 5px 10px;
+}
 
 input {
   max-width: 100%;
+}
+
+.input-wrap {
+  margin-bottom: 10px;
 }
 
 .required {
@@ -4420,6 +4439,11 @@ Start: MODAL
 }
 .modal-transparent .close {
   color: #fff;
+}
+@media (min-width: 480px) {
+  .modal-registration .modal-body {
+    padding: 50px;
+  }
 }
 
 /* =====================
