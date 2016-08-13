@@ -1023,7 +1023,7 @@ End:  COLUMNS
     padding-top: 30px;
   }
 }
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   .section {
     padding-left: 15px;
     padding-right: 15px;
@@ -2460,6 +2460,11 @@ Start: PRODUCT
 /* ===================== 
 Start: FILTER      
 ======================== */
+.show-filter,
+.filter-responsive-wrap {
+  margin-bottom: 15px;
+}
+
 .show-sort-block-list {
   margin-top: 15px;
 }
@@ -4200,8 +4205,21 @@ End:  SORTING SIMILIAR
   border: 1px solid #f4f4f4;
 }
 .filter-block-inner {
-  padding: 20px 25px 25px;
+  padding: 15px;
   border-bottom: 1px solid #f4f4f4;
+}
+@media (min-width: 601px) and (max-width: 991px) {
+  .filter-block-inner {
+    width: 50%;
+    display: inline-block;
+    margin-left: -3px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .filter-block-inner {
+    padding: 20px 25px 25px;
+  }
 }
 .filter-block-inner:last-child {
   border-bottom: none;
@@ -4216,7 +4234,8 @@ End:  SORTING SIMILIAR
   font-size: 14px;
   height: 29px;
   padding: 5px;
-  width: 210px;
+  width: 100%;
+  max-width: 100%;
   margin-bottom: 20px;
   outline: none;
 }
@@ -4269,10 +4288,18 @@ End:  SORTING SIMILIAR
 .price-range {
   margin-bottom: 20px;
 }
+.price-choose, .price-range {
+  max-width: 215px;
+}
 
 /* ╨и╨╕╤А╨╕╨╜╨░ ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░ */
 #slider-price {
   width: 200px;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #slider-price {
+    width: 160px;
+  }
 }
 
 /* ╨Ъ╨╛╨╜╤В╨╡╨╣╨╜╨╡╤А ╤Б╨╗╨░╨╣╨┤╨╡╤А╨░ */
