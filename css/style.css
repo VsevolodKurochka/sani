@@ -1223,7 +1223,7 @@ a:hover, button:hover {
   vertical-align: middle;
 }
 
-.relative, .header-logo-text, .header-resp-inner > div, .header-resp-toggler-search-inner, .header-resp-title, .entry-reg-block, .share-block a, .phone-block--phone, .cart-block, .header-search-block, .footer-cont-in, .footer-search-block, .share-b, #totop, .search-circle, .header-resp-toggler-search button, .header-search-block button, .footer-search-block button, .news-b, .leader-text-form-input-wrap, .box-deliv, .box-pay, .item-b, .item-price--old, .main-video, .main-review-header, .aside-pickup-block-link, .product-image-carousel-wrap, .sorting-similiar li, .form-anonimus, .checkbox-def label {
+.relative, .header-logo-text, .header-resp-inner > div, .header-resp-toggler-search-inner, .header-resp-title, .entry-reg-block, .share-block a, .phone-block--phone, .cart-block, .header-search-block, .footer-cont-in, .footer-search-block, .share-b, #totop, .search-circle, .header-resp-toggler-search button, .header-search-block button, .footer-search-block button, .news-b, .leader-text-form-input-wrap, .box-deliv, .box-pay, .item-b, .item-price--old, .main-video, .main-review-header, .aside-pickup-block-link, .product-image-carousel-wrap, .sorting-similiar li, .sorting-similiar .ss-link, .form-anonimus, .checkbox-def label {
   position: relative;
 }
 
@@ -1913,7 +1913,7 @@ Start: BUTTON
   padding: 10px 15px;
   position: relative;
   overflow: hidden;
-  transition: all .3s;
+  transition: all ease .5s;
   text-decoration: none;
   z-index: 2;
   font-size: 18px;
@@ -1970,6 +1970,13 @@ Start: BUTTON
   padding: 10px 0;
   width: 220px;
   font-size: 13px;
+}
+.btn-buy:hover {
+  background-color: #00ace0;
+}
+.btn-buy-wrap {
+  position: relative;
+  top: 15px;
 }
 
 /* =====================
@@ -3326,13 +3333,20 @@ Start: CART PAGE
 }
 .input-group-btn {
   vertical-align: middle;
+  position: relative;
+  top: 2px;
 }
 .input-group-btn .minus,
 .input-group-btn .plus {
   display: inline-block;
   width: 7px;
   height: 11px;
+  transition: none;
   background-position: -112px -117px;
+}
+.input-group-btn .minus:hover,
+.input-group-btn .plus:hover {
+  background-position: -159px -117px;
 }
 .input-group-btn .minus {
   transform: rotate(-180deg);
@@ -3974,7 +3988,24 @@ Start: SORTING SIMILIAR
 .sorting-similiar .ss-link {
   font-size: 14px;
   color: #1584cd;
-  text-decoration: underline;
+  text-decoration: none;
+}
+.sorting-similiar .ss-link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #1584cd;
+  opacity: 1;
+  transition: all ease .5s;
+}
+.sorting-similiar .ss-link:hover {
+  color: #e06618;
+}
+.sorting-similiar .ss-link:hover:after {
+  opacity: 0;
 }
 
 /* =====================
