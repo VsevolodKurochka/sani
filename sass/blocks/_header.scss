@@ -345,6 +345,9 @@ Start: HEADER
 				font-size: 15px;
 			}
 		}
+		.top-nav-menu{
+			@extend .white;
+		}
 	}
 	&-menu{
 		transition: all ease .5s;

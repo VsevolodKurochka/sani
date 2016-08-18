@@ -97,7 +97,7 @@ Start: COLOR AND SIZE
   color: #e2e2e2;
 }
 
-.white, .header-resp-title, .entry-reg-block p, .entry-reg-block a, .footer-block-menu li a, .footer-cont-in a, .footer-btns a, .copyright, .news-even .news-b-text, .hover-blue:hover, .leader-text-form button:hover, .item-shop, .form-anonimus {
+.white, .header-resp-title, .top-nav.big .top-nav-menu, .entry-reg-block p, .entry-reg-block a, .footer-block-menu li a, .footer-cont-in a, .footer-btns a, .copyright, .news-even .news-b-text, .hover-blue:hover, .leader-text-form button:hover, .item-shop, .form-anonimus {
   color: #fff;
 }
 

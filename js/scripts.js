@@ -74,6 +74,38 @@ $(document).ready(function(){
 				//return false;
 			});
 		});
+
+
+		//MENU
+			$(".menu").wrap("<div class='menu-wrap' />");
+			$(".aside .menu-wrap").wrap("<div class='aside-menu' />");
+			function swapMenu(){
+				// if ( $(".responsive-menu").length > 0 ) {
+				// 	console.log(1);
+				// }else{
+				// 	console.log(0);
+				// }
+				if ( $(document).width() <= 991 ) {
+					$(".menu-wrap").appendTo(".responsive-menu");
+				}else {
+					$(".menu-wrap").appendTo(".aside-menu");
+				}
+			}
+			swapMenu();
+			$(window).resize(swapMenu);
+
+		//NAVIGATION
+			$(".top-nav-menu").wrap('<div class="top-nav-menu-w" />');
+			function swapNav(){
+				if ( $(document).width() <= 991 ) {
+					$(".top-nav-menu").appendTo(".responsive-top-nav-menu");
+				}else {
+					$(".top-nav-menu").appendTo(".top-nav-menu-w");
+				}
+			}
+			swapNav();
+			$(window).resize(swapNav);
+
 		function hideShow(clickEl, hideEl, showEl){
 			$(clickEl).click(function(){
 				//$(hideEl).toggleClass("dn");
