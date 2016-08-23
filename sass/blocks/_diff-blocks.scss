@@ -661,6 +661,12 @@ Start: FILTER
       @include resp-max(sm){
         display: none;
       }
+      &.nav{
+        min-height: 45px;
+        @include resp-max(sm){
+          display: block;
+        }
+      }
       li{
         display: inline-block;
         margin: 0 5px;
@@ -986,6 +992,7 @@ Start: SLIDER
     float: left;
   }
   &-text{
+    @extend .grey;
     @include resp-max(sm){
       padding: 50px 0 0px 20px;
     }
@@ -1411,7 +1418,7 @@ End:  PRODUCT
 .menu{
   > ul{
     > li{
-      padding-left: 50px;
+      padding: 3px 0;
       border-bottom: 1px solid #f4f4f4;
       position: relative;
     }
@@ -1423,35 +1430,48 @@ End:  PRODUCT
         // .child-list{
         //   display: block;
         // }
-        
-        &:after{
-          transform: rotate(-180deg);
-          @include resp-min(md){
-              transform: rotate(90deg);
+        .icon{
+          &:after{
+            transform: rotate(-180deg);
+            @include resp-min(md){
+                transform: rotate(90deg);
+            }
           }
-          
         }
       }
       &.active{
         
       }
       &.has-child{
-        &:after{
-          content: "";
+        .icon{
           position: absolute;
           right: 10px;
-          top: 10px;
-          @extend .sprite;
-          @include resp-min(md){
-            width: 6px;
-            height: 10px; 
-            background-position: -78px -117px;
+          top: 7.5px;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+          &:after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @extend .sprite;
+            @include resp-min(md){
+              width: 6px;
+              height: 10px; 
+              margin-left: -3px;
+              margin-top: -5px;
+              background-position: -78px -117px;
+            }
+            @include resp-max(md){
+              margin-top: -8.5px;
+              margin-left: -8.5px;
+              width: 17px;
+              height: 17px;
+              background-position: -43px -111px;
+            }
           }
-          @include resp-max(md){
-            width: 17px;
-            height: 17px;
-            background-position: -43px -111px;
-          }
+
         }
       }
       &:last-child{
@@ -1459,7 +1479,7 @@ End:  PRODUCT
       }
       a{
         display: block;
-        padding: 5px 0;
+        padding: 5px 0px 5px 50px;
         font-size: 16px;
         @extend .grey;
         text-decoration: none;
@@ -1483,10 +1503,16 @@ End:  PRODUCT
   &-img{
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
     display: inline-block;
     text-align: center;
-    @extend .vertical-image;
+    height: 30px;
+    margin-top: -15px;
+    width: 30px;
+    img{
+      width: 25px;
+      height: 25px;
+    }
   }
   > div{
     margin-bottom: 30px;
@@ -2128,11 +2154,14 @@ input{
     &-price{
       .item-price{
         width: 100%;
+        &.default{
+          margin-top: 10px;
+        }
+        p{
+          font-size: 27px;
+        }
         &--old{
           font-size: 16px;
-        }
-        &--new{
-          font-size: 27px;
         }
       }
       .input-group-value{
@@ -2298,10 +2327,10 @@ input{
         padding-left: 25px;
       }
     }
-    
   }
   tbody{
     tr{
+      background-color: #fff;
       td{
         &:first-child{
           @extend .light-blue;

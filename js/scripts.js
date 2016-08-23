@@ -66,14 +66,27 @@ $(document).ready(function(){
 		toggleBlock(".header-resp-btn-menu .navbar-toggle", "#header-resp-toggler-menu");
 		toggleBlock("#header-resp-login-btn", "#header-resp-toggler-form");
 		toggleBlock("#header-resp-search-btn", "#header-resp-toggler-search");
-		$(".menu ul > li").each(function(){
-			$(this).children("a").click(function(e){
-				$(this).parent().toggleClass("opened-menu");
-				$(this).next().slideToggle("slow");
-				e.preventDefault();
-				//return false;
-			});
-		});
+
+
+		
+		function clickerMenu(){
+			if ( $(document).width() <= 991 ) {
+		
+				$(".menu > ul > li > a").click(function(e){
+						$(this).parent().toggleClass("opened-menu");
+						$(this).next().slideToggle("slow");
+						e.preventDefault();
+						//return false;
+					});
+			}else {
+				$(".menu .icon").click(function(){
+					$(this).parent().toggleClass("opened-menu");
+					$(this).prev().slideToggle("slow");
+				});
+			}
+		}
+		clickerMenu();
+		$(window).resize(clickerMenu);
 
 
 		//MENU
@@ -142,14 +155,14 @@ $(document).ready(function(){
 		});
 
 		// SORT
-		$(".sort-block-list li").each(function(){
-			$(this).click(function(){
-				// if ( $(this).next().hasClass("active") || $(this).prev().hasClass("active") ) {
-				// 	$(this).removeClass("active");
-				// }
-				$(this).toggleClass("active");
-			});
-		});
+		// $(".sort-block-list li").each(function(){
+		// 	$(this).click(function(){
+		// 		if ( $(this).next().hasClass("active") || $(this).prev().hasClass("active") ) {
+		// 			$(this).removeClass("active");
+		// 		}
+		// 		$(this).toggleClass("active");
+		// 	});
+		// });
 		// $(".top-nav").css({
 		// 	'margin-top' : $(".header").outerHeight() + "px"
 		// });
@@ -246,5 +259,23 @@ $(document).ready(function(){
 				$("input#maxCost").val(value2);
 			}
 			$("#slider-price").slider("values",1,value2);
+		});
+		$(".various").fancybox({
+			maxWidth	: 800,
+			maxHeight	: 600,
+			fitToView	: false,
+			padding: 7,
+			minHeight: 400,
+			width		: '70%',
+			height		: '70%',
+			autoSize	: false,
+			closeClick	: false,
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
+		$(".fancybox").fancybox({
+			openEffect	: 'none',
+			closeEffect	: 'none',
+			padding: 7
 		});
 });	
