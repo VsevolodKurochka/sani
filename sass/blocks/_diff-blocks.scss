@@ -1710,6 +1710,10 @@ Start: CART PAGE
     
     vertical-align: top;
     @extend .medium;
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
   }
   &-price{
     font-size: 18px;

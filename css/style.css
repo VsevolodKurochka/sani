@@ -1271,7 +1271,7 @@ Start: HEADER
   width: 100%;
   padding: 9.5px 0;
   background-color: #f8f9fb;
-  transition: all ease .5s;
+  transition: box-shadow ease .5s;
 }
 @media (min-width: 992px) {
   .header {
@@ -3428,6 +3428,10 @@ Start: CART PAGE
 .cart-name {
   font-size: 16px;
   vertical-align: top;
+}
+.cart-name a {
+  color: inherit;
+  text-decoration: none;
 }
 .cart-price {
   font-size: 18px;

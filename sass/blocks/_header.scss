@@ -10,7 +10,7 @@ Start: HEADER
 	width: 100%;
 	padding: 9.5px 0;
 	background-color: #f8f9fb;
-	transition: all ease .5s;
+	transition: box-shadow ease .5s;
 	@include resp-min(md){
 		background-color: map-get($colors, "white");
 		padding: 12px 0;
