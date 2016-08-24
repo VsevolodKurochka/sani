@@ -318,6 +318,7 @@ Start: LEADER
   }
   &-category{
     margin: 30px 0;
+    clear: both;
     @include resp-max(sm){
       background-color: #3bbdc5;
     }

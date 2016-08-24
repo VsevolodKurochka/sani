@@ -996,6 +996,14 @@ End:  COLUMNS
   clear: both;
 }
 
+.clearfix:after, .clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
 .row {
   margin-left: -15px;
   margin-right: -15px;
@@ -1263,6 +1271,7 @@ Start: HEADER
   width: 100%;
   padding: 9.5px 0;
   background-color: #f8f9fb;
+  transition: all ease .5s;
 }
 @media (min-width: 992px) {
   .header {
@@ -1275,6 +1284,9 @@ Start: HEADER
   .header-wrapper {
     margin-bottom: 28px;
   }
+}
+.header-shadow {
+  box-shadow: 0 13px 17px 1px rgba(0, 0, 0, 0.15);
 }
 .header-logo a {
   text-decoration: none;
@@ -2171,6 +2183,7 @@ Start: LEADER
 }
 .leader-category {
   margin: 30px 0;
+  clear: both;
 }
 @media (max-width: 767px) {
   .leader-category {
@@ -4417,6 +4430,9 @@ Start: MODAL
 
 .modal-open {
   overflow: hidden;
+}
+.modal-open .header {
+  padding-right: 17px;
 }
 
 .modal {

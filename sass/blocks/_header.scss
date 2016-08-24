@@ -1,7 +1,6 @@
 /* ===================== 
 Start: HEADER      
 ======================== */
-
 .header {
 	@extend .cf;
 	z-index: 999;
@@ -11,6 +10,7 @@ Start: HEADER
 	width: 100%;
 	padding: 9.5px 0;
 	background-color: #f8f9fb;
+	transition: all ease .5s;
 	@include resp-min(md){
 		background-color: map-get($colors, "white");
 		padding: 12px 0;
@@ -21,7 +21,9 @@ Start: HEADER
 			margin-bottom: 28px;
 		}
 	}
-	&-title{}
+	&-shadow{
+		box-shadow: 0 13px 17px 1px rgba(0,0,0,.15);
+	}
 	&-logo{
 		a{
 			text-decoration: none;

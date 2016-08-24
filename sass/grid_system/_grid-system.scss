@@ -42,6 +42,9 @@ End:  COLUMNS
   @include default-after();
   @extend %relative;
 }
+.clearfix{
+  @include default-after();
+}
 .row{
   @extend .cf;
   margin-left: -15px;

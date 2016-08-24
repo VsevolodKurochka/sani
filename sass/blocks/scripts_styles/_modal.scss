@@ -14,6 +14,9 @@ Start: MODAL
 
 .modal-open {
   overflow: hidden;
+  .header{
+    padding-right: 17px;
+  }
 }
 
 .modal {
