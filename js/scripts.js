@@ -25,6 +25,7 @@ $(document).ready(function(){
 				$(".header").removeClass("header-shadow");
 			}
 		});
+		//ADD CLASS ANCHOR TO ELEMENT, WHICH WILL BE CLICK and scroll to element
 		$('.anchor').click(function(){
 			var href = $(this).attr('href');
 			$('body,html').animate({
@@ -32,40 +33,13 @@ $(document).ready(function(){
 			},2000);
 			return false;
 		});
+		//RETURN TO TOP
 		$("#totop").click(function(){
 			$("body,html").animate({
 				scrollTop: 0
 			}, 400);
 			return false;
 		});
-
-		//CAROUSEL SETTINGS
-		$(".product-image-carousel").jCarouselLite({
-		    btnNext: ".product-image-carousel-wrap .next",
-		    btnPrev: ".product-image-carousel-wrap .prev"
-		});		
-		$("#main-reviews").owlCarousel({
-			autoPlay: false,
-			singleItem: true,
-			navigation: true,
-			navigationText: ["",""],
-			pagination: false
-		});
-		$("#slider-main").owlCarousel({
-			autoPlay: false,
-			singleItem: true,
-			navigationText: ["",""],
-			navigation: true,
-			pagination: true
-		});
-		$(".default-pr-c").owlCarousel({
-			items: 3,
-			itemsDesktop: [1199, 3],
-			navigation: true,
-			navigationText: ["",""],
-			pagination: false
-		});
-
 		//NAVIGATION ENTRY AND REGISTER
 		$(".modal-toggle").click(function(e){
 			var tab = e.target.hash;
@@ -264,5 +238,31 @@ $(document).ready(function(){
 			openEffect	: 'none',
 			closeEffect	: 'none',
 			padding: 7
+		});
+				//CAROUSEL SETTINGS
+		$(".product-image-carousel").jCarouselLite({
+		    btnNext: ".product-image-carousel-wrap .next",
+		    btnPrev: ".product-image-carousel-wrap .prev"
+		});		
+		$("#main-reviews").owlCarousel({
+			autoPlay: false,
+			singleItem: true,
+			navigation: true,
+			navigationText: ["",""],
+			pagination: false
+		});
+		$("#slider-main").owlCarousel({
+			autoPlay: false,
+			singleItem: true,
+			navigationText: ["",""],
+			navigation: true,
+			pagination: true
+		});
+		$(".default-pr-c").owlCarousel({
+			items: 3,
+			itemsDesktop: [1199, 3],
+			navigation: true,
+			navigationText: ["",""],
+			pagination: false
 		});
 });	
