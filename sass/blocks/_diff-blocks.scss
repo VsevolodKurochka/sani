@@ -640,6 +640,18 @@ End:  BOX
 
     
 /* ===================== 
+Start: CATEGORY      
+======================== */
+.category-parent{
+  .aside-menu{
+    display: none;
+  }
+}
+/* =====================
+End:  CATEGORY
+======================== */
+        
+/* ===================== 
 Start: PRODUCT      
 ======================== */
     
@@ -2561,13 +2573,20 @@ End:  SORTING SIMILIAR
     width: 18px;
     height: 16px;
     margin: 0 4px;
+    transition: none;
     @extend .sprite;
   }
   &-grid{
-    background-position: -289px -232px;
+    background-position: -350px -231px;
+    &.active{
+      background-position: -289px -232px;
+    }
   }
   &-list{
     background-position: -264px -232px;
+    &.active{
+      background-position: -328px -231px;
+    }
   }
 }
 .change-view,

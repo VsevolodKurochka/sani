@@ -45,6 +45,10 @@ $(document).ready(function(){
 			var tab = e.target.hash;
 			$('li > a[href="' + tab + '"]').tab("show");
 		});
+		$(".toggle-aside-menu").click(function(){
+			$(".aside-menu").slideToggle("slow");
+		});
+
 
 		//FOOTER RESPONSIVE BLOCK TOGGLE
 		
