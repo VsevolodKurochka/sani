@@ -49,6 +49,27 @@ $(document).ready(function(){
 			$(".aside-menu").slideToggle("slow");
 		});
 
+		//MENU
+		// $(".menu > ul > li > a").each(function(){
+		// 	if ( $(this).children(".child-list").length > 0 ) {
+		// 			console.log(2);
+		// 	}
+		// 	$(this).click(function(e){
+		// 		$(this).parent().toggleClass("opened-menu");
+		// 		$(this).next().slideToggle("slow");
+		// 		e.preventDefault();
+		// 	});
+		// });
+		$(".menu > ul > li").each(function(){
+			if ( $(this).children(".child-list").length > 0 ) {
+
+					$(this).children("a").click(function(e){
+						$(this).parent().toggleClass("opened-menu");
+						$(this).next().slideToggle("slow");
+						e.preventDefault();
+					});
+			}
+		});
 
 		//FOOTER RESPONSIVE BLOCK TOGGLE
 		
@@ -84,11 +105,7 @@ $(document).ready(function(){
 
 					//MENU
 					$(".menu-wrap").appendTo(".responsive-menu");
-					$(".menu > ul > li > a").click(function(e){
-						$(this).parent().toggleClass("opened-menu");
-						$(this).next().slideToggle("slow");
-						e.preventDefault();
-					});
+					
 
 					//NAVIGATION
 					$(".top-nav-menu").appendTo(".responsive-top-nav-menu");
@@ -101,10 +118,10 @@ $(document).ready(function(){
 
 					//MENU
 					$(".menu-wrap").appendTo(".aside-menu");
-					$(".menu .icon").click(function(){
-						$(this).parent().toggleClass("opened-menu");
-						$(this).prev().slideToggle("slow");
-					});
+					// $(".menu .icon").click(function(){
+					// 	$(this).parent().toggleClass("opened-menu");
+					// 	$(this).prev().slideToggle("slow");
+					// });
 
 					//NAVIGATION
 					$(".top-nav-menu").appendTo(".top-nav-menu-w");

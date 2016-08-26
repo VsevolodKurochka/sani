@@ -121,7 +121,7 @@ Start: COLOR AND SIZE
   color: #7dccff;
 }
 
-.light-blue, a, .characteristics tbody tr td:first-child, .nav-tabs-registration li a {
+.light-blue, a, .menu ul li:hover > a, .product-info-value-b label, .characteristics tbody tr td:first-child, .nav-tabs-registration li a {
   color: #00ace0;
 }
 
@@ -1112,6 +1112,17 @@ End:  GRID SYSTEM
 /* ===================== 
 Start: Connect fonts      
 ======================== */
+@font-face {
+  font-family: 'ALSRubl-Arial';
+  src: url("../fonts/alsrubl-arial-regular.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+.ruble {
+  font-family: 'ALSRubl-Arial', Arial, sans-serif;
+  line-height: normal;
+}
+
 .roboto, body, .item-shop, .breadcrumbs li:after, .default-input, .def-form textarea,
 .def-form input, .form-modal input {
   font-family: 'Roboto', sans-serif;
@@ -1564,6 +1575,9 @@ Start: HEADER
 .top-nav-menu {
   transition: all ease .5s;
 }
+.top-nav-menu li.active a:after {
+  display: none;
+}
 .top-nav-menu a {
   color: inherit;
 }
@@ -1915,6 +1929,10 @@ Start: START FOOTER
 /* =====================
 End:  START FOOTER
 ========================*/
+.transition, .menu ul li {
+  transition: all ease .5s;
+}
+
 /* ===================== 
 Start: BUTTON      
 ======================== */
@@ -3189,6 +3207,9 @@ End:  PRODUCT
 .menu ul li {
   margin-bottom: 5px;
 }
+.menu ul li:hover {
+  border-bottom-color: #00ace0;
+}
 .menu ul li.opened-menu .icon:after {
   transform: rotate(-180deg);
 }
@@ -3334,10 +3355,12 @@ Start: BREADCRUMBS
     display: none;
   }
 }
-.breadcrumbs li a {
+.breadcrumbs li a, .breadcrumbs li span {
   color: #999999;
-  text-decoration: underline;
   font-size: 12px;
+}
+.breadcrumbs li a {
+  text-decoration: underline;
 }
 .breadcrumbs li:after {
   content: ">";
@@ -3826,6 +3849,12 @@ input {
 .product-info {
   border-left: 1px solid #fafafa;
 }
+.product-info-color .item-choose-color {
+  padding-bottom: 0;
+}
+.product-info-price .item-price {
+  margin-left: 0;
+}
 .product-info > div {
   padding: 15px 0;
   border-bottom: 1px solid #fafafa;
@@ -3844,12 +3873,10 @@ input {
 }
 .product-info-price .item-price {
   width: 100%;
+  font-size: 27px;
 }
 .product-info-price .item-price.default {
   margin-top: 10px;
-}
-.product-info-price .item-price p {
-  font-size: 27px;
 }
 .product-info-price .item-price--old {
   font-size: 16px;
@@ -4226,7 +4253,7 @@ End:  SORTING SIMILIAR
   background-position: -264px -232px;
 }
 .change-view-list.active {
-  background-position: -328px -231px;
+  background-position: -327px -232px;
 }
 
 .change-view,

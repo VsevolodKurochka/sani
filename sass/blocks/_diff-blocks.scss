@@ -1,3 +1,6 @@
+.transition{
+  transition: all ease .5s;
+}
 /* ===================== 
 Start: BUTTON      
 ======================== */
@@ -1431,6 +1434,7 @@ End:  VIDEO AND REVIEW MAIN
 /* =====================
 End:  PRODUCT
 ======================== */
+
 .menu{
   > ul{
     > li{
@@ -1442,6 +1446,13 @@ End:  PRODUCT
   ul{
     li{
       margin-bottom: 5px;
+      @extend .transition;
+      &:hover{
+        border-bottom-color: map-get($colors, "light-blue");
+        > a{
+          @extend .light-blue;
+        }
+      }
       &.opened-menu{
         // .child-list{
         //   display: block;
@@ -1614,10 +1625,12 @@ Start: BREADCRUMBS
         }
       }
     }
-    a{
+    a,span{
       @include color("br");
-      text-decoration: underline;
       font-size: 12px;
+    }
+    a{  
+      text-decoration: underline;
     }
     &:after{
       content: ">";
@@ -2154,6 +2167,16 @@ input{
     &-header{
 
     }
+    &-color{
+      .item-choose-color{
+        padding-bottom: 0;
+      }
+    }
+    &-price{
+      .item-price{
+        margin-left: 0;
+      }
+    }
     > div{
       padding: 15px 0;
       @extend .cf;
@@ -2161,6 +2184,9 @@ input{
     }
     &-value{
       &-b{
+        label{
+          @extend .light-blue;
+        }
         @include resp-min(sm){
           border-radius: 11px;
           background-color: #f8f9fb;
@@ -2174,11 +2200,10 @@ input{
     &-price{
       .item-price{
         width: 100%;
+        font-size: 27px;
+
         &.default{
           margin-top: 10px;
-        }
-        p{
-          font-size: 27px;
         }
         &--old{
           font-size: 16px;
@@ -2588,7 +2613,7 @@ End:  SORTING SIMILIAR
   &-list{
     background-position: -264px -232px;
     &.active{
-      background-position: -328px -231px;
+      background-position: -327px -232px;
     }
   }
 }

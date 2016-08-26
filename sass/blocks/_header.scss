@@ -353,6 +353,15 @@ Start: HEADER
 	}
 	&-menu{
 		transition: all ease .5s;
+		li{
+			&.active{
+				a{
+					&:after{
+						display: none;
+					}
+				}
+			}
+		}
 		a{
 			@extend .hover-link-menu;
 			@extend .light;

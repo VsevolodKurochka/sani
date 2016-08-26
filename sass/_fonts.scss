@@ -1,6 +1,17 @@
 /* ===================== 
 Start: Connect fonts      
 ======================== */
+@font-face {
+  font-family: 'ALSRubl-Arial';
+  src: 
+  	url('../fonts/alsrubl-arial-regular.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+.ruble {
+  font-family: 'ALSRubl-Arial', Arial, sans-serif;
+  line-height: normal;
+}
 .roboto{
 	font-family: 'Roboto', sans-serif;
 }
