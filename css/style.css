@@ -2610,6 +2610,9 @@ Start: ITEM
     margin-top: 10px;
   }
 }
+.product-box-list .item-choose-color {
+  display: none;
+}
 
 .item-b {
   border: 1px solid #fbfbfb;
