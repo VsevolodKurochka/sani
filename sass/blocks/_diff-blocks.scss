@@ -64,6 +64,10 @@ Start: BUTTON
     -moz-box-shadow: 0 2px 2px rgba(0,0,1,.26);
     box-shadow: 0 2px 2px rgba(0,0,1,.26);
     color: #000;
+    &:hover{
+      background-color: #475995;
+      color: #fff;
+    }
   }
   &-entry{
     border: 1px solid #0b90cf;
@@ -229,6 +233,7 @@ Start: NEWS
         @extend .bold;
         font-size: 16px;
         max-height: 66px;
+        text-decoration: none;
       }
       &--title,
       &--text{
@@ -1603,6 +1608,27 @@ End:  PRODUCT
       }
     }
   }
+  &-banner{
+    border: 10px solid map-get($colors, "pink-light") !important;
+    padding: 20px;
+    &-text{
+      font-size: 15px;
+      color: #6e6e6e;
+      @extend .light;
+      margin-bottom: 15px;
+    }
+    &-title{
+      font-size: 25px;
+      margin: 15px 0;
+      &-price{
+        @extend .bold;
+        font-size: 30px;
+      }
+    }
+    img{
+      max-width: 45px;
+    }
+  }
 }
     
 /* ===================== 
@@ -2074,7 +2100,7 @@ input{
           margin-top: -20px;         
         }
         &-prev{
-          left: -50px;
+          left: -20px;
         }
       } 
     }
@@ -2261,6 +2287,9 @@ input{
     position: relative;
     margin-top: -165px;
   }
+}
+.tab-content-no-padding {
+  padding-bottom: 10px !important;
 }
 .vendor-code-wrap{
   margin-left: -15px;

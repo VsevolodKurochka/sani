@@ -137,6 +137,10 @@ Start: COLOR AND SIZE
   color: #b942a4;
 }
 
+.pink-light {
+  color: #d640a8;
+}
+
 /*SIZE*/
 .text_smaller {
   font-size: 12px;
@@ -1128,7 +1132,7 @@ Start: Connect fonts
   font-family: 'Roboto', sans-serif;
 }
 
-.light, .top-nav-menu a, .btn-entry, .news-b-text--time, .news-b-text--text, .leader-inf-text--pos, .leader-text-act, .main-review-header--city, .main-review-text, .nav-tabs-registration li a {
+.light, .top-nav-menu a, .btn-entry, .news-b-text--time, .news-b-text--text, .leader-inf-text--pos, .leader-text-act, .main-review-header--city, .main-review-text, .aside-banner-text, .nav-tabs-registration li a {
   font-weight: 100;
 }
 
@@ -1137,7 +1141,7 @@ Start: Connect fonts
 }
 
 .bold, .title-site,
-.small-title, .title, .big-title, .navbar-toggle-menu-text, .entry-reg-block a, .phone-block--phone, .footer-cont-in--phone a, .footer-cont-in-title, .copyright, .btn, .news-b-text--title, .leader-text-title, .leader-text-form button, .box-title, .item-b-link, .slider-main-text-title, .offer-b-title, .main-review-header--title, .aside-title, .cart-price, .cart-count-q, .cart-summary, .sorting-similiar .ss-link, .filter-block .fbt {
+.small-title, .title, .big-title, .navbar-toggle-menu-text, .entry-reg-block a, .phone-block--phone, .footer-cont-in--phone a, .footer-cont-in-title, .copyright, .btn, .news-b-text--title, .leader-text-title, .leader-text-form button, .box-title, .item-b-link, .slider-main-text-title, .offer-b-title, .main-review-header--title, .aside-title, .aside-banner-title-price, .cart-price, .cart-count-q, .cart-summary, .sorting-similiar .ss-link, .filter-block .fbt {
   font-weight: 700;
 }
 
@@ -1991,6 +1995,10 @@ Start: BUTTON
   box-shadow: 0 2px 2px rgba(0, 0, 1, 0.26);
   color: #000;
 }
+.btn-yellow:hover {
+  background-color: #475995;
+  color: #fff;
+}
 .btn-entry {
   border: 1px solid #0b90cf;
   background-color: #fff;
@@ -2120,6 +2128,7 @@ Start: NEWS
 .news-b-text--title {
   font-size: 16px;
   max-height: 66px;
+  text-decoration: none;
 }
 .news-b-text--title, .news-b-text--text {
   margin-bottom: 15px;
@@ -3335,6 +3344,25 @@ End:  PRODUCT
 .aside-pickup-block-inner {
   display: none;
 }
+.aside-banner {
+  border: 10px solid #d640a8 !important;
+  padding: 20px;
+}
+.aside-banner-text {
+  font-size: 15px;
+  color: #6e6e6e;
+  margin-bottom: 15px;
+}
+.aside-banner-title {
+  font-size: 25px;
+  margin: 15px 0;
+}
+.aside-banner-title-price {
+  font-size: 30px;
+}
+.aside-banner img {
+  max-width: 45px;
+}
 
 /* ===================== 
 Start: BREADCRUMBS      
@@ -3763,7 +3791,7 @@ input {
     margin-top: -20px;
   }
   .product-carousel .owl-prev {
-    left: -50px;
+    left: -20px;
   }
 }
 
@@ -3931,6 +3959,10 @@ input {
     margin-top: -165px;
   }
 }
+.tab-content-no-padding {
+  padding-bottom: 10px !important;
+}
+
 .vendor-code-wrap {
   margin-left: -15px;
   margin-right: -15px;
