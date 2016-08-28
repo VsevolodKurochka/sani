@@ -1884,22 +1884,21 @@ Start: START FOOTER
   left: 0;
   width: 100%;
   height: 100%;
-  background-position-y: -136px;
 }
 .share-b-fb:after {
-  background-position-x: -9px;
+  background-position: -9px -136px;
 }
 .share-b-tw:after {
-  background-position-x: -63px;
+  background-position: -63px -136px;
 }
 .share-b-vk:after {
-  background-position-x: -115px;
+  background-position: -115px -136px;
 }
 .share-b-y:after {
-  background-position-x: -168px;
+  background-position: -168px -136px;
 }
 .share-b-ok:after {
-  background-position-x: -221px;
+  background-position: -221px -136px;
 }
 
 .top-wrap {

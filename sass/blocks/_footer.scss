@@ -192,31 +192,32 @@ Start: START FOOTER
 			width: 100%;
 			height: 100%;
 			@extend .sprite;
-			background-position-y: -136px;
+
 		}
 		&-fb{
 			&:after{
-				background-position-x: -9px;
+				background-position: -9px -136px;
 			}
 		}
 		&-tw{
 			&:after{
-				background-position-x: -63px;
+				background-position: -63px -136px;
+				
 			}
 		}
 		&-vk{
 			&:after{
-				background-position-x: -115px;
+				background-position: -115px -136px;
 			}
 		}
 		&-y{
 			&:after{
-				background-position-x: -168px;
+				background-position: -168px -136px;
 			}
 		}
 		&-ok{
 			&:after{
-				background-position-x: -221px;
+				background-position: -221px -136px;
 			}
 		}
 	}
