@@ -11,12 +11,14 @@ Start: MODAL
 .fade.in {
   opacity: 1;
 }
-
-.modal-open {
-  overflow: hidden;
+.modal-open,
+.fancybox-margin{
   .header{
     padding-right: 17px;
   }
+}
+.modal-open {
+  overflow: hidden;
 }
 
 .modal {

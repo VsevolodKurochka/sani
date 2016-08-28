@@ -193,9 +193,9 @@ $(document).ready(function(){
 			return false;
 		});
 		//PRODUCT
-		$(".product-image-carousel img").click(function() {
-		    $(".product-image-big img").attr("src", $(this).attr("src"));
-		});
+		// $(".product-image-carousel img").click(function() {
+		//     $(".product-image-big img").attr("src", $(this).attr("src"));
+		// });
 
 		//FILTER
 			$(".show-filter").click(function(){

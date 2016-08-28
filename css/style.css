@@ -1132,7 +1132,8 @@ Start: Connect fonts
   font-family: 'Roboto', sans-serif;
 }
 
-.light, .top-nav-menu a, .btn-entry, .news-b-text--time, .news-b-text--text, .leader-inf-text--pos, .leader-text-act, .main-review-header--city, .main-review-text, .aside-banner-text, .nav-tabs-registration li a {
+.light, .top-nav-menu span,
+.top-nav-menu a, .btn-entry, .news-b-text--time, .news-b-text--text, .leader-inf-text--pos, .leader-text-act, .main-review-header--city, .main-review-text, .aside-banner-text, .nav-tabs-registration li a {
   font-weight: 100;
 }
 
@@ -1532,11 +1533,15 @@ Start: HEADER
   }
 }
 
-.hover-link-menu, .hover-link-menu-default, .top-nav.big li a, .top-nav-menu a, .footer-block-menu li a {
+.hover-link-menu, .hover-link-menu-default, .top-nav.big li span,
+.top-nav.big li a, .top-nav-menu span,
+.top-nav-menu a, .footer-block-menu li a {
   position: relative;
   text-decoration: none;
 }
-.hover-link-menu:after, .hover-link-menu-default:after, .top-nav.big li a:after, .top-nav-menu a:after, .footer-block-menu li a:after {
+.hover-link-menu:after, .hover-link-menu-default:after, .top-nav.big li span:after,
+.top-nav.big li a:after, .top-nav-menu span:after,
+.top-nav-menu a:after, .footer-block-menu li a:after {
   content: "";
   position: absolute;
   top: 100%;
@@ -1547,10 +1552,13 @@ Start: HEADER
   transition: all ease .5s;
   border-radius: 10px;
 }
-.hover-link-menu-default:after, .top-nav.big li a:after {
+.hover-link-menu-default:after, .top-nav.big li span:after,
+.top-nav.big li a:after {
   background-color: #fff;
 }
-.hover-link-menu:hover:after, .hover-link-menu-default:hover:after, .top-nav.big li a:hover:after, .top-nav-menu a:hover:after, .footer-block-menu li a:hover:after {
+.hover-link-menu:hover:after, .hover-link-menu-default:hover:after, .top-nav.big li span:hover:after,
+.top-nav.big li a:hover:after, .top-nav-menu span:hover:after,
+.top-nav-menu a:hover:after, .footer-block-menu li a:hover:after {
   width: 0;
 }
 
@@ -1573,15 +1581,17 @@ Start: HEADER
     padding: 0 18px;
   }
 }
+.top-nav.big li span,
 .top-nav.big li a {
   font-size: 15px;
 }
 .top-nav-menu {
   transition: all ease .5s;
 }
-.top-nav-menu li.active a:after {
+.top-nav-menu li.active span:after, .top-nav-menu li.active a:after {
   display: none;
 }
+.top-nav-menu span,
 .top-nav-menu a {
   color: inherit;
 }
@@ -2751,6 +2761,7 @@ Start: ITEM
   font-size: 14px;
   text-align: center;
   min-width: 125px;
+  cursor: pointer;
 }
 .item-choose-color {
   padding-bottom: 20px;
@@ -3585,8 +3596,12 @@ Start: CART PAGE
   font-weight: 100;
   font-size: 14px;
 }
+.cart-buttons-btn {
+  vertical-align: middle;
+}
 
 .go-buy {
+  display: inline-block;
   border: none;
   background-color: transparent;
   font-size: 14px;
@@ -4511,11 +4526,13 @@ Start: MODAL
   opacity: 1;
 }
 
+.modal-open .header,
+.fancybox-margin .header {
+  padding-right: 17px;
+}
+
 .modal-open {
   overflow: hidden;
-}
-.modal-open .header {
-  padding-right: 17px;
 }
 
 .modal {

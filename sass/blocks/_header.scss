@@ -342,6 +342,7 @@ Start: HEADER
 			}
 			display: inline-block;
  			vertical-align: middle;
+ 			span,
 			a{
 				@extend .hover-link-menu-default;
 				font-size: 15px;
@@ -355,13 +356,14 @@ Start: HEADER
 		transition: all ease .5s;
 		li{
 			&.active{
-				a{
+				span,a{
 					&:after{
 						display: none;
 					}
 				}
 			}
 		}
+		span,
 		a{
 			@extend .hover-link-menu;
 			@extend .light;

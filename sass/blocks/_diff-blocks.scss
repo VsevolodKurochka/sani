@@ -967,6 +967,7 @@ Start: ITEM
     font-size: 14px;
     text-align: center;
     min-width: 125px;
+    cursor: pointer;
   }
   &-choose-color{
     padding-bottom: 20px;
@@ -1874,9 +1875,13 @@ Start: CART PAGE
       font-weight: 100;
       font-size: 14px;
     }
+    &-btn{
+      vertical-align: middle;
+    }
   }
 }
 .go-buy{
+  display: inline-block;
   border: none;
   background-color: transparent;
   font-size: 14px;
