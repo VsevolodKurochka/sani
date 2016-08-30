@@ -74,7 +74,6 @@ section{
   @extend %relative;
 }
 .section{
-
   padding-top: 20px;
   @include resp-min(sm){
     padding-top: 30px;
@@ -82,6 +81,13 @@ section{
   @include resp-max(lg){
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+.main{
+  > .section{
+    &:first-child{
+      padding-top: 5px;
+    }
   }
 }
 // @each $breakpoint-name, $breakpoint-value in $breakpoints{
@@ -119,6 +125,17 @@ End:  HIDDEN AND VISIBLE UTILITIES
 @each $br-name, $br-value in $breakpoints{
   @include resp-min($br-name){
     .min-#{$br-name}-inline{
+      display: inline-block;
+    }
+  }
+  @include resp-max($br-name){
+    .max-#{$br-name}-block{
+      display: block;
+    }
+    .max-#{$br-name}-center{
+      text-align: center;
+    }
+    .max-#{$br-name}-inline{
       display: inline-block;
     }
   }

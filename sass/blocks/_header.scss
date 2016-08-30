@@ -38,7 +38,7 @@ Start: HEADER
 			overflow: hidden;
 			@extend .relative;
 			top: 3px;
-  		left: 4px;
+  		left: 3px;
 			&--title{
 				@extend .orange;
 				@extend .text-u;
@@ -255,30 +255,30 @@ Start: HEADER
 
 .navbar-toggle-menu{
 	position: relative;
-    float: left;
-    padding: 3px 10px 6px 0;
-    background-color: transparent;
-    border: none;
-    border-radius: 4px;
-    &-open{
-    	.icon-bar-1{
-		    transform: rotate(45deg) translate(5px,5px);
-    	}
-    	.icon-bar-2{
-			opacity: 0;
-    	}
-    	.icon-bar-3{
-			transform: rotate(-45deg) translate(4px, -3px);
-    	}
-    }
+  float: left;
+  padding: 5px 14.6px 3px 5px;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  &-open{
+  	.icon-bar-1{
+	    transform: rotate(45deg) translate(5px,5px);
+  	}
+  	.icon-bar-2{
+		opacity: 0;
+  	}
+  	.icon-bar-3{
+		transform: rotate(-45deg) translate(4px, -3px);
+  	}
+  }
 	.icon-bar{
-	    display: block;
-	    width: 22px;
-	    height: 2px;
-	    border-radius: 1px;
-        background-color: #fff;
-        transition: all ease .25s;
-        transform-origin: 50% 100%;
+    display: block;
+    width: 14px;
+    height: 1px;
+    border-radius: 0;
+    background-color: #fff;
+    transition: all ease .25s;
+    transform-origin: 50% 100%;
 	}
 	.icon-bar:not(.icon-bar-1){
 		margin-top: 4px;
@@ -329,10 +329,10 @@ Start: HEADER
 }
 .top-nav{
 	@extend .cf;
-	padding: 9px 0;
+	padding: 12.5px 0;
 	background-color: map-get($colors, "light-blue");
 	@include resp-min(sm){
-		margin-top: 85px;
+		margin-top: 83px;
 	}
 	&.big{
 		li{
@@ -372,9 +372,9 @@ Start: HEADER
 	}
 }
 .entry-reg-block{
-	padding-top: 3px;
-	padding-left: 20px;
 	@extend .relative;
+	top: 2px;
+	left: 11px;
 	a{
 		@extend .bold;
 	}
@@ -382,7 +382,7 @@ Start: HEADER
 		content: "";
 		position: absolute;
 		left: 0;
-		top: 2px;
+		top: -3px;
 		width: 14px;
 		height: 21px;
 		@extend .sprite;
@@ -405,10 +405,10 @@ Start: TOP FIXED
 	background-repeat: no-repeat;
 }
 .share-block{
-	margin: 5px 0 10px;
+	margin: 9px 0 0px 29px;
 	a{
 		display: inline-block;
-		padding-left: 25px;
+		padding-left: 28px;
 		@extend .relative;
 		text-decoration: none;
 		&:before{
@@ -417,6 +417,12 @@ Start: TOP FIXED
 			left: 0;
 			top: 0;
 		}
+	}
+	&.social-block{
+	  margin: 5px 0 0 29px;
+	  a{
+	  	padding-left: 29px;
+	  }
 	}
 }
 .email-block{
@@ -444,11 +450,11 @@ Start: TOP FIXED
 .phone-block{
 	a{
 		display: block;
-		padding-left: 25px;
+		padding-left: 40.5px;
 	}
 	&--phone{
 		font-size: 17px;
-		margin-bottom: 5px;
+		margin-bottom: 4.3px;
 		@extend .grey;
 		@extend .bold;
 		@extend .text-dn;
@@ -456,7 +462,7 @@ Start: TOP FIXED
 		&:after{
 			content: "";
 			position: absolute;
-			left: 0;
+			left: 13px;
 			top: 2px;
 			width: 17px;
 			height: 18px;
@@ -470,6 +476,8 @@ Start: TOP FIXED
 }
 .cart-block{
 	@extend .relative;
+  top: 5px;
+  left: 66px;
 	&:after{
 		content: "";
 		position: absolute;
@@ -482,13 +490,21 @@ Start: TOP FIXED
 		background-position: -79px 0;
 	}
 	&-items{
-		margin-bottom: 10px;
+    margin: 1px 0px 8px 0px;
+	  @extend .relative;
+	  left: 3px;
+	  top: 2px;
+	}
+	&-sum{
+		@extend .relative;
+		left: 4px;
 	}
 }
 .header-search-block{
 	@extend .text-right;
 	@extend .relative;
 	padding-top: 15px;
+	right: -13px;
 	input{
 	  position: absolute;
 	  right: 50px;

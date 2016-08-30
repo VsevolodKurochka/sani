@@ -1,3 +1,4 @@
+
 .transition{
   transition: all ease .5s;
 }
@@ -179,6 +180,16 @@ Start: NEWS
         background-color: map-get($colors, "light-blue");
         @extend .white;
       }
+      &:hover{
+        .news-b{
+          &-text{
+            background-color: #00baf3;
+          }
+        }
+      }
+    }
+    .news-b-text--title:hover{
+      @extend .grey;
     }
   }
   &-odd{
@@ -199,29 +210,36 @@ Start: NEWS
           color: #999999;
         }
       }
+      &:hover{
+        .news-b-text{
+          background-color: #dcdcdc;
+        }
+      }
+    }
+    .news-b-text--title:hover{
+      @extend .light-blue;
     }
   }
   &-b{
     @extend .relative;
-    position: relative;
-    min-height: 398px;
-    width: 270px;
-    margin-left: auto;
-    margin-right: auto;
+    min-height: 355px;
+    
+    &-text{
+      transition: all ease .5s;
+    }
     &-text,
     &-img{
       position: absolute;
       left: 0;
       width: 100%;
-      height: 200px;
+      height: 180px;
     }
     
     &-img{      
       overflow: hidden;
       img{
         height: 100%;
-        max-height: 100%;
-        
+        max-height: 100%;       
         width: 280px;
         max-width: none;
         margin-left: -5px;
@@ -237,7 +255,7 @@ Start: NEWS
       }
       &--title,
       &--text{
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -254,25 +272,40 @@ Start: NEWS
       color: inherit;
       height: 100%;
     }
+    @include resp-min(tp){
+      @include resp-max(sm){
+        width: 260px;
+      }
+    }
+    @include resp-max(lg){
+      margin-left: auto;
+      margin-right: auto;
+    }
     @include resp-max(md){
       margin-bottom: 15px;
+      @include resp-min(sm){
+        width: 280px;
+        &-img{
+          img{
+            width: 290px;
+          }
+        }
+      }
     }
     @include resp-min(md){
-      width: 100%;
       @include resp-max(lg){
         min-height: 300px;
+        width: 100%;
         &-img{
           height: 125px;
         }
       }
     }
     @include resp-min(lg){
-      min-height: 400px;
+      min-height: 356px;
+      width: 264px;
       &-img{
-        height: 200px;
-        img{
-          
-        }
+        height: 176px;
       }
     }
   }
@@ -691,7 +724,7 @@ Start: FILTER
       li{
         display: inline-block;
         margin: 0 5px;
-        padding: 5px 15px;
+        padding: 9px 13px;
         @include resp-max(sm){
           margin: 15px 5px;
           display: block;
@@ -758,6 +791,7 @@ Start: ITEM
         @extend .cf;
         &-img{
           height: 75px;
+          max-width: 110px;
         }
         
         @include resp-min(lg){
@@ -946,9 +980,9 @@ Start: ITEM
         background-color: #ffaaaa;
       }
     }
-    &--new{
-      font-size: 18px;
-    }
+    // &--new{
+    //   font-size: 18px;
+    // }
   }
   &-shop{
     display: inline-block;
@@ -995,14 +1029,15 @@ Start: SLIDER
 ======================== */
 .slider-main{
   border: 8px solid map-get($colors, "light-blue");
+
   @include resp-min(sm){
-    height: 280px;
+    height: 283px;
     &-text{
       padding: 30px;
     }
     &-text,
     &-img{
-      height: 265px;
+      height: 267px;
       img{
         width: 100%;
       }
@@ -1058,8 +1093,8 @@ Start: SLIDER
       bottom: 0px;
       left: 10px;
       @include resp-min(sm){
-        bottom: 15px;
-        left: 25px;
+        bottom: 10px;
+        left: 30px;
       }
     }
     &-buttons{
@@ -1142,6 +1177,16 @@ Start: SLIDER
       }
     }
   }
+  @include resp-min(lg){
+    top: -7px;
+    left: 18px;
+    &-text{
+      width: 42.7%;
+    }
+    &-img{
+      width: 57.3%;
+    }
+  }
 }
 /* ===================== 
 End: SLIDER      
@@ -1171,7 +1216,7 @@ Start: OFFER
       @include resp-min(lg){
         font-size: 19px;  
       }
-      line-height: 1;
+      line-height: 1.3;
       margin-bottom: 10px;
       @extend .bold;
     }
@@ -1191,15 +1236,22 @@ Start: OFFER
     @include resp-min(sm){
       float: left;
       width: 33.33333%;
-      &-title,
+      &-title{
+        margin-bottom: 16px;
+      }
       &-i{
-        margin-bottom: 20px;
+        margin-bottom: 22px;
       }
       &-title{
         min-height: 38px;
       }
       &-text{
         min-height: 72px;
+        font-size: 14px;
+        line-height: 1.3;
+        position: relative;
+        left: 1px;
+        top: -1px;
       }
     }
     @include resp-max(sm){
@@ -1443,99 +1495,10 @@ End:  VIDEO AND REVIEW MAIN
 /* =====================
 End:  PRODUCT
 ======================== */
-
-.menu{
-  > ul{
-    > li{
-      padding: 3px 0;
-      border-bottom: 1px solid #f4f4f4;
-      position: relative;
-    }
-  }
-  ul{
-    li{
-      margin-bottom: 5px;
-      @extend .transition;
-      &:hover{
-        border-bottom-color: map-get($colors, "light-blue");
-        > a{
-          @extend .light-blue;
-        }
-      }
-      &.opened-menu{
-        // .child-list{
-        //   display: block;
-        // }
-        .icon{
-          &:after{
-            transform: rotate(-180deg);
-            @include resp-min(md){
-                transform: rotate(90deg);
-            }
-          }
-        }
-      }
-      &.active{
-        
-      }
-      &.has-child{
-        .icon{
-          position: absolute;
-          right: 10px;
-          top: 7.5px;
-          cursor: pointer;
-          width: 20px;
-          height: 20px;
-          &:after{
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            @extend .sprite;
-            @include resp-min(md){
-              width: 6px;
-              height: 10px; 
-              margin-left: -3px;
-              margin-top: -5px;
-              background-position: -78px -117px;
-            }
-            @include resp-max(md){
-              margin-top: -8.5px;
-              margin-left: -8.5px;
-              width: 17px;
-              height: 17px;
-              background-position: -43px -111px;
-            }
-          }
-
-        }
-      }
-      &:last-child{
-        border-bottom: none;
-      }
-      a{
-        display: block;
-        padding: 5px 0px 5px 50px;
-        font-size: 16px;
-        @extend .grey;
-        text-decoration: none;
-      }
-
-    }
-    &.child-list{
-      display: none;
-      li{
-        padding-left: 10px;
-        a{
-          font-size: 14px;
-        }
-      }
-    }
-  }
-}
 //ASIDE
 .aside{
-  
+  @extend .relative;
+  top: -20px;
   &-img{
     position: absolute;
     left: 0;
@@ -1544,7 +1507,7 @@ End:  PRODUCT
     text-align: center;
     height: 30px;
     margin-top: -15px;
-    width: 30px;
+    width: 40px;
     img{
       width: 25px;
       height: 25px;
@@ -1634,6 +1597,108 @@ End:  PRODUCT
     }
   }
 }
+.menu{
+
+  ul{
+    li{
+      margin-bottom: 1.8px;
+      @extend .transition;
+      &:hover{
+        border-bottom-color: map-get($colors, "light-blue");
+        > a{
+          @extend .light-blue;
+        }
+      }
+      a{
+        display: block;
+        padding: 0 0px 5px 48px;
+        font-size: 16px;
+        @extend .grey;
+        text-decoration: none;
+      }
+      &.opened-menu{
+        // .child-list{
+        //   display: block;
+        // }
+        .icon{
+          &:after{
+            transform: rotate(-180deg);
+            @include resp-min(md){
+                transform: rotate(90deg);
+            }
+          }
+        }
+      }
+      &.current{
+        > a{
+          @extend .light-blue;
+        }
+        .child-list{
+          display: block;
+        }
+      }
+      &.active{
+        
+      }
+      &.has-child{
+        .icon{
+          position: absolute;
+          right: 10px;
+          top: 7.5px;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+          &:after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @extend .sprite;
+            @include resp-min(md){
+              width: 6px;
+              height: 10px; 
+              margin-left: -3px;
+              margin-top: -5px;
+              background-position: -78px -117px;
+            }
+            @include resp-max(md){
+              margin-top: -8.5px;
+              margin-left: -8.5px;
+              width: 17px;
+              height: 17px;
+              background-position: -43px -111px;
+            }
+          }
+
+        }
+      }
+      &:last-child{
+        border-bottom: none;
+      }
+      
+
+    }
+    &.child-list{
+      display: none;
+      li{
+        padding-left: 10px;
+        a{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  > ul{
+    > li{
+      border-bottom: 1px solid #f4f4f4;
+      position: relative;
+      > a {
+        padding: 8px 0 8px 48px;
+      }
+    }
+  }
+}
+
     
 /* ===================== 
 Start: BREADCRUMBS      
@@ -2299,6 +2364,13 @@ input{
     margin-top: -165px;
   }
 }
+.tab{
+  &-content{
+    .choose-color{
+      display: none;
+    }
+  }
+}
 .tab-content-no-padding {
   padding-bottom: 10px !important;
 }
@@ -2494,6 +2566,123 @@ Start: SORTING SIMILIAR
 /* =====================
 End:  SORTING SIMILIAR
 ======================== */
+    
+/* ===================== 
+Start: NEWS PAGE      
+======================== */
+.news-content{
+  &-list{
+
+  }
+  &-inner{
+    @extend .cf;
+    margin-bottom: 30px;
+    &-description{
+      height: 93px;
+      overflow: hidden;
+    }
+    &-img,
+    .title{
+      @extend .max-sm-center;
+      display: block;
+    }
+    .title{
+      text-decoration: none;
+    }
+    &-img{
+      img{
+        width: 160px;
+        height: 120px;
+      }
+    }
+    @include resp-min(sm){
+      &-img,
+      &-text{
+        display: inline-block;
+        vertical-align: top;
+      }
+      &-img{
+        width: 20%;
+        margin-right: 5px;
+        
+      }
+      &-text{
+        width: 75%;
+        position: relative;
+        top: -5px;
+      }
+    }
+    @include resp-max(sm){
+      
+    }
+  }
+  &-link{
+    float: right;
+  }
+}
+.heading{
+  &-link{
+    @extend .grey;
+    @extend .bold;
+    font-size: 14px;
+    @include resp-min(sm){
+      margin-left: 15px;
+    }
+  }
+  &-title{
+    font-size: 14px;
+    @extend .bold;
+    color: #999999;
+    margin-right: 15px;
+    margin-top: 5px;
+  }
+}
+.text-page{
+
+}
+%content-margin{
+  margin-bottom: 15px;
+}
+.content{
+  &-header{
+    @extend %content-margin;
+  }
+  &-body{
+    font-size: 16px;
+    @extend .light;
+    @extend %content-margin;
+    p{
+      @extend %content-margin;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    img{
+      @extend %content-margin;
+      @include resp-min(sm){
+        padding: 0 15px;
+        max-width: 49%;
+      }
+    }
+  }
+}
+.media{
+  &-inner{
+    display: inline-block;
+  }
+  &-label{
+    display: block;
+    padding: 7.5px 0;
+    border-bottom: 1px solid map-get($colors, "e2e2e2");
+    @extend .br;
+    font-size: 14px;
+    @extend .light;
+  }
+}
+/* =====================
+End:  NEWS PAGE
+======================== */
+
 //PRODUCT INFO BANNER
 .p-i-b{
   background-color: #3bbdc5;
@@ -2802,6 +2991,7 @@ End:  SORTING SIMILIAR
     max-width: 215px;
   }
 }
+
 /* Ширина слайдера */
 #slider-price {
   width: 200px;
@@ -2865,4 +3055,55 @@ End:  SORTING SIMILIAR
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+}
+//PP
+@include resp-min(lg){
+
+  .header{
+    .phone-block{
+      position: relative;
+      top: 4px;
+    }
+  }
+  .offer{
+    &-w{
+      left: 18px;
+    }
+    &-b{
+      &-i{
+        img{
+          position: relative;
+          top: 8px;
+        }
+      }
+      &-1{
+        img{
+          top: 12px;
+          left: -9px;
+        }
+      }
+      &-2{
+        img{
+          left: -3px;
+        }
+      }
+      &-3{
+        img{
+          left: -1px;
+        }
+      }
+    }
+  }
+  #menu{
+    left: 42px;
+  }
+  .footer-search-block-wrap {
+    left: 24px;
+    top: 4px;
+    width: 251px;
+  }
+  .share-wrap{
+    position: relative;
+    left: 22px;
+  }
 }

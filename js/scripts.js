@@ -62,12 +62,11 @@ $(document).ready(function(){
 		// });
 		$(".menu > ul > li").each(function(){
 			if ( $(this).children(".child-list").length > 0 ) {
-
-					$(this).children("a").click(function(e){
-						$(this).parent().toggleClass("opened-menu");
-						$(this).next().slideToggle("slow");
-						e.preventDefault();
-					});
+				$(this).children("a").click(function(e){
+					$(this).parent().toggleClass("opened-menu");
+					$(this).next().slideToggle("slow");
+					e.preventDefault();
+				});
 			}
 		});
 
