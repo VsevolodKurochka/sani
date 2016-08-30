@@ -260,7 +260,7 @@ Start: START FOOTER
 	@extend .cf;
 	@extend .bold;
 	@extend .white;
-	padding: 15px;
+	padding: 23px;
 	background-color: #0095c2;
 	font-size: 14px;
 	@include resp-max(sm){

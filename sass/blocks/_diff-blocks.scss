@@ -148,12 +148,16 @@ End:  BUTTON
     width: 15px;
     height: 16px;
     margin-left: -7.5px;
-    margin-top: -8px;
+    margin-top: -9px;
     @extend .sprite;
     background-position: -15px -110px;
   }
 }
-    
+@include resp-min(lg){
+  .wrapper{
+    padding-left: 18px;
+  }    
+}
 /* ===================== 
 Start: NEWS      
 ======================== */
@@ -365,6 +369,10 @@ Start: LEADER
     }
   }
   &-wrap{
+    margin-bottom: 27px;
+    @include resp-min(sm){
+      margin-bottom: 36px;
+    }
     @include resp-max(xs){
       padding: 0;
     }
@@ -721,10 +729,25 @@ Start: FILTER
           display: block;
         }
       }
+      &.nav{
+        li{
+          &:first-child{
+            
+            margin-left: 0;
+            margin-right: 1px;
+          }
+          &.active{
+            &:first-child{
+              padding-left: 0;
+            }
+          }
+        }
+      }
       li{
         display: inline-block;
-        margin: 0 5px;
-        padding: 9px 13px;
+        margin-right: 10px;
+        padding: 4px 12px;
+        height: 28px;
         @include resp-max(sm){
           margin: 15px 5px;
           display: block;
@@ -771,16 +794,25 @@ Start: ITEM
           @extend .col-sm-6;
         }
         &-img{
-          height: 175px;
+          height: 170px;
         }
         &-link{
-          margin-bottom: 15px;
+          margin-bottom: 13px;
         }
         &-manufacturer{
           display: none;
         }
         &-footer{
           @extend .cf;
+          padding-left: 6px;
+        }
+
+      }
+      &-price{
+        /*SEVA*/
+        margin-left: -2px;
+        &--new{
+          font-size: 18px;
         }
       }
     }
@@ -884,8 +916,8 @@ Start: ITEM
       @include color("white");
       &-wrap{
         position: absolute;
-        left: 5px;
-        top: 5px;
+        left: 10px;
+        top: 15px;
         z-index: 2;
       }
       span{
@@ -1029,7 +1061,7 @@ Start: SLIDER
 ======================== */
 .slider-main{
   border: 8px solid map-get($colors, "light-blue");
-
+  margin-bottom: 27px;
   @include resp-min(sm){
     height: 283px;
     &-text{
@@ -1100,7 +1132,7 @@ Start: SLIDER
     &-buttons{
       position: absolute;
       top: 50%;
-      margin-top: -17.5px;
+      margin-top: -16px;
       left: 0;
       width: 100%;
     }
@@ -1121,12 +1153,10 @@ Start: SLIDER
       position: absolute;
       background-color: map-get($colors, "light-blue");
       @include resp-min(sm){
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
         border-radius: 100%;
         &:after{
-          margin-left: -6px;
-          margin-top: -10.5px;
           width: 12px;
           height: 21px;
           background-position: -196px -46px;
@@ -1158,11 +1188,19 @@ Start: SLIDER
     }
     @include resp-min(sm){
       &-prev{
-        left: -19px;
+        left: -21px;
+        &:after{
+          margin-left: -8px;
+          margin-top: -9.5px;
+        }
       }
       &-next{
-        right: -19px;
+        right: -29px;
         left: auto;
+        &:after{
+          margin-left: -5px;
+          margin-top: -9.5px;
+        }
       }
     }
     @include resp-max(sm){
@@ -1178,13 +1216,11 @@ Start: SLIDER
     }
   }
   @include resp-min(lg){
-    top: -7px;
-    left: 18px;
     &-text{
-      width: 42.7%;
+      width: 43.6%;
     }
     &-img{
-      width: 57.3%;
+      width: 56.4%;
     }
   }
 }
@@ -1197,6 +1233,7 @@ Start: OFFER
 ======================== */
 .offer{
   &-w{
+    margin-bottom: 20px;
     @include resp-max(sm){
       text-align: center;
     }
@@ -1221,7 +1258,8 @@ Start: OFFER
       @extend .bold;
     }
     @include resp-min(tp){
-      padding: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
       @include resp-max(sm){
         width: 50%;
         margin-left: -0.5em;
@@ -1240,7 +1278,7 @@ Start: OFFER
         margin-bottom: 16px;
       }
       &-i{
-        margin-bottom: 22px;
+        margin-bottom: 17px;
       }
       &-title{
         min-height: 38px;
@@ -1498,7 +1536,7 @@ End:  PRODUCT
 //ASIDE
 .aside{
   @extend .relative;
-  top: -20px;
+  top: -15px;
   &-img{
     position: absolute;
     left: 0;
@@ -1515,7 +1553,7 @@ End:  PRODUCT
   }
   > div{
     margin-bottom: 30px;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 2px solid #ebebeb;
     &:last-child{
       border-bottom: none;
       margin-bottom: 0;
@@ -1527,6 +1565,7 @@ End:  PRODUCT
     margin-bottom: 15px;
   }
   &-brand{
+    padding-bottom: 34px;
     a{
       display: inline-block;
       width: 50%;
@@ -1541,9 +1580,9 @@ End:  PRODUCT
   }
   &-pickup{
     @extend .bg-grey;
-    padding: 15px;
+    padding: 18px;
     &-block{
-      margin-bottom: 10px;
+      margin-bottom: 3px;
       &-link{
         @extend .link-def;
         margin-bottom: 10px;
@@ -1595,6 +1634,9 @@ End:  PRODUCT
     img{
       max-width: 45px;
     }
+  }
+  &-menu{
+    padding-bottom: 20px;
   }
 }
 .menu{
@@ -2369,6 +2411,9 @@ input{
     .choose-color{
       display: none;
     }
+    .item-b{
+      min-height: 310px;
+    }
   }
 }
 .tab-content-no-padding {
@@ -3062,24 +3107,32 @@ End:  NEWS PAGE
   .header{
     .phone-block{
       position: relative;
-      top: 4px;
+      top: 2px;
+    }
+    .cart-block{
+      top: 2px;
+      left: 66px;
+    }
+    &-search-block{
+      padding-top: 13px;
+      right: -13px;
     }
   }
   .offer{
-    &-w{
-      left: 18px;
-    }
+    // &-w{
+    //   left: 18px;
+    // }
     &-b{
       &-i{
         img{
           position: relative;
-          top: 8px;
+          top: 3px;
         }
       }
       &-1{
         img{
-          top: 12px;
-          left: -9px;
+          top: 7px;
+          left: -6px;
         }
       }
       &-2{
@@ -3089,7 +3142,7 @@ End:  NEWS PAGE
       }
       &-3{
         img{
-          left: -1px;
+          left: 14px;
         }
       }
     }

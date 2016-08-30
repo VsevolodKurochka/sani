@@ -18,7 +18,7 @@ Start: HEADER
 	}
 	&-wrapper{
 		@include resp-max(md){
-			margin-bottom: 28px;
+			margin-bottom: 48px;
 		}
 	}
 	&-shadow{
@@ -31,14 +31,14 @@ Start: HEADER
 		}
 		&-img{
 			float: left;
-			margin-right: 10px;
-			padding-top: 15px;
+			margin-right: 13px;
+			padding-top: 13px;
 		}
 		&-text{
 			overflow: hidden;
 			@extend .relative;
-			top: 3px;
-  		left: 3px;
+  		left: 1px;
+  		top: 1px;
 			&--title{
 				@extend .orange;
 				@extend .text-u;
@@ -256,7 +256,7 @@ Start: HEADER
 .navbar-toggle-menu{
 	position: relative;
   float: left;
-  padding: 5px 14.6px 3px 5px;
+  padding: 4px 14.6px 3px 5px;
   background-color: transparent;
   border: none;
   border-radius: 4px;
@@ -332,7 +332,8 @@ Start: HEADER
 	padding: 12.5px 0;
 	background-color: map-get($colors, "light-blue");
 	@include resp-min(sm){
-		margin-top: 83px;
+		margin-top: 81px;
+		margin-bottom: 23px;
 	}
 	&.big{
 		li{
@@ -373,15 +374,15 @@ Start: HEADER
 }
 .entry-reg-block{
 	@extend .relative;
-	top: 2px;
-	left: 11px;
+	top: 0;
+	left: 5px;
 	a{
 		@extend .bold;
 	}
 	&:after{
 		content: "";
 		position: absolute;
-		left: 0;
+		left: 6px;
 		top: -3px;
 		width: 14px;
 		height: 21px;
@@ -405,7 +406,7 @@ Start: TOP FIXED
 	background-repeat: no-repeat;
 }
 .share-block{
-	margin: 9px 0 0px 29px;
+	margin-left: 29px;
 	a{
 		display: inline-block;
 		padding-left: 28px;
@@ -415,21 +416,16 @@ Start: TOP FIXED
 			content: "";
 			position: absolute;
 			left: 0;
-			top: 0;
 		}
-	}
-	&.social-block{
-	  margin: 5px 0 0 29px;
-	  a{
-	  	padding-left: 29px;
-	  }
 	}
 }
 .email-block{
+	margin-top: 7px;
 	a{	
 		@extend .grey;
 		@extend .medium;	
 		&:before{
+			top: 1px;
 			width: 18px;
 			height: 14px;
 			@extend .sprite;
@@ -438,8 +434,11 @@ Start: TOP FIXED
 	}
 }
 .social-block{
+	margin-top: 5px;
 	a{
+		padding-left: 29px;
 		&:before{
+			top: 0;
 			width: 20px;
 			height: 19px;
 			@extend .sprite;
@@ -476,8 +475,7 @@ Start: TOP FIXED
 }
 .cart-block{
 	@extend .relative;
-  top: 5px;
-  left: 66px;
+  
 	&:after{
 		content: "";
 		position: absolute;
@@ -503,8 +501,7 @@ Start: TOP FIXED
 .header-search-block{
 	@extend .text-right;
 	@extend .relative;
-	padding-top: 15px;
-	right: -13px;
+	
 	input{
 	  position: absolute;
 	  right: 50px;
