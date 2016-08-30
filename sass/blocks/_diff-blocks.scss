@@ -1771,6 +1771,9 @@ Start: CART PAGE
     a{
       color: inherit;
       text-decoration: none;
+      &:hover{
+        @extend .light-blue;
+      }
     }
   }
   &-price{
@@ -1926,7 +1929,7 @@ End:  CART PAGE
         left: 25px;
       }
     }
-    span{
+    span:not(.ruble){
       display: none;
       position: absolute;
       left: 5px;
@@ -1946,7 +1949,7 @@ End:  CART PAGE
     &:checked + label:before{
       border-color: #00ace0;
     }
-    &:checked + label span{
+    &:checked + label span:not(.ruble){
       display: inline-block;
     }
   }

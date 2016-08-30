@@ -121,7 +121,7 @@ Start: COLOR AND SIZE
   color: #7dccff;
 }
 
-.light-blue, a, .menu ul li:hover > a, .product-info-value-b label, .characteristics tbody tr td:first-child, .nav-tabs-registration li a {
+.light-blue, a, .menu ul li:hover > a, .cart-name a:hover, .product-info-value-b label, .characteristics tbody tr td:first-child, .nav-tabs-registration li a {
   color: #00ace0;
 }
 
@@ -3646,7 +3646,7 @@ End:  CART PAGE
 .radio label.box-deliv:after {
   left: 25px;
 }
-.radio label span {
+.radio label span:not(.ruble) {
   display: none;
   position: absolute;
   left: 5px;
@@ -3665,7 +3665,7 @@ End:  CART PAGE
 .radio input[type=radio]:checked + label:before {
   border-color: #00ace0;
 }
-.radio input[type=radio]:checked + label span {
+.radio input[type=radio]:checked + label span:not(.ruble) {
   display: inline-block;
 }
 .radio-input-parent {
