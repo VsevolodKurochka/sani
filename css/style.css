@@ -81,7 +81,7 @@ Start: COLOR AND SIZE
   color: #000;
 }
 
-.grey, .title, .email-block a, .phone-block--phone, .sort-block-list li.active a, .item-b-link, .slider-main-text, .menu ul li a {
+.grey, .title, .email-block a, .phone-block--phone, .sort-block-list li.active a, .item-b-link, .slider-main-text, .slider-main-text-title, .menu ul li a {
   color: #333333;
 }
 

@@ -1018,6 +1018,9 @@ Start: SLIDER
   }
   &-text{
     @extend .grey;
+    &-title{
+      @extend .grey;
+    }
     @include resp-max(sm){
       padding: 50px 0 0px 20px;
     }
