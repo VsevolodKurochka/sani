@@ -2727,6 +2727,53 @@ Start: NEWS PAGE
 /* =====================
 End:  NEWS PAGE
 ======================== */
+    
+/* ===================== 
+Start: CONTACT PAGE      
+======================== */
+.contact{
+  &-page{
+    @extend .light;
+  }
+  &-block{
+    padding-left: 20px;
+    margin-bottom: 20px;
+    i{
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      text-align: center;
+      @extend .middle-blue;
+    }
+    &-m{
+      margin-top: 10px;
+    }
+  }
+  &-title{
+    @extend .bold;
+    font-size: 17px;
+    &.m{
+      margin-bottom: 10px;
+    }
+  }
+  &-phone{
+    display: inline-block;
+  }
+  &-map{
+    margin-top: 15px;
+    @include resp-max(sm){
+      margin-bottom: 15px;
+    }
+    iframe{
+      border: 1px solid #ebebeb;
+    }
+  }
+}
+/* =====================
+End:  CONTACT PAGE
+======================== */
 
 //PRODUCT INFO BANNER
 .p-i-b{
