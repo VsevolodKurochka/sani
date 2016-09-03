@@ -85,7 +85,7 @@ Start: COLOR AND SIZE
   color: #333333;
 }
 
-.br, .media-label {
+.br, .news-category-list li a, .media-label {
   color: #999999;
 }
 
@@ -125,7 +125,7 @@ Start: COLOR AND SIZE
   color: #7dccff;
 }
 
-.light-blue, a, .news-odd .news-b-text--title:hover, .menu ul li:hover > a, .menu ul li.current > a, .cart-name a:hover, .product-info-value-b label, .characteristics tbody tr td:first-child, .nav-tabs-registration li a {
+.light-blue, a, .news-odd .news-b-text--title:hover, .menu ul li:hover > a, .menu ul li.current > a, .cart-name a:hover, .product-info-value-b label, .characteristics tbody tr td:first-child, .news-category-title i, .nav-tabs-registration li a {
   color: #00ace0;
 }
 
@@ -1246,7 +1246,7 @@ Start: Connect fonts
 }
 
 .bold, .title-site,
-.small-title, .title, .big-title, .navbar-toggle-menu-text, .entry-reg-block a, .phone-block--phone, .footer-cont-in--phone a, .footer-cont-in-title, .copyright, .btn, .news-b-text--title, .leader-text-title, .leader-text-form button, .box-title, .item-b-link, .slider-main-text-title, .offer-b-title, .main-review-header--title, .aside-title, .aside-banner-title-price, .cart-price, .cart-count-q, .cart-summary, .sorting-similiar .ss-link, .heading-link, .heading-title, .contact-title, .filter-block .fbt {
+.small-title, .title, .big-title, .navbar-toggle-menu-text, .entry-reg-block a, .phone-block--phone, .footer-cont-in--phone a, .footer-cont-in-title, .copyright, .btn, .news-b-text--title, .leader-text-title, .leader-text-form button, .box-title, .item-b-link, .slider-main-text-title, .offer-b-title, .main-review-header--title, .aside-title, .aside-banner-title-price, .cart-price, .cart-count-q, .cart-summary, .sorting-similiar .ss-link, .news-category-title, .heading-link, .heading-title, .contact-title, .filter-block .fbt {
   font-weight: 700;
 }
 
@@ -2170,6 +2170,7 @@ End:  BUTTON
 }
 
 .link-def, .show-more-big, .show-more-small, .sort-block-list li a, .aside-pickup-block-link {
+  cursor: pointer;
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px dashed #7dccff;
@@ -4374,6 +4375,31 @@ End:  SORTING SIMILIAR
 /* ===================== 
 Start: NEWS PAGE      
 ======================== */
+.news-category {
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 18px 0px rgba(153, 153, 153, 0.25);
+}
+.news-category-list-hidden {
+  height: 40px;
+  overflow: hidden;
+}
+.news-category-list li {
+  display: inline-block;
+  margin-right: 15px;
+}
+.news-category-list li a {
+  font-size: 14px;
+}
+.news-category-title {
+  font-size: 15px;
+  margin-top: 5px;
+}
+.news-category-title i {
+  margin-right: 5px;
+}
+
 .news-content-inner {
   margin-bottom: 30px;
 }

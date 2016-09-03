@@ -158,6 +158,15 @@ $(document).ready(function(){
 				$("#showseotext").text("Читать далее");
 			}
 		});
+		$("#showCat").click(function(){
+			$(".news-category-list").toggleClass("news-category-list-hidden");
+			if( $(".news-category-list").hasClass("news-category-list-hidden") ) {
+				$("#showCat").text("Все рубрики");
+			}else{
+				$("#showCat").text("Скрыть рубрики");
+				
+			}
+		});
 
 		//MAIN BLUE BLOCK
 		$(".leader-text-form input")
