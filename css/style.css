@@ -2241,6 +2241,7 @@ Start: NEWS
 }
 .news-b {
   min-height: 355px;
+  margin-bottom: 35px;
 }
 .news-b-text {
   transition: all ease .5s;
@@ -2257,9 +2258,25 @@ Start: NEWS
 .news-b-img img {
   height: 100%;
   max-height: 100%;
-  width: 280px;
+  width: 100%;
   max-width: none;
-  margin-left: -5px;
+}
+@media (min-width: 601px) {
+  .news-b-img img {
+    width: 280px;
+    margin-left: -5px;
+  }
+}
+@media (max-width: 600px) {
+  .news-b {
+    width: 280px;
+  }
+  .news-b-img {
+    margin-left: -1px;
+  }
+  .news-b-img img {
+    width: 290px;
+  }
 }
 .news-b-text {
   padding: 15px;

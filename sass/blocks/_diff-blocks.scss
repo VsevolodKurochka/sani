@@ -228,7 +228,8 @@ Start: NEWS
   &-b{
     @extend .relative;
     min-height: 355px;
-    
+    margin-bottom: 35px;
+
     &-text{
       transition: all ease .5s;
     }
@@ -245,9 +246,22 @@ Start: NEWS
       img{
         height: 100%;
         max-height: 100%;       
-        width: 280px;
+        width: 100%;
         max-width: none;
-        margin-left: -5px;
+        
+        @include resp-min(tp){
+          width: 280px;
+          margin-left: -5px;
+        }
+      }
+    }
+    @include resp-max(tp){
+      width: 280px;
+      &-img{
+        margin-left: -1px;
+        img{
+          width: 290px;
+        }
       }
     }
     &-text{
