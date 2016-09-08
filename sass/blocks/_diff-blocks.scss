@@ -265,25 +265,22 @@ Start: NEWS
       }
     }
     &-text{
-      padding: 15px;
+      padding: 15px 15px 15px 19px;
       &--title{
         @extend .bold;
         font-size: 16px;
-        max-height: 66px;
+        max-height: 56px;
         text-decoration: none;
+        line-height: 18px;
       }
       &--title,
       &--text{
-        margin-bottom: 10px;
+        margin-bottom: 11px;
         overflow: hidden;
         text-overflow: ellipsis;
       }
       &--text{
         max-height: 55px;
-      }
-      &--time,
-      &--text{
-        @extend .light;
       }
     }
     a{
@@ -353,7 +350,7 @@ Start: SHOW MORE
     font-size: 18px;
   }
   &-wrap{
-    margin-top: 35px;
+    margin-top: 24px;
     @extend .text-center;
   }
 }
@@ -381,6 +378,15 @@ Start: LEADER
     clear: both;
     @include resp-max(sm){
       background-color: #3bbdc5;
+      padding: 26px 0 22px 0;
+      .leader{
+        &-text-title{
+          margin-bottom: 8px;
+        }
+        &-text-form{
+          margin-top: 30px;
+        }
+      }
     }
   }
   &-wrap{
@@ -450,7 +456,7 @@ Start: LEADER
       margin-bottom: 10px;
     }
     &-act{
-      @extend .light;
+      @extend .regular;
     }
     @include resp-min(sm){
       &-title{
@@ -491,10 +497,13 @@ Start: LEADER
         }
       }
       &.big{
-        margin-top: 7.5px;
+        margin-top: 1.5px;
         input, button{
           @include resp-min(xs){
             min-width: 195px;
+          }
+          @include resp-min(lg){
+            width: 195px;
           }
         }
       }
@@ -522,7 +531,7 @@ Start: LEADER
           font-weight: 700;
         }
         @include resp-max(xs){
-          max-width: 134px;
+          max-width: 155px;
           font-weight: 500;
         }
       }
@@ -534,7 +543,7 @@ Start: LEADER
         @extend .bold;
         @extend .hover-blue;
         @include resp-max(xs){
-          padding: 10px;
+          padding: 10px 15px;
           font-size: 14px;
         }
       }
@@ -543,7 +552,7 @@ Start: LEADER
   &-shape{
     position: absolute;
     bottom: 25px;
-    right: 25px;
+    right: 16px;
     @include resp-max(sm){
       display: none;
     }
@@ -562,23 +571,73 @@ Start: LEADER
       }
     }
   }
+  &-main{
+    .leader-inf{
+      @include resp-min(sm){
+        position: relative;
+        top: 7px;
+        left: 8px;
+        line-height: 24px;
+      }
+    }
+    .leader-text{
+      @include resp-min(sm){
+        position: relative;
+        left: 22px;
+        top: -5px;
+        &-form{
+          &.big{
+            position: relative;
+            top: 9px;
+          }
+        }
+      }
+    }
+  }
 }
 /* =====================
 End:  LEADER
 ======================== */
     
 /* ===================== 
-Start: BOX      
+Start: SEO      
 ======================== */
-.delivery-payment-wrap{
-  @include resp-max(sm){
-    .box{
-      margin-left: -15px;
-      margin-right: -15px;
-      margin-bottom: 15px;
+.seo-text{
+  font-size: 14px;
+  &-p{
+    font-weight: 400;
+    &-hidden{
+      overflow: hidden;
+      max-height: 101px;
+      text-overflow: ellipsis;
+    }
+  }
+  &-section{
+    @include resp-min(sm){
+      padding-bottom: 20px;
     }
   }
 }
+#showseotext{
+  position: absolute;
+  right: 0;
+}
+/* =====================
+End:  SEO
+======================== */
+
+/* ===================== 
+Start: BOX      
+======================== */
+// .delivery-payment-wrap{
+//   @include resp-max(sm){
+//     .box{
+//       margin-left: -15px;
+//       margin-right: -15px;
+//       margin-bottom: 15px;
+//     }
+//   }
+// }
 .box{
   padding: 10px;
   @include resp-max(xs){
@@ -590,26 +649,31 @@ Start: BOX
   &-grey{
    @extend .bg-grey;
   }
+  @include resp-min(lg){
+    padding: 10px;
+  }
   &-inner{
+    @include resp-min(xs){
+      border: 5px solid #fff;
+      padding: 7.5px;
+    }
+    
+    @include resp-min(lg){
+      padding: 15px;
+    }
     @include resp-min(sm){
       &-d-p{
-        min-height: 200px;
+        min-height: 226px;
+        padding: 24px 22px;
+        .box-title{
+          margin-bottom: 28px;
+        }
       }
     }
     @include resp-max(sm){
       &-d-p{
         padding: 15px 5px;
       }
-    }
-    @include resp-min(xs){
-      border: 5px solid #fff;
-      padding: 7.5px;
-    }
-  }
-  @include resp-min(lg){
-    padding: 10px;  
-    &-inner{
-      padding: 15px;
     }
   }
   &-title{
@@ -633,7 +697,7 @@ Start: BOX
     &:after{
       content: "";
       position: absolute;
-      left: 0;
+      left: 2px;
       top: 2px;
       @extend .sprite;
     }
@@ -659,7 +723,7 @@ Start: BOX
     }
   }
   &-pay{
-    margin-bottom: 10px;
+    margin-bottom: 19px;
     padding-left: 25px;
     &-cour{
       &:after{
@@ -725,6 +789,9 @@ Start: FILTER
 .show-filter,
 .filter-responsive-wrap{
   margin-bottom: 15px;
+}
+.show-filter{
+  width: 142px;
 }
 .show-sort-block-list{
   margin-top: 15px;
@@ -809,10 +876,11 @@ Start: ITEM
           @extend .col-sm-6;
         }
         &-img{
-          height: 170px;
+          height: 164px;
         }
         &-link{
-          margin-bottom: 13px;
+          margin: 5px 0 0 7px;
+          line-height: 1.2;
         }
         &-manufacturer{
           display: none;
@@ -1024,7 +1092,7 @@ Start: ITEM
         top: 50%;
         width: 100%;
         height: 1px;
-        background-color: #ffaaaa;
+        background-color: #db0000;
       }
     }
     // &--new{
@@ -1044,7 +1112,6 @@ Start: ITEM
     box-shadow: 1px 1px 1px rgba(0,0,0,.23);
     @extend .white;
     @extend .roboto;
-    @extend .medium;
     font-size: 14px;
     text-align: center;
     min-width: 125px;
@@ -1081,10 +1148,13 @@ Start: SLIDER
     height: 283px;
     &-text{
       padding: 30px;
+
     }
     &-text,
     &-img{
       height: 267px;
+    }
+    &-img{
       img{
         width: 100%;
       }
@@ -1104,7 +1174,11 @@ Start: SLIDER
       @extend .grey;
     }
     @include resp-max(sm){
-      padding: 50px 0 0px 20px;
+      padding: 14px 0 0px 25px;
+      img{
+        max-width: 45px;  
+        margin-bottom: 11px;
+      }
     }
     &-title{
       @extend .bold;
@@ -1116,6 +1190,9 @@ Start: SLIDER
       }
       @include resp-min(sm){
         font-size: 36px;
+        line-height: 43px;
+        margin-left: 4px;
+        margin-top: 9px;
       }
     }
   }
@@ -1210,7 +1287,7 @@ Start: SLIDER
         }
       }
       &-next{
-        right: -29px;
+        right: -20px;
         left: auto;
         &:after{
           margin-left: -5px;
@@ -1334,6 +1411,41 @@ End:  OFFER
 /* =====================
 Start:  VIDEO AND REVIEW MAIN
 ======================== */
+.review-wrap{
+  &-text,
+  &-video{
+    float: left;
+    position: relative;
+    //@include resp-min
+  }
+  @include resp-max(sm){
+    &-video,
+    &-text{
+      width: 100%;
+    }
+  }
+  @include resp-min(sm){
+    &-video,
+    &-text{
+      width: 50%;
+    }
+  }
+  @include resp-min(md){
+    &-video{
+      width: 454px;
+      right: 375px;
+    }
+    &-text{
+      width: 376px;
+      left: 455px;
+    }
+  }
+}
+.r-v-wrap{
+  .small-title{
+    margin-bottom: 21px;
+  }
+}
 .no-p{
   padding: 0 !important;
 }
@@ -1396,7 +1508,7 @@ Start:  VIDEO AND REVIEW MAIN
       }
     }
     &-btn{
-      @include after_center(80px,80px);
+      @include after_center(66px, 66px);
       border: 5px solid #fff;
       border-radius: 100%;
       background-color: rgba(0, 172, 224, 0.65);
@@ -1407,7 +1519,7 @@ Start:  VIDEO AND REVIEW MAIN
         top: 50%;
         width: 20px;
         height: 23px;
-        margin-left: -8px;
+        margin-left: -6px;
         margin-top: -11.5px;
         background-position: -89px -111px;
         @extend .sprite;
@@ -1432,15 +1544,13 @@ Start:  VIDEO AND REVIEW MAIN
     }
   }
   @include resp-min(sm){
+    &-video,
+    &-review-wrap{
+      min-height: 332px;
+    }
     &-video{
-      min-height: 350px;
       img{
         position: absolute;
-      }
-    }
-    &-review{
-      &-wrap{
-        min-height: 350px;
       }
     }
   }
@@ -1492,7 +1602,7 @@ Start:  VIDEO AND REVIEW MAIN
       }
     }
     &-wrap{
-      padding: 25px;
+      padding: 19px 17px 17px 25px;
       position: relative;
       .owl{
         &-carousel{
@@ -1501,7 +1611,7 @@ Start:  VIDEO AND REVIEW MAIN
         &-controls{
           display: block !important;
           position: absolute;
-          top: -50px;
+          top: -48px;
           right: 0;
           @include resp-min(sm){
             right: -10px;
@@ -1509,8 +1619,8 @@ Start:  VIDEO AND REVIEW MAIN
         }
         &-prev,
         &-next{
-          width: 40px;
-          height: 40px;
+          width: 35px;
+          height: 38px;
           position: relative;
           background-color: map-get($colors, "light-blue");
           &:hover{
@@ -2427,7 +2537,7 @@ input{
       display: none;
     }
     .item-b{
-      min-height: 310px;
+      min-height: 291px;
     }
   }
 }

@@ -17,14 +17,18 @@ $(document).ready(function(){
 		// 		}
 		// 	}
 		// });
-
+		$(".link-fixed").each(function(){
+			$(this).clone().appendTo(".visible-fixed-menu .top-nav-menu-list");
+		});
+		var headerF = "header-fixed";
 		$(window).scroll(function(){
 			if ( $(window).scrollTop() > $(".header").outerHeight() + 20 ) {
-				$(".header").addClass("header-shadow");
+				$(".header").addClass(headerF);
 			}else{
-				$(".header").removeClass("header-shadow");
+				$(".header").removeClass(headerF);
 			}
 		});
+		
 		//ADD CLASS ANCHOR TO ELEMENT, WHICH WILL BE CLICK and scroll to element
 		$('.anchor').click(function(){
 			var href = $(this).attr('href');

@@ -1,6 +1,6 @@
 body{
   @extend .roboto;
-  @extend .medium;
+  @extend .regular;
   @include color("grey");
   font-size: 13px;
   line-height: 1.42857143;

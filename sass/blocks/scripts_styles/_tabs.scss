@@ -67,10 +67,11 @@ Start: TAB STYLES
   }
   &-social{
     text-align: left; 
+    @extend .cf;
     li{
       float: left;
-      width: 33.3333%;
-      height: 55px;
+      width: 33.33333%;
+      height: 57px;
       border: 1px solid #fbfbfb;
       position: relative;
       z-index: 1;
@@ -113,6 +114,11 @@ Start: TAB STYLES
         width: 100%;
         height: 100%;
         display: block;
+      }
+    }
+    @include resp-min(lg){
+      li{
+        width: 96px;
       }
     }
   }
@@ -158,7 +164,11 @@ Start: TAB STYLES
   }
 }
 .social-tabs{
-  margin-top: 56px;
+  margin-top: 48px;
+  @include resp-min(lg){
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 .tab-content > .tab-pane {
   display: none;

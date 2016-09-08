@@ -15,8 +15,14 @@ Start: Connect fonts
 .roboto{
 	font-family: 'Roboto', sans-serif;
 }
+.thin{
+  font-weight: 100;
+}
 .light{
-	font-weight: 100;
+	font-weight: 300;
+}
+.regular{
+  font-weight: 400;
 }
 .medium{
 	font-weight: 500;

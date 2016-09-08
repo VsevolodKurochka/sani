@@ -110,9 +110,9 @@ End:  COLOR AND SIZE
   .hidden-#{$visibility}{
     display: none;
   }
-  // .visible-#{$visibility}{
-  //   display: block !important;
-  // }
+  .visible-#{$visibility}{
+    display: block !important;
+  }
 }
 @mixin after_d(){
   content: "";

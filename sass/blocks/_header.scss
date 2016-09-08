@@ -21,24 +21,27 @@ Start: HEADER
 			margin-bottom: 48px;
 		}
 	}
-	&-shadow{
+	&-fixed{
 		box-shadow: 0 13px 17px 1px rgba(0,0,0,.15);
 	}
 	&-logo{
+		@extend .relative;
+		top: 1px;
 		a{
 			text-decoration: none;
 			color: inherit;
+			
 		}
 		&-img{
 			float: left;
-			margin-right: 13px;
+			margin-right: 15px;
 			padding-top: 13px;
+			@extend .relative;
+		  left: 1px;
+  		top: -1px;
 		}
 		&-text{
 			overflow: hidden;
-			@extend .relative;
-  		left: 1px;
-  		top: 1px;
 			&--title{
 				@extend .orange;
 				@extend .text-u;
@@ -447,6 +450,29 @@ Start: TOP FIXED
 	}
 }
 .phone-block{
+	@extend .relative;
+	&:before{
+		@extend .after_d;
+		width: 37px;
+		height: 38px;
+	  left: -14px;
+		top: 50%;
+		margin-top: -19px;
+		background-color: #f5f6f8;
+		border-radius: 100%;
+		opacity: 0;
+		@extend .transition;
+	}
+	&:after{
+		@extend .after_d;
+		left: 13px;
+		top: 2px;
+		width: 17px;
+		height: 18px;
+		@extend .sprite;
+		background-position: -43px -3px;
+		@extend .transition;
+	}	
 	a{
 		display: block;
 		padding-left: 40.5px;
@@ -458,16 +484,7 @@ Start: TOP FIXED
 		@extend .bold;
 		@extend .text-dn;
 		@extend .relative;
-		&:after{
-			content: "";
-			position: absolute;
-			left: 13px;
-			top: 2px;
-			width: 17px;
-			height: 18px;
-			@extend .sprite;
-			background-position: -43px -3px;
-		}
+		
 	}
 	&--recall{
 		@extend .medium;
@@ -501,7 +518,6 @@ Start: TOP FIXED
 .header-search-block{
 	@extend .text-right;
 	@extend .relative;
-	
 	input{
 	  position: absolute;
 	  right: 50px;
@@ -524,6 +540,41 @@ Start: TOP FIXED
 		}
 	}
 }
+.visible-fixed{
+	display: none;
+	&-menu{
+		li{
+			display: inline-block;
+			padding: 15px 7px;
+			&:first-child{
+				padding-left: 0;
+			}
+			a{
+				color: #4d83c8;
+			}
+		}
+	}
+}
+.header-fixed{
+	.visible-fixed{
+		display: block;
+	}
+	.hidden-fixed{
+		display: none;
+		@extend .transition;
+	}
+	.phone-block{
+		&:before{
+			opacity: 1;
+		}
+		&:after{
+			top: 50%;  
+			margin-top: -9px;
+  		margin-left: -16px;
+		}
+	}
+}
+
 /* =====================
 End:  TOP FIXED
 ======================== */

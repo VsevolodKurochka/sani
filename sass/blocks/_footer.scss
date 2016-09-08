@@ -3,7 +3,7 @@ Start: START FOOTER
 ======================== */
 .footer{
 	@extend .cf;
-	margin-top: 20px;
+	margin-top: 9px;
 	padding: 0 0 20px;
 	@include resp-min(sm){
 		padding: 22px 0 55px;
@@ -13,7 +13,7 @@ Start: START FOOTER
 	&-block{
 		&-title{
 			font-size: 24px;
-			font-weight: 100;
+			font-weight: 400;
 			margin-bottom: 22px;
 		}
 		&-menu{
@@ -45,7 +45,6 @@ Start: START FOOTER
 		}
 		&-in{
 			@extend .relative;
-			font-weight: 100;
 			font-size: 14px;
 			padding-left: 36px;
 			margin-bottom: 27px;
@@ -133,7 +132,6 @@ Start: START FOOTER
 			display: inline-block;
 			@extend .white;
 			font-size: 16px;
-			font-weight: 100;
 			&:after{
 				content: "";
 				position: absolute;

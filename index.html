@@ -10,7 +10,7 @@
   	<![endif]-->
 	<!-- <script src="js/jquery.js"></script> -->
 	<link rel="stylesheet" href="css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=latin,cyrillic" rel="stylesheet">
 	<!-- Jquery, Bootstrap, WOW, Masked Input -->
 	<script src="js/min.scripts.js"></script>
 	<script src="js/scripts.js"></script>
@@ -36,7 +36,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="col-xs-12 col-md-2 col-lg-3">
+						<div class="col-xs-12 col-md-2 col-lg-3 hidden-fixed">
 							<div class="share-block email-block">
 								<a href="mailto: finsani@yandex.ru">finsani@yandex.ru</a>
 							</div>
@@ -50,6 +50,13 @@
 								<a href="" class="phone-block-recall dark-blue">
 									Перезвоните мне!
 								</a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 visible-fixed">
+							<div class="row visible-fixed-menu">
+								<ul class="row top-nav-menu-list">
+									
+								</ul>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-2">
@@ -165,11 +172,11 @@
 							<div class="top-nav-menu">
 								<ul class="top-nav-menu-list">
 									<li class="active"><a href="">О нас</a></li>
-									<li><a href="">Акции</a></li>
-									<li><a href="">Доставка и оплата</a></li>
+									<li class="link-fixed"><a href="">Акции</a></li>
+									<li class="link-fixed"><a href="">Доставка и оплата</a></li>
 									<li><a href="">Статьи</a></li>
-									<li class="active"><span>Отзывы</span></li>
-									<li><a href="">Контакты</a></li>
+									<li class="active link-fixed"><span>Отзывы</span></li>
+									<li class="link-fixed"><a href="">Контакты</a></li>
 								</ul>
 							</div>
 						</div>
@@ -322,7 +329,8 @@
 									<div class="item">
 										<a href="https://vk.com/feed" target="_blank">
 											<div class="slider-main-text">
-												<p class="slider-main-text-title">Финские сани и самокаты для всей семьи</p>
+												<img src="img/slider-sani.png" alt="" class="slider-sani">
+												<p class="slider-main-text-title">Финские сани<br> и самокаты<br><span class="light"> для всей семьи</span></p>
 											</div>
 											<div class="slider-main-img">
 												<img src="img/slider.png" alt="">
@@ -332,6 +340,7 @@
 									<div class="item">
 										<a href="https://vk.com/feed" target="_blank">
 											<div class="slider-main-text">
+												<img src="img/slider-sani.png" alt="" class="slider-sani">
 												<p class="slider-main-text-title">Финские сани и самокаты для всей семьи</p>
 											</div>
 											<div class="slider-main-img">
@@ -413,12 +422,7 @@
 														<span class="item-b-tag item-b-tag-rec">
 															<span>Рекомендуем</span>
 														</span>
-														<span class="item-b-tag item-b-tag-new">
-															<span>Новинка</span>
-														</span>
-														<span class="item-b-tag item-b-tag-pop">
-															<span>Популярно</span>
-														</span>
+														
 													</div>
 								    				<div class="item-b-img">
 								    					<a href="#">
@@ -472,7 +476,7 @@
 								    					</a>
 								    				</div><!-- /.item-b-img -->
 								    				<div class="item-b-name">
-								    					<a href="#" class="item-b-link">Финские сани CLASSIC (для взрослых)Финские сани CLASSIC (для взрослых)Финские сани CLASSIC (для взрослых)</a>
+								    					<a href="#" class="item-b-link">Финские сани CLASSIC (для взрослых)</a>
 								    				</div>
 								    				<div class="item-choose-color choose-color">
 								    					<p class="bold">Выбрать цвет:</p>
@@ -518,7 +522,7 @@
 									    					</a>
 									    				</div><!-- /.item-b-img -->
 									    				<div class="item-b-name">
-									    					<a href="#" class="item-b-link">Финские сани для взрослых</a>
+									    					<a href="#" class="item-b-link">Финские сани Superior (для взрослых)</a>
 									    				</div>
 									    				<div class="item-choose-color choose-color">
 									    					<p class="bold">Выбрать цвет:</p>
@@ -1480,8 +1484,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-md-9">
-						<div class="row">
-							<div class="r-v-wrap review-no-p col-xs-12 col-sm-6 col-md-5 col-md-push-7">
+						<div class="cf max-sm-negative">
+							<div class="r-v-wrap review-no-p review-wrap-text ">
 								<span class="small-title main-review-title">Отзывы</span>
 								<a href="#" class="main-review-link">Читать все</a>
 								<div class="main-review-wrap">
@@ -1507,7 +1511,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="r-v-wrap review-no-p col-xs-12 col-sm-6 col-md-7 col-md-pull-5">
+							<div class="r-v-wrap review-no-p review-wrap-video">
 								<div class="main-video-wrap">
 									<p class="small-title">Видео о нашей аптеке</p>
 									<div class="cf video-block main-video">
@@ -1554,9 +1558,9 @@
 		<section class="section delivery-payment-wrap">
 			<div class="container">
 				<div class="row">
-					<div class="row">
+					<div class="cf max-sm-negative">
 						<div class="col-xs-12 col-sm-6">
-							<div class="box box-grey">
+							<div class="box box-grey max-sm-negative">
 								<div class="box-inner box-inner-d-p">
 									<p class="box-title">Оперативная доставка</p>
 									<div class="cf">
@@ -1575,7 +1579,7 @@
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6">
-							<div class="box box-grey">
+							<div class="box box-grey max-sm-negative">
 								<div class="box-inner box-inner-d-p">
 									<p class="box-title">5 удобных вариантов оплаты</p>
 									<div class="cf">
@@ -1606,10 +1610,10 @@
 				</div>
 			</div>
 		</section>
-		<section class="section leader-wrap">
+		<section class="section">
 			<div class="container">
-				<div class="row">
-					<div class="cf leader">
+				<div class="cf max-sm-negative">
+					<div class="cf max-sm-negative leader leader-main">
 						<div class="col-xs-12 col-md-3 col-lg-2">
 							<div class="leader-inf">
 								<div class="leader-inf-img">
@@ -1642,10 +1646,10 @@
 				</div><!-- /.leader -->
 			</div>
 		</section>
-		<section class="section">
+		<section class="section seo-text-section">
 			<div class="container">
-				<div class="row seo-text">
-					<h1 class="title-site">Интернет-магазин <span class="orange text-u">Finsani.ru</span></h1>
+				<div class="max-sm-negative seo-text">
+					<h1 class="title-site ttu">Интернет-магазин <span class="orange text-u">Finsani.ru</span></h1>
 					<p class="seo-text-p seo-text-p-hidden">Все нижеперечисленные препараты для увеличения потенции не являются лекарственными. Их действие на потенцию мужчины носит скорее психологический характер. На практике доказано, что принимать их показано только при психогенных формах эректильной дисфункции, слабой потенции и как подсобное средство на фоне основного лечения. Очевидно, что для многих такая "панацея" явно противопоказана и может нанести непоправимый вред здоровью. Многие из нас, а вернее, большинство не любят лечиться. Некоторые из нас обращают свое внимание на широко рекламируемые препараты для увеличения потенции, надеясь в очередном купленном (весьма недешевом) якобы лекарстве найти панацею от всех своих. 
 					Все нижеперечисленные препараты для увеличения потенции не являются лекарственными. Их действие на потенцию мужчины носит скорее психологический характер. На практике доказано, что принимать их показано только при психогенных формах эректильной дисфункции, слабой потенции и как подсобное средство на фоне основного лечения. Очевидно, что для многих такая "панацея" явно противопоказана и может нанести непоправимый вред здоровью. Многие из нас, а вернее, большинство не любят лечиться. Некоторые из нас обращают свое внимание на широко рекламируемые препараты для увеличения потенции, надеясь в очередном купленном (весьма недешевом) якобы лекарстве найти панацею от всех своих. 
 					</p>
@@ -1655,9 +1659,9 @@
 		</section>
 		<section class="section">
 			<div class="container">
-				<div class="row" id="news">
+				<div class="cf max-sm-negative" id="news">
 					<div class="cf">
-						<p class="small-title">Новости</p>
+						<p class="small-title sm-23">Новости</p>
 					</div>
 					<div class="row news-wrap">
 						<div class="col-xs-12 col-tp-6 col-sm-6 col-md-3 news-even">
@@ -1709,7 +1713,7 @@
 							</div>
 						</div>
 					</div><!-- /.news-wrap -->
-					<div class="cf show-more-wrap">
+					<div class="cf text-center">
 							<a id="show-more-btn" href="#" class="show-more-big">Показать ещё 8 новостей</a>
 					</div>
 				</div>

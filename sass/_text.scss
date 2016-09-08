@@ -1,18 +1,29 @@
 .tdu{
 	text-decoration: underline;
 }
+.ttu{
+	text-transform: uppercase;
+}
 .pointer{
 	cursor: pointer;
 }
 .title-site,
 .small-title{
   font-size: 20px;
-  margin-bottom: 30px;
   @extend .bold;
   @include resp-max(sm){
   	font-size: 16px;
   	margin-bottom: 5px;
   }
+}
+.small-title{
+	margin-bottom: 30px;
+	&.sm-23{
+		margin-bottom: 23px;
+	}
+}
+.title-site{
+	margin-bottom: 24.5px;
 }
 span.small-title{
 	display: inline-block;
@@ -20,17 +31,7 @@ span.small-title{
 .title-site{
 	@extend .ultrabold;
 }
-.seo-text{
-	font-size: 14px;
-	&-p{
-		font-weight: 100;
-		&-hidden{
-			overflow: hidden;
-			max-height: 101px;
-			text-overflow: ellipsis;
-		}
-	}
-}
+
 .title{
 	font-size: 18px;
   @include resp-min(xs){

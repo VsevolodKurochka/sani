@@ -103,6 +103,12 @@ section{
 /* ===================== 
 Start: HIDDEN AND VISIBLE UTILITIES      
 ======================== */
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg{
+  display: none;
+}
 @include resp-min(lg){
   @include visibility-utility(lg);
 }
@@ -137,6 +143,9 @@ End:  HIDDEN AND VISIBLE UTILITIES
     }
     .max-#{$br-name}-inline{
       display: inline-block;
+    }
+    .max-#{$br-name}-right{
+      float: right;
     }
   }
 }
