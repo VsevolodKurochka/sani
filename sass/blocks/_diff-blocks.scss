@@ -369,7 +369,8 @@ Start: LEADER
 }
 .leader{
   background-color: map-get($colors, "light-blue");
-  padding: 15px 7.5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   @include resp-min(sm){
     padding: 25px 0;
   }
@@ -386,10 +387,13 @@ Start: LEADER
         &-text-form{
           margin-top: 30px;
         }
+        &-text-act{
+          margin-bottom: 30px;
+        }
       }
     }
     @include resp-min(sm){
-      padding: 14px 27px 26px 44px;
+      padding: 14px 27px 26px 29px;
       .leader{
         &-text{
           &-title{
@@ -548,7 +552,7 @@ Start: LEADER
           font-weight: 700;
         }
         @include resp-max(xs){
-          max-width: 155px;
+          width: 144px;
           font-weight: 500;
         }
       }
@@ -560,7 +564,9 @@ Start: LEADER
         @extend .bold;
         @extend .hover-blue;
         @include resp-max(xs){
-          padding: 10px 15px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          width: 115px;
           font-size: 14px;
         }
       }
@@ -3257,6 +3263,236 @@ End:  CONTACT PAGE
   .counter{
     @extend .dark-blue;
   }
+}
+/* --- EASYDROPDOWN METRO THEME --- */
+
+/* PREFIXED CSS */
+
+.dropdown,
+.dropdown div,
+.dropdown li,
+.dropdown div::after,
+.dropdown .carat,
+.dropdown .carat:after,
+.dropdown .selected::after,
+.dropdown:after{
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.dropdown .selected::after,
+.dropdown.scrollable div::after{
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+}
+
+/* WRAPPER */
+.dropdown,
+.dropdown li{
+  border: 1px solid #f4f4f4;
+}
+.dropdown {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  background: #ffffff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  margin-bottom: 21px;
+  border-radius: 10px;
+}
+
+.dropdown.open{
+  z-index: 2;
+  border-radius: 10px 10px 0 0;
+}
+
+// .dropdown:hover{
+//   background: #f4f4f4;
+// }
+
+.dropdown:after{
+  content: '';
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  top: 2px;
+  width: 30px;
+  background: transparent;
+}
+
+// .dropdown.focus:after{
+//   background: #0180d1;
+// }
+
+/* CARAT */
+
+.dropdown .carat, .dropdown .carat:after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -4px;
+  border: 6px solid transparent;
+  border-top: 6px solid #b5309b;
+  z-index: 2;
+  -webkit-transform-origin: 50% 20%;
+  -moz-transform-origin: 50% 20%;
+  -ms-transform-origin: 50% 20%;
+  transform-origin: 50% 20%;
+}
+
+.dropdown .carat:after {
+  margin-top: -8px;
+  right: -6px;
+  border-top-color: #fff;
+}
+
+// .dropdown:hover .carat:after{
+//   border-top-color: #f4f4f4;
+// }
+
+// .dropdown.focus .carat{
+//   border-top-color: #f8f8f8;
+// }
+
+// .dropdown.focus .carat:after{
+//   border-top-color: #0180d1;
+// }
+
+// .dropdown.open .carat{
+//   -webkit-transform: rotate(180deg);
+//   -moz-transform: rotate(180deg);
+//   -ms-transform: rotate(180deg);
+//   transform: rotate(180deg);
+// }
+
+/* OLD SELECT (HIDDEN) */
+
+.dropdown .old{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.dropdown select{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.dropdown.touch .old{
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown.touch select{
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* SELECTED FEEDBACK ITEM */ 
+
+.dropdown .selected, .dropdown li {
+  display: block;
+  /* font-size: 18px; */
+  line-height: 1;
+  color: #000;
+  padding: 9px 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* DROP DOWN WRAPPER */
+
+.dropdown div {
+  position: absolute;
+  height: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: -1px;
+  background: #ffffff;
+  overflow: hidden;
+  opacity: 0;
+}
+// .dropdown:hover div{
+//   background: #f4f4f4;
+// }
+
+/* Height is adjusted by JS on open */
+
+.dropdown.open div{
+  opacity: 1;
+  z-index: 2;
+}
+
+/* FADE OVERLAY FOR SCROLLING LISTS */
+
+.dropdown.scrollable div::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  
+  box-shadow: inset 0 -50px 30px -35px #f8f8f8;
+}
+
+.dropdown.scrollable:hover div::after{
+  box-shadow: inset 0 -50px 30px -35px #f4f4f4;
+}
+
+.dropdown.scrollable.bottom div::after{
+  opacity: 0;
+}
+
+/* DROP DOWN LIST */
+
+.dropdown ul{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  overflow: hidden;
+}
+
+.dropdown.scrollable.open ul{
+  overflow-y: auto;
+}
+
+/* DROP DOWN LIST ITEMS */
+
+.dropdown li{
+  list-style: none;
+  padding: 8px 12px;
+  color: #666666;
+}
+
+/* .focus class is also added on hover */
+
+.dropdown li.focus{
+  //background: #0180d1;
+  position: relative;
+  z-index: 3;
+  color: #00ace0;
+}
+.dropdown li.active {
+  background: #fff;
+  color: #00ace0;
 }
 .fb{
   &-row{

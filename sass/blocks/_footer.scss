@@ -8,6 +8,9 @@ Start: START FOOTER
 	@include resp-min(sm){
 		padding: 22px 0 55px;
 	}
+	@include resp-max(sm){
+		margin-top: 35px;
+	}
 	@include color("white");
 	background-color: map-get($colors, "light-blue");
 	&-block{
