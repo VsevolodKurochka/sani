@@ -73,6 +73,9 @@ input{
 a{
   @extend .light-blue;
 }
+input,a,button{
+  outline: none;
+}
 a,button{
   transition: all ease .5s;
   &:hover{

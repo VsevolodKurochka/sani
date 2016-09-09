@@ -34,10 +34,9 @@ Start: HEADER
 		}
 		&-img{
 			float: left;
-			margin-right: 15px;
+			margin-right: 14px;
 			padding-top: 13px;
 			@extend .relative;
-		  left: 1px;
   		top: -1px;
 		}
 		&-text{
@@ -288,7 +287,7 @@ Start: HEADER
 	}
 	&-text{
 	  @extend .bold;
-	  
+	  @extend .roboto;
 		position: absolute;
 	  @include resp-min(md){
 	  	color: #fff;
@@ -304,31 +303,37 @@ Start: HEADER
 	}
 }
 .hover-link-menu{
-	position: relative;
-	text-decoration: none;
-	&:after{
-		content: "";
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		height: 1px;
-		background-color: #000;
-		transition: all ease .5s;
-		border-radius: 10px;
+	text-decoration: underline;
+	&:hover{
+		text-decoration: none;
 	}
 	&-default{
 		@extend .hover-link-menu;
-		&:after{
-			background-color: map-get($colors,"white");
-		}
 	}
-	&:hover{
-		&:after{
-			width: 0;
-		}
-	}
-	
+	// position: relative;
+	// text-decoration: none;
+	// &:after{
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 100%;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 1px;
+	// 	background-color: #000;
+	// 	transition: all ease .5s;
+	// 	border-radius: 10px;
+	// }
+	// &-default{
+	// 	@extend .hover-link-menu;
+	// 	&:after{
+	// 		background-color: map-get($colors,"white");
+	// 	}
+	// }
+	// &:hover{
+	// 	&:after{
+	// 		width: 0;
+	// 	}
+	// }
 }
 .top-nav{
 	@extend .cf;
@@ -370,15 +375,11 @@ Start: HEADER
 		span,
 		a{
 			@extend .hover-link-menu;
-			@extend .light;
 			color: inherit;
 		}
 	}
 }
 .entry-reg-block{
-	@extend .relative;
-	top: 0;
-	left: 5px;
 	a{
 		@extend .bold;
 	}
@@ -461,7 +462,6 @@ Start: TOP FIXED
 		background-color: #f5f6f8;
 		border-radius: 100%;
 		opacity: 0;
-		@extend .transition;
 	}
 	&:after{
 		@extend .after_d;
@@ -471,7 +471,6 @@ Start: TOP FIXED
 		height: 18px;
 		@extend .sprite;
 		background-position: -43px -3px;
-		@extend .transition;
 	}	
 	a{
 		display: block;
@@ -518,6 +517,7 @@ Start: TOP FIXED
 .header-search-block{
 	@extend .text-right;
 	@extend .relative;
+	padding-top: 13px;
 	input{
 	  position: absolute;
 	  right: 50px;
@@ -533,6 +533,9 @@ Start: TOP FIXED
 	button{
 		background-color: map-get($colors, "orange");
 		@extend .search-circle;
+		&:hover{
+			background-color: map-get($colors, "light-blue");
+		}
 	}
 	&:hover{
 		input{
