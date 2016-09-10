@@ -100,34 +100,7 @@ section{
 //     }
 //   }
 // }
-/* ===================== 
-Start: HIDDEN AND VISIBLE UTILITIES      
-======================== */
-.visible-xs,
-.visible-sm,
-.visible-md,
-.visible-lg{
-  display: none;
-}
-@include resp-min(lg){
-  @include visibility-utility(lg);
-}
-@include resp-min(md){
-  @include resp-max(lg){
-    @include visibility-utility(md);  
-  }
-}
-@include resp-min(sm){
-  @include resp-max(md){
-    @include visibility-utility(sm);
-  }
-}
-@include resp-max(sm){
-  @include visibility-utility(xs);
-}
-/* =====================
-End:  HIDDEN AND VISIBLE UTILITIES
-======================== */
+
 @each $br-name, $br-value in $breakpoints{
   @include resp-min($br-name){
     .min-#{$br-name}-inline{

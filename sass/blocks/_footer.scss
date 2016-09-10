@@ -10,6 +10,7 @@ Start: START FOOTER
 	}
 	@include resp-max(sm){
 		margin-top: 35px;
+		padding-bottom: 26px;
 	}
 	@include color("white");
 	background-color: map-get($colors, "light-blue");
@@ -48,9 +49,6 @@ Start: START FOOTER
 	  	top: 7px;
 	  	left: -23px;
 	  }
-		@include resp-max(sm){
-			margin-top: 30px;
-		}
 		&-in{
 			@extend .relative;
 			font-size: 14px;
@@ -132,12 +130,18 @@ Start: START FOOTER
 				background-color: #e06618
 			}
 		}
-		@include resp-max(md){
-			display: inline-block;
-			input{
-				width: 250px;
+		// @include resp-max(tp){
+		// 	display: block;
+		// }
+		@include resp-min(tp){
+			@include resp-max(md){
+				display: inline-block;
+				input{
+					width: 250px;
+				}
 			}
 		}
+		
 	}
 	&-btns{
 		padding-top: 10px;
@@ -162,11 +166,11 @@ Start: START FOOTER
 		}
 	}
 }
-.search-share-block{
-	@include resp-max(tp){
-		text-align: center;
-	}
-}
+// .search-share-block{
+// 	@include resp-max(tp){
+// 		text-align: center;
+// 	}
+// }
 .share-wrap-wrap,
 .footer-search-block-wrap{
 	@include resp-min(tp){
@@ -184,7 +188,7 @@ Start: START FOOTER
 			margin-top: 37px;
 		}
 		@include resp-max(tp){
-			margin-top: 45px;
+			margin-top: 30px;
 		}
 	}
 	&-b{
@@ -275,13 +279,14 @@ Start: START FOOTER
 	@extend .cf;
 	@extend .bold;
 	@extend .white;
-	padding: 17px;
+	padding: 17px 0;
 	background-color: #0095c2;
 	font-size: 14px;
 	@include resp-max(sm){
 		text-align: center;
+		padding: 15px 0;
 	}
 }
 /* =====================
 End:  START FOOTER
-========================*/
+======================== */

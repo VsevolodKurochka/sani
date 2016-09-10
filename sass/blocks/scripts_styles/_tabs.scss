@@ -125,27 +125,48 @@ Start: TAB STYLES
   &-product{
     text-align: left;
     li{
-      padding: 15px 20px;
-      @extend .border-default;
       
+      @extend .border-default;
       background-color: #f8f9fb;
-      @include resp-min(sm){
-        border-bottom: none;
-      }
+      text-align: left;
+      margin-bottom: 10px;
+      
       a{
         display: inline-block;
         font-size: 18px;
         margin-right: 0;
         text-decoration: none;
         color: #1584cd;
-        border-bottom: 2px dashed #1584cd;
+        border-bottom: 1px dashed #1584cd;
         transition: none;
+        padding: 11px 19px;
+        @extend .bold;
       }
       &.active {
-        background-color: transparent;
+        background-color: #fff;
+      }
+      &:hover, &.active{
+        a{
+          border-bottom-color: transparent;
+          @extend .orange-dark;
+        }
+      }
+      @include resp-min(sm){
+        border-bottom: none;
+        margin-right: 6px;
+        
+        margin-bottom: -3px;
+        text-align: center;
+        a{
+          min-width: 137px;
+        }
+      }
+      @include resp-max(sm){
+        background-color: #fff;
+        border: 2px solid #fafbfc;
+        border-radius: 10px;
         a{
           border-bottom: none;
-          @extend .orange;
         }
       }
     }
@@ -153,18 +174,23 @@ Start: TAB STYLES
 }
 
 .tab-content-product{
+  background-color: #fff;
   padding: 15px;
+  line-height: 21px;
   @include resp-min(sm){
-    padding: 25px;
+    padding: 18px 30px 25px 25px;
   }
+  @extend .static-text;
   @extend .border-default;
-  font-size: 14px;
-  ul,p{
+  p{
+    margin-bottom: 13px;
+  }
+  ul{
     margin-bottom: 20px;
   }
 }
 .social-tabs{
-  margin-top: 53px;
+  margin-top: 56px;
   @include resp-min(lg){
     margin-left: -15px;
     margin-right: -15px;

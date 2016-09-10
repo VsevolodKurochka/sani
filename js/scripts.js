@@ -139,20 +139,14 @@ $(document).ready(function(){
 			$(window).resize(changePosElements);
 
 
-		function hideShow(clickEl, hideEl, showEl){
+		function hideShowEntryReg(clickEl, showEl){
 			$(clickEl).click(function(){
-				//$(hideEl).toggleClass("dn");
-				if( $(showEl).hasClass("dn") ){
-					$(showEl).removeClass("dn").addClass("db");
-				}
-				if( $(hideEl).hasClass("db") ){
-					$(hideEl).removeClass("db").addClass("dn");
-				}
-				//$(showEl).toggleClass("db");
+				$(".header-resp-toggler-form-inner > div").hide();
+				$(showEl).show();
 			});
 		}
-		hideShow(".entry-btn", "#head-resp-re", "#head-resp-entry");
-		hideShow(".reg-btn", "#head-resp-entry", "#head-resp-reg");
+		hideShowEntryReg(".entry-btn", "#head-resp-entry");
+		hideShowEntryReg(".reg-btn", "#head-resp-reg");
 		//MAIN SEO TEXT
 		$("#showseotext").click(function(){
 			$(".seo-text-p").toggleClass("seo-text-p-hidden seo-text-opened");
@@ -214,6 +208,18 @@ $(document).ready(function(){
 				$(this).parent().next().slideToggle("slow");
 			});
 			
+		// $(".radio-input-parent input").click(function(){
+		// 	$(".radio .radio-input-parent").removeClass("radio-input-parent-active");
+		// 	$(this).closest(".radio-input-parent").toggleClass("radio-input-parent-active");
+		// });
+		function radioCartClicked(clickEl, allDivs){
+			$(clickEl).click(function(){
+				$(allDivs).removeClass("radio-input-parent-active");
+				$(this).closest(".radio-input-parent").toggleClass("radio-input-parent-active");
+			});
+		}
+		radioCartClicked(".radio-delivery input", ".radio-delivery > div");
+		radioCartClicked(".radio-payment input", ".radio-payment > div");
 
 		
 		$("#slider-price").slider({

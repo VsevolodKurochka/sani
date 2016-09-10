@@ -366,9 +366,7 @@ Start: HEADER
 		li{
 			&.active{
 				span,a{
-					&:after{
-						display: none;
-					}
+					text-decoration: none;
 				}
 			}
 		}
@@ -546,12 +544,15 @@ Start: TOP FIXED
 .visible-fixed{
 	display: none;
 	&-menu{
+	  left: -6px;
+  	top: 3px;
 		li{
 			display: inline-block;
-			padding: 15px 7px;
+			padding: 15px 19.5px;
 			&:first-child{
 				padding-left: 0;
 			}
+			span,
 			a{
 				color: #4d83c8;
 			}
@@ -567,6 +568,8 @@ Start: TOP FIXED
 		@extend .transition;
 	}
 	.phone-block{
+	  top: 4px;
+  	left: 19px;
 		&:before{
 			opacity: 1;
 		}
@@ -575,6 +578,10 @@ Start: TOP FIXED
 			margin-top: -9px;
   		margin-left: -16px;
 		}
+	}
+	.cart-block{
+	  top: 6px;
+		left: 56px;
 	}
 }
 
