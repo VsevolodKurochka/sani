@@ -1239,7 +1239,7 @@ Start: Connect fonts
   line-height: normal;
 }
 
-.roboto, body, .navbar-toggle-menu-text, .show-filter, .item-shop, .breadcrumbs li:after, .default-input, .def-form textarea,
+.roboto, body, .navbar-toggle-menu-text, .btn, .show-filter, .item-shop, .breadcrumbs li:after, .default-input, .def-form textarea,
 .def-form input, .form-modal input, .def-form label, .price-input {
   font-family: 'Roboto', sans-serif;
 }
