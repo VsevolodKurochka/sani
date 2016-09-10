@@ -28,9 +28,13 @@ Start: START FOOTER
 				a{
 					@extend .white;
 					display: inline-block;
-					@extend .hover-link-menu;
 					&:after{
 						background-color: #40c1e8;
+					}
+				}
+				&.active{
+					a{
+						text-decoration: none;
 					}
 				}
 			}
