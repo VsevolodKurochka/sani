@@ -2126,7 +2126,7 @@ Start: START FOOTER
 /* =====================
 End:  START FOOTER
 ======================== */
-.transition, .header-fixed .hidden-fixed, .footer-search-block input, .slider-main .owl-prev, .slider-main .owl-next, .menu li {
+.transition, .header-fixed .hidden-fixed, .footer-search-block input, .slider-main .owl-prev, .slider-main .owl-next, .menu li, .radio label:before {
   transition: all ease .5s;
 }
 
@@ -3102,7 +3102,7 @@ Start: ITEM
   }
 }
 
-.borderDef, .item-b, .item-choose-color li a, .table-bordered, .filter-block, .filter-block select, .item-choose-color li img {
+.borderDef, .item-b, .item-choose-color li a, .table-bordered, .cart-summary, .filter-block, .filter-block select, .item-choose-color li img {
   border: 1px solid #f4f4f4;
 }
 
@@ -4122,6 +4122,9 @@ Start: CART PAGE
   padding: 17px 0;
   margin-bottom: 17px;
   font-size: 20px;
+  border-top: none;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 .cart-info-b {
   margin-bottom: 10px;
@@ -4265,6 +4268,9 @@ End:  CART PAGE
 }
 .radio-input-parent-active {
   border-color: #3bbdc5;
+}
+.radio-input-parent:hover label:before {
+  border-color: #1584cc;
 }
 
 .default-input, .def-form textarea,

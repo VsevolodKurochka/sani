@@ -2269,6 +2269,10 @@ Start: CART PAGE
     margin-bottom: 17px;
     font-size: 20px;
     @extend .bold;
+    @extend .borderDef;
+    border-top: none;
+    margin-left: 1px;
+    margin-right: 1px;
     &-total{
       
     }
@@ -2368,6 +2372,7 @@ End:  CART PAGE
     position: relative;
     padding-left: 19px;
     font-size: 14px;
+
     &:before{
       content: "";
       display: inline-block;
@@ -2380,6 +2385,7 @@ End:  CART PAGE
       margin-top: -6.5px;
       border: 1px solid #e0e0e0;
       border-radius: 8px;
+      @extend .transition;
     }
     &.box-deliv{
       padding-left: 47px;
@@ -2418,6 +2424,13 @@ End:  CART PAGE
     display: inline-block;
     &-active{
       border-color: #3bbdc5;
+    }
+    &:hover{
+      label{
+        &:before{
+          border-color: #1584cc;
+        }
+      }
     }
   }
 }
