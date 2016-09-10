@@ -1874,8 +1874,8 @@ Start: TOP FIXED
   margin-left: -16px;
 }
 .header-fixed .cart-block {
-  top: 6px;
-  left: 56px;
+  top: 6px !important;
+  left: 45px !important;
 }
 
 /* =====================
@@ -2211,10 +2211,6 @@ Start: BUTTON
 }
 .btn-buy:hover {
   background-color: #00ace0;
-}
-.btn-buy-wrap {
-  position: relative;
-  top: 15px;
 }
 
 /* =====================

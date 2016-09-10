@@ -92,10 +92,10 @@ Start: BUTTON
       background-color: map-get($colors, "light-blue");
     }
   }
-  &-buy-wrap{
-    position: relative;
-    top: 15px;
-  }
+  // &-buy-wrap{
+  //   position: relative;
+  //   top: 15px;
+  // }
 }
 /* =====================
 End:  BUTTON
