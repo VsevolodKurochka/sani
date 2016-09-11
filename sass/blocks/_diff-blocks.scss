@@ -964,6 +964,7 @@ Start: ITEM
           @extend .col-md-4;
           @extend .col-tp-6;
           @extend .col-sm-6;
+          margin-right: -1px;
         }
         &-img{
           height: 164px;
@@ -989,6 +990,10 @@ Start: ITEM
       &-btn{
         min-height: 43px;
       }
+    }
+    .leader-category{
+      float: left;
+      width: 100%;
     }
   }
   &-list{
@@ -1233,13 +1238,16 @@ Start: ITEM
         max-height: 100%;
       }
     }
+    &-name{
+      min-height: 45px;
+    }
     &-link{
       display: block;
       font-size: 16px;
       @extend .bold;
       @extend .grey;
       text-decoration: none;
-      height: 45px;
+      height: 39px;
       overflow: hidden;
       text-overflow: ellipsis;
       
@@ -2511,114 +2519,6 @@ input{
   }
 }
 .product{
-  &-carousel{
-    .owl{
-      &-buttons{
-        position: absolute;
-        left: 0;
-        width: 100%;
-      }
-      &-prev,
-      &-next{
-        position: absolute;
-        top: 0;
-        &:after{
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          @extend .sprite;
-        }
-      }
-      &-prev{
-        transform: rotate(-180deg);
-      }
-      &-next{
-        right: 0;
-        left: auto;
-      }
-      @include resp-min(tl){
-        @include resp-max(lg){
-          &-buttons{
-            top: -25px;
-          }
-          &-prev{
-            right: 40px;
-            left: auto;
-          }
-        }
-        &-prev,
-        &-next{
-          &:after{
-            width: 24px;
-            height: 40px;
-            margin-left: -12px;
-            margin-top: -20px;
-            background-position: -179px -190px;
-          }
-          &:hover{
-            &:after{
-              background-position: -385px -195px;
-            }
-          }
-        }
-      }
-      @include resp-max(tl){
-        &-buttons{
-          top: 50%;
-          margin-top: -40px;
-        }
-        &-prev{
-          left: 0;
-        }
-        &-prev,
-        &-next{
-          border-radius: 10px 0px 0px 10px;
-          width: 15px;
-          height: 40px;
-          background-color: map-get($colors, "light-blue");
-          &:after{
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 10px;
-            height: 14px;
-            margin-top: -7px;
-            margin-left: -5px;
-            background-position: -213px -50px;
-          }
-        }
-      }
-      @include resp-min(lg){
-        &-buttons{
-          top: 50%;
-          margin-top: 2px;         
-        }
-        &-prev{
-          left: -43px;
-        }
-        &-next{
-          right: -54px;
-        }
-      } 
-    }
-    .item-b{
-      min-height: 296px;
-      &-img{
-        min-height: 174px;
-      }
-      &-link{
-        padding-left: 4px;
-        line-height: 20px;
-      }
-    }
-    &-title{
-      margin: 9px 0 14px;
-    }
-  }
-}
-.product{
   &-image-info{
     border: 1px solid #fafafa;
     @include resp-max(sm){
@@ -2825,6 +2725,115 @@ input{
           margin-right: auto;
         }
       }
+    }
+  }
+  &-carousel{
+    @extend .borderDef;
+    .owl{
+      &-buttons{
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+      &-prev,
+      &-next{
+        position: absolute;
+        top: 0;
+        &:after{
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          @extend .sprite;
+        }
+      }
+      &-prev{
+        transform: rotate(-180deg);
+      }
+      &-next{
+        right: 0;
+        left: auto;
+      }
+      @include resp-min(tl){
+        @include resp-max(lg){
+          &-buttons{
+            top: -25px;
+          }
+          &-prev{
+            right: 40px;
+            left: auto;
+          }
+        }
+        &-prev,
+        &-next{
+          &:after{
+            width: 24px;
+            height: 40px;
+            margin-left: -12px;
+            margin-top: -20px;
+            background-position: -179px -190px;
+          }
+          &:hover{
+            &:after{
+              background-position: -385px -195px;
+            }
+          }
+        }
+      }
+      @include resp-max(tl){
+        &-buttons{
+          top: 50%;
+          margin-top: -40px;
+        }
+        &-prev{
+          left: 0;
+        }
+        &-prev,
+        &-next{
+          border-radius: 10px 0px 0px 10px;
+          width: 15px;
+          height: 40px;
+          background-color: map-get($colors, "light-blue");
+          &:after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 10px;
+            height: 14px;
+            margin-top: -7px;
+            margin-left: -5px;
+            background-position: -213px -50px;
+          }
+        }
+      }
+      @include resp-min(lg){
+        &-buttons{
+          top: 50%;
+          margin-top: 2px;         
+        }
+        &-prev{
+          left: -43px;
+        }
+        &-next{
+          right: -54px;
+        }
+      } 
+    }
+    .item-b{
+      min-height: 296px;
+      border: none;
+      border-right: 1px solid #f4f4f4;
+      &-img{
+        min-height: 174px;
+      }
+      &-link{
+        padding-left: 4px;
+        line-height: 20px;
+      }
+    }
+    &-title{
+      margin: 9px 0 14px;
     }
   }
 }

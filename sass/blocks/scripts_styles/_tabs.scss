@@ -137,18 +137,23 @@ Start: TAB STYLES
         margin-right: 0;
         text-decoration: none;
         color: #1584cd;
-        border-bottom: 1px dashed #1584cd;
+        
         transition: none;
         padding: 11px 19px;
         @extend .bold;
+      }
+      span{
+        border-bottom: 1px dashed #1584cd;
       }
       &.active {
         background-color: #fff;
       }
       &:hover, &.active{
         a{
-          border-bottom-color: transparent;
           @extend .orange-dark;
+        }
+        span{
+          border-bottom-color: transparent;
         }
       }
       @include resp-min(sm){
