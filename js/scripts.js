@@ -330,6 +330,7 @@ $(document).ready(function(){
 		$(".default-pr-c").owlCarousel({
 			items: 3,
 			itemsDesktop: [1199, 3],
+			itemsDesktopSmall: [1024,2],
 			navigation: true,
 			navigationText: ["",""],
 			pagination: false

@@ -266,10 +266,11 @@ Start: NEWS
     @include resp-max(tp){
       width: 280px;
       &-img{
-        width: 282px;
-        margin-left: -2px;
+        width: 280px;
+        
         img{
           width: 290px;
+          margin-left: -2px;
         }
       }
     }
@@ -902,7 +903,6 @@ Start: FILTER
         li{
           &:first-child{
             margin-left: 0;
-            margin-right: 1px;
           }
           // &.active{
           //   &:first-child{
@@ -997,7 +997,9 @@ Start: ITEM
     }
     .leader-category{
       float: left;
-      width: 100%;
+      @include resp-min(sm){
+        width: 100%;
+      }
     }
   }
   &-list{
@@ -1336,7 +1338,15 @@ Start: ITEM
     }
   }
 }
-
+.product-carousel .item-choose-color ~ .item-b-footer {
+  padding-bottom: 15px;
+}
+@include resp-max(sm){
+  .product-box-grid ~ .show-more-wrap,
+  .product-box-list ~ .show-more-wrap{
+    margin-bottom: 31px; 
+  }
+}
 .product-box-grid .hidden-grid{
   display: none !important;
 }
@@ -2014,7 +2024,7 @@ End:  PRODUCT
 .menu{
   .icon{
     position: absolute;
-    right: -7px;
+    right: 10px;
     top: 7.5px;
     cursor: pointer;
     width: 20px;
@@ -2039,6 +2049,9 @@ End:  PRODUCT
         height: 17px;
         background-position: -43px -111px;
       }
+    }
+    @include resp-min(md){
+      right: -7px;
     }
   }
   ul{
@@ -2701,7 +2714,10 @@ input{
         line-height: 29px;
         font-weight: bold;
         &.default{
-          margin-top: 21px;
+          margin-top: 10px;
+          @include resp-min(sm){
+            margin-top: 21px; 
+          }
         }
         &--old{
           font-size: 16px;
@@ -2884,24 +2900,63 @@ input{
           left: -43px;
         }
         &-next{
-          right: -54px;
+          right: -54px !important;
         }
       } 
     }
     .item-b{
-      min-height: 296px;
+      min-height: 286px;
       border: none;
-      border-right: 1px solid #f4f4f4;
+      @include resp-min(tp){
+        border-right: 1px solid #f4f4f4;
+
+      }
       &-img{
-        min-height: 174px;
+        @include resp-min(sm){
+          min-height: 174px;
+        }
       }
       &-link{
         padding-left: 4px;
         line-height: 20px;
       }
+      &-wrap{
+        @include resp-min(tp){
+          @include resp-max(sm){
+            width: 100%;
+          }
+        }
+        @include resp-min(sm){
+          width: 100%;
+        }
+      }
     }
     &-title{
       margin: 9px 0 14px;
+    }
+    @include resp-min(sm){
+      .item-b{
+        min-height: 296px;
+      }
+    }
+    .item{
+      &-choose-color{
+        display: none;
+      }
+    }
+    @include resp-max(sm){
+      .item{
+        &-b{
+          &-img{
+            height: 160px;
+          }
+          &-link{
+            padding-left: 0;
+            margin: 1px 0 0 4px;
+          }
+        }
+        
+      }
     }
   }
   @include resp-max(sm){
@@ -2917,7 +2972,7 @@ input{
       }
       .btn-to-cart{
         position: relative;
-        top: 7px;
+        
         left: 1px;
       }
     }
@@ -3282,7 +3337,7 @@ Start: NEWS PAGE
         
       }
       &-text{
-        width: 75%;
+        width: 79%;
         position: relative;
         top: -5px;
       }
@@ -3373,12 +3428,12 @@ Start: CONTACT PAGE
   //   @extend .regular;
   // }
   &-block{
-    padding-left: 20px;
+    padding-left: 30px;
     margin-bottom: 20px;
     i{
       font-size: 20px;
       position: absolute;
-      left: 0;
+      left: 7.5px;
       top: 0;
       width: 30px;
       text-align: center;
@@ -3453,7 +3508,10 @@ End:  CONTACT PAGE
     position: relative;
     top: 2px;
     img{
-      max-width: 57px;
+      max-width: 66px;
+      @include resp-min(sm){
+        max-width: 57px;
+      }
     }
   }
   &-name{
