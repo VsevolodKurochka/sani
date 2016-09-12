@@ -87,9 +87,9 @@ Start: BUTTON
     font-size: 22.58px;
     padding: 0;
     font-weight: 400;
-    margin-top: 7px;
+    margin-top: 10px;
     margin-left: 12px;
-    line-height: 1px;
+    line-height: 1;
     &:hover{
       background-color: map-get($colors, "light-blue");
     }
@@ -2220,6 +2220,9 @@ Start: CART PAGE
   }
 }
 .cart{
+  &-wrap{
+    margin-bottom: 17px;
+  }
   &-buy-btn{
     margin-top: 20px;
     .btn-big{
@@ -2310,12 +2313,8 @@ Start: CART PAGE
   }
   &-summary{
     padding: 17px 0;
-    margin-bottom: 17px;
     font-size: 20px;
     @extend .bold;
-    @extend .borderDef;
-    border-top: none;
-    margin-right: 1px;
     &-total{
       
     }
@@ -2389,6 +2388,9 @@ Start: CART PAGE
     &-btn{
       vertical-align: middle;
     }
+  }
+  &-checkout{
+    padding: 9px 15px;
   }
 }
 .go-buy{
@@ -2535,7 +2537,7 @@ input{
 }
 .delivery-p-wrap{
   @include resp-min(sm){
-    margin-bottom: 15px;
+    margin-bottom: 18px;
   }
 }
 .pr-c-margin{
@@ -3420,9 +3422,9 @@ End:  CONTACT PAGE
     padding: 7px 0 8px 15px;
   }
   @include resp-max(sm){
-    &.product-info-banner{
-      padding-left: 15px;  
-    }
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 8px;
   }
   &-i-t{
     margin-top: 2px;
