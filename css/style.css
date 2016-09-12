@@ -2239,7 +2239,7 @@ Start: BUTTON
   font-size: 22.58px;
   padding: 0;
   font-weight: 400;
-  margin-top: 10px;
+  margin-top: 9px;
   margin-left: 12px;
   line-height: 1;
 }
@@ -2907,21 +2907,6 @@ Start: CATEGORY
 .category-parent .aside-menu {
   display: none;
 }
-@media (max-width: 767px) {
-  .category-product-box.product-box-grid .item-b {
-    min-height: 286px;
-  }
-  .category-product-box.product-box-grid .item-b-link {
-    margin: 1px 0 0 3px;
-  }
-  .category-product-box.product-box-grid .item-b-btn {
-    margin-top: 6px;
-    margin-left: -6px;
-  }
-  .category-product-box.product-box-grid .item-b-price {
-    line-height: 18px;
-  }
-}
 
 /* =====================
 End:  CATEGORY
@@ -3026,6 +3011,21 @@ Start: ITEM
 }
 .product-box-grid .item-b-footer {
   padding-left: 6px;
+}
+@media (max-width: 767px) {
+  .product-box-grid .item-b {
+    min-height: 286px;
+  }
+  .product-box-grid .item-b-link {
+    margin: 1px 0 0 3px;
+  }
+  .product-box-grid .item-b-btn {
+    margin-top: 6px;
+    margin-left: -6px;
+  }
+  .product-box-grid .item-b-price {
+    line-height: 18px;
+  }
 }
 .product-box-grid .item-price {
   /*SEVA*/
@@ -4781,7 +4781,7 @@ input {
     left: -43px;
   }
   .product-carousel .owl-next {
-    right: -54px !important;
+    right: -43px !important;
   }
 }
 .product-carousel .item-b {
@@ -5138,6 +5138,7 @@ Start: NEWS PAGE
 
 .news-content-inner {
   margin-bottom: 30px;
+  font-size: 0;
 }
 .news-content-inner-description {
   height: 93px;
@@ -5154,6 +5155,9 @@ Start: NEWS PAGE
   width: 160px;
   height: 120px;
 }
+.news-content-inner-text {
+  font-size: 13px;
+}
 @media (min-width: 768px) {
   .news-content-inner-img, .news-content-inner-text {
     display: inline-block;
@@ -5161,10 +5165,10 @@ Start: NEWS PAGE
   }
   .news-content-inner-img {
     width: 20%;
-    margin-right: 5px;
+    padding-right: 5px;
   }
   .news-content-inner-text {
-    width: 79%;
+    width: 80%;
     position: relative;
     top: -5px;
   }
@@ -5198,11 +5202,6 @@ Start: NEWS PAGE
 
 .content-body p:last-child {
   margin-bottom: 0;
-}
-@media (min-width: 768px) {
-  .content-body img {
-    max-width: 49%;
-  }
 }
 
 .media-inner {

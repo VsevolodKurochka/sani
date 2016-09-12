@@ -87,7 +87,7 @@ Start: BUTTON
     font-size: 22.58px;
     padding: 0;
     font-weight: 400;
-    margin-top: 10px;
+    margin-top: 9px;
     margin-left: 12px;
     line-height: 1;
     &:hover{
@@ -852,25 +852,13 @@ Start: CATEGORY
       display: none;
     }
   }
-  &-product-box{
-    &.product-box-grid{
-      .item-b{
-        @include resp-max(sm){
-          min-height: 286px;
-          &-link{
-            margin: 1px 0 0 3px;
-          }
-          &-btn{
-            margin-top: 6px;
-            margin-left: -6px;
-          }
-          &-price{
-            line-height: 18px;
-          }
-        }
-      }
-    }
-  }
+  // &-product-box{
+  //   &.product-box-grid{
+  //     .item-b{
+        
+  //     }
+  //   }
+  // }
 }
 /* =====================
 End:  CATEGORY
@@ -1005,6 +993,19 @@ Start: ITEM
           @extend .cf;
           padding-left: 6px;
         }
+        @include resp-max(sm){
+          min-height: 286px;
+          &-link{
+            margin: 1px 0 0 3px;
+          }
+          &-btn{
+            margin-top: 6px;
+            margin-left: -6px;
+          }
+          &-price{
+            line-height: 18px;
+          }
+        }
 
       }
       &-price{
@@ -1015,6 +1016,7 @@ Start: ITEM
       &-btn{
         min-height: 43px;
       }
+
     }
     .leader-category{
       float: left;
@@ -2945,7 +2947,7 @@ input{
           left: -43px;
         }
         &-next{
-          right: -54px !important;
+          right: -43px !important;
         }
       } 
     }
@@ -3352,6 +3354,7 @@ Start: NEWS PAGE
   &-inner{
     @extend .cf;
     margin-bottom: 30px;
+    font-size: 0;
     &-description{
       height: 93px;
       overflow: hidden;
@@ -3370,6 +3373,9 @@ Start: NEWS PAGE
         height: 120px;
       }
     }
+    &-text{
+      font-size: 13px;
+    }
     @include resp-min(sm){
       &-img,
       &-text{
@@ -3378,11 +3384,11 @@ Start: NEWS PAGE
       }
       &-img{
         width: 20%;
-        margin-right: 5px;
+        padding-right: 5px;
         
       }
       &-text{
-        width: 79%;
+        width: 80%;
         position: relative;
         top: -5px;
       }
@@ -3441,10 +3447,9 @@ Start: NEWS PAGE
     }
     img{
       @extend %content-margin;
-      @include resp-min(sm){
-        //padding: 0 15px;
-        max-width: 49%;
-      }
+      // @include resp-min(sm){
+      //   max-width: 49%;
+      // }
     }
   }
 }
