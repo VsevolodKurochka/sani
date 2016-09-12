@@ -4033,7 +4033,7 @@ End:  CONTACT PAGE
 
 /* Ширина слайдера */
 #slider-price {
-  width: 200px;
+  width: 180px;
   @include resp-min(md){
     @include resp-max(lg){
       width: 160px;
