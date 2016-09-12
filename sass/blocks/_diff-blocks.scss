@@ -846,9 +846,30 @@ End:  BOX
 /* ===================== 
 Start: CATEGORY      
 ======================== */
-.category-parent{
-  .aside-menu{
-    display: none;
+.category{
+  &-parent{
+    .aside-menu{
+      display: none;
+    }
+  }
+  &-product-box{
+    &.product-box-grid{
+      .item-b{
+        @include resp-max(sm){
+          min-height: 286px;
+          &-link{
+            margin: 1px 0 0 3px;
+          }
+          &-btn{
+            margin-top: 6px;
+            margin-left: -6px;
+          }
+          &-price{
+            line-height: 18px;
+          }
+        }
+      }
+    }
   }
 }
 /* =====================
@@ -997,8 +1018,16 @@ Start: ITEM
     }
     .leader-category{
       float: left;
-      @include resp-min(sm){
-        width: 100%;
+      width: 100%;
+      @include resp-max(sm){
+        padding-left: 15px;
+        padding-right: 15px;
+        &-wrap{
+          &-inner{
+            margin-left: -15px;
+            margin-right: -15px;
+          }
+        }
       }
     }
   }
@@ -1011,6 +1040,7 @@ Start: ITEM
         &-wrap{
           @extend .cf;
           width: 100%;
+          float: none;
         }
         &-img{
           img{
@@ -1152,6 +1182,7 @@ Start: ITEM
         display: none;
       }
     }
+
     @include resp-max(sm){
       margin-left: -15px;
       margin-right: -15px;
@@ -1165,8 +1196,19 @@ Start: ITEM
           }
         }
       }
+     
     }
   }
+}
+@include resp-max(sm){
+  .leader{
+    &-category{
+      &-wrap{
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+    }
+  }  
 }
 .borderDef{
   border: 1px solid #f4f4f4;
@@ -1345,6 +1387,9 @@ Start: ITEM
   .product-box-grid ~ .show-more-wrap,
   .product-box-list ~ .show-more-wrap{
     margin-bottom: 31px; 
+  }
+  .sorting-responsive-wrap ~ .product-box-grid {
+    margin-top: 15px;
   }
 }
 .product-box-grid .hidden-grid{
@@ -3634,9 +3679,12 @@ End:  CONTACT PAGE
     display: inline-block;
     width: 18px;
     height: 16px;
-    margin: 0 4px;
+    margin: 0 2px;
     transition: none;
     @extend .sprite;
+    @include resp-min(sm){
+      margin: 0 4px;
+    }
   }
   &-grid{
     background-position: -350px -231px;
@@ -3655,6 +3703,15 @@ End:  CONTACT PAGE
 .category-inline{
   position: relative;
   top: 2px;
+}
+@include resp-max(sm){
+  .change-view{
+    top: 5px;
+    right: 15px;
+  } 
+  .category-inline{
+    top: 9px;
+  }   
 }
 .checkbox-def{
   input{
@@ -4085,15 +4142,15 @@ End:  CONTACT PAGE
   &-range{
     margin-bottom: 20px;
   }
-  &-choose,
-  &-range{
-    max-width: 200px;
-  }
+  // &-choose,
+  // &-range{
+  //   max-width: 200px;
+  // }
 }
 
 /* Ширина слайдера */
 #slider-price {
-  width: 180px;
+  width: 200px;
   @include resp-min(md){
     @include resp-max(lg){
       width: 160px;
