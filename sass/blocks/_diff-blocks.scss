@@ -87,6 +87,9 @@ Start: BUTTON
     font-size: 22.58px;
     padding: 0;
     font-weight: 400;
+    margin-top: 7px;
+    margin-left: 12px;
+    line-height: 1px;
     &:hover{
       background-color: map-get($colors, "light-blue");
     }
@@ -961,6 +964,7 @@ Start: ITEM
           min-height: 286px;
         }
         &-wrap{
+          @extend .col-xs-12;
           @extend .col-md-4;
           @extend .col-tp-6;
           @extend .col-sm-6;
@@ -1368,9 +1372,14 @@ Start: SLIDER
         width: 100%;
       }
     }
+    &-sani{
+      margin-left: 8px;
+      margin-top: 1px;
+    }
   }
   @include resp-max(sm){
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: -15px;
   }
   &-text,
   &-img{
@@ -1384,6 +1393,11 @@ Start: SLIDER
     }
     @include resp-max(sm){
       padding: 14px 0 0px 25px;
+      &-title{
+        margin-top: -8px;
+        line-height: 19px;
+        margin-left: -2px;
+      }
       img{
         max-width: 45px;  
         margin-bottom: 11px;
@@ -1410,7 +1424,7 @@ Start: SLIDER
     position: relative;
     @include resp-max(sm){
       overflow: hidden;
-      min-height: 180px;
+      min-height: 138px;
       img{
         position: absolute;
         max-width: none;
@@ -1419,10 +1433,7 @@ Start: SLIDER
       }
     }
   }
-  &-sani{
-    margin-left: 8px;
-    margin-top: 1px;
-  }
+  
   .owl{
     &-pagination{
       position: absolute;
@@ -1439,6 +1450,9 @@ Start: SLIDER
       margin-top: -16px;
       left: 0;
       width: 100%;
+      @include resp-max(sm){
+        margin-top: -20px;
+      }
     }
     &-page{
       span{
@@ -1552,6 +1566,7 @@ Start: OFFER
     margin-bottom: 25px;
     @include resp-max(sm){
       text-align: center;
+      margin-top: 10px;
     }
   }
   &-b{
@@ -1609,22 +1624,28 @@ Start: OFFER
       }
     }
     @include resp-max(sm){
-      margin-bottom: 10px;
       padding-left: 15px;
       padding-right: 15px;
-      .box{
-        padding: 10px;
-      }
+      // .box{
+      //   padding: 10px;
+      // }
     }
     @include resp-max(xs){
       &-text,
       &-title{
         text-align: left;
       }
+      &-text{
+        padding-left: 14px;
+        padding-top: 0px;
+        line-height: 18px;
+      }
       &-i{
         float: left;
-        width: 33px;
-        margin-right: 10px;
+        width: 37px;
+        margin-right: 31px;
+        position: relative;
+        left: 17px;
       }
     }
   }
@@ -2097,9 +2118,17 @@ Start: BREADCRUMBS
 .breadcrumbs{
   height: 20px;
   overflow: hidden;
+  @extend .relative;
+  @include resp-max(sm){
+    left: -2px;
+    top: -1px;
+  }
+  @include resp-min(md){
+    top: -5px;
+  }
   li{
     display: inline-block;
-    padding-right: 20px;
+    padding-right: 13px;
     @extend %relative;
     @include resp-max(sm){
       &:nth-child(n+3){
@@ -2121,7 +2150,7 @@ Start: BREADCRUMBS
     &:after{
       content: ">";
       position: absolute;
-      right: 5px;
+      right: 2px;
       top: 50%;
       margin-top: -8.5px;
       @extend .roboto;
@@ -2286,7 +2315,6 @@ Start: CART PAGE
     @extend .bold;
     @extend .borderDef;
     border-top: none;
-    margin-left: 1px;
     margin-right: 1px;
     &-total{
       
@@ -2520,23 +2548,33 @@ input{
 }
 .product{
   &-image-info{
-    border: 1px solid #fafafa;
+    @extend .borderDef;
     @include resp-max(sm){
       margin-left: -15px;
       margin-right: -15px;
+      border-top: none;
     }
   }
   &-image{
-    padding: 15px;
+    @include resp-min(sm){
+      padding: 15px;
+    }
     &-big{
       position: relative;
       text-align: center;
       .item-b-tag-wrap{
-        left: 5px;
-        top: 5px;
+        left: 24px;
+        top: 13px;
+      }
+      @include resp-max(sm){
+        height: 170px;
       }
       @include resp-min(sm){
         min-height: 319px;
+        .item-b-tag-wrap{
+          left: 5px;
+          top: 5px;
+        }
       }
       img{
         max-height: 100%;
@@ -2604,6 +2642,7 @@ input{
   @include resp-min(sm){
     &-info{
       width: 46%;
+      border-left: 1px solid #f4f4f4;
     }
     &-image{
       width: 54%;
@@ -2614,13 +2653,16 @@ input{
     > div{
       //padding: 14px 0 17px 0;
       @extend .cf;
-      border-bottom: 1px solid #fafafa;
+      border-bottom: 1px solid #f4f4f4;
+      &:last-child{
+        border-bottom: none;
+      }
     }
-    border-left: 1px solid #fafafa;
     &-header{
       padding: 14px 0 12px 0;
     }
     &-color{
+      padding: 14px 0 12px 0;
       .item-choose-color{
         padding-bottom: 0;
       }
@@ -2684,31 +2726,55 @@ input{
       }
     }
     &-advantage{
-      &.bg-grey{
-        padding: 23px 20px 2px 29px;
+      padding: 23px 20px 2px 29px;
+      @include resp-max(sm){
+        padding: 25px 0 30px 12px;
       }
     }
     &-has-banner{
       .product-info{
-        &-price{
-          padding-bottom: 21px;
-        }
-        &-advantage{
-          padding-top: 17px;
+        &-value{
+          display: none;
         }
       }
-      .adv-b{
-        margin-bottom: 17px;
+      @include resp-min(sm){
+        .product-info{
+          &-value{
+            display: none;
+          }
+          &-price{
+            padding-bottom: 21px;
+          }
+          &-advantage{
+            padding-top: 17px;
+          }
+        }
+        .adv-b{
+          margin-bottom: 17px;
+        }
+      }
+      @include resp-max(sm){
+        .product-info{
+          &-advantage{
+            padding-bottom: 18px;
+          }
+          // .p-i-b-i-t{
+
+          // }
+        }
       }
     }
   }
   &-tabs{
     margin-top: 19px;
     margin-bottom: 15px;
+    @include resp-max(sm){
+      margin-top: 8px;
+    }
   }
   &-video{
     border: 10px solid #e2e2e2;
-    height: 210px;
+    height: 212px;
     @include resp-min(xs){
       height: 246px;
     }
@@ -2783,7 +2849,7 @@ input{
       @include resp-max(tl){
         &-buttons{
           top: 50%;
-          margin-top: -40px;
+          margin-top: -59px;
         }
         &-prev{
           left: 0;
@@ -2836,24 +2902,38 @@ input{
       margin: 9px 0 14px;
     }
   }
+  @include resp-max(sm){
+    &-info{
+      &-header{
+        padding: 0px 0 15px 0;
+      }
+      &-value{
+        padding: 16px 0 14px 13px;
+      }
+      &-price{
+        padding: 16px 0 7px 0;
+      }
+      .btn-to-cart{
+        position: relative;
+        top: 7px;
+        left: 1px;
+      }
+    }
+  }
 }
 .characteristics{
   &-wrap{
-    margin-bottom: 30px;
-  }
-  @include resp-max(sm){
     margin-bottom: 15px;
-    margin-left: -15px;
-    margin-right: -15px;
   }
   table{
     min-height: 246px;
-    thead{
-      background-color: #f8f9fb;
-      td{
-        width: 100%;
-        padding-left: 28px;
-      }
+  }
+  thead{
+    background-color: #f8f9fb;
+    td{
+      width: 100%;
+      font-size: 14px;
+      @extend .bold;
     }
   }
   tbody{
@@ -2862,26 +2942,58 @@ input{
       td{
         &:first-child{
           @extend .light-blue;
-          padding-left: 25px;
+          padding-left: 12px;
         }
         &:last-child{
           text-align: right;
-          padding-right: 25px;
+          padding-right: 15px;
         }
       }
     }
   }
-  td{
-    height: 35px;
+  @include resp-min(sm){
+    table{
+      
+    }
+    thead{
+      td{
+        padding-left: 28px;
+      }
+    }
+    tbody{
+      td{
+        height: 35px;
+        &:first-child{
+          padding-left: 25px;
+        }
+        &:last-child{
+          padding-right: 25px;
+        }
+      }
+    }
+    td{
+      height: 35px;
+    }
+  }
+  @include resp-max(sm){
+    margin-bottom: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    td{
+      height: 32px;
+      padding: 0 13px !important;
+      line-height: 32px !important;
+    }
   }
 }
-@include resp-min(sm){
+@include resp-min(md){
   .tab-content-product{
     padding-bottom: 163px !important;
   }
   .characteristics-wrap{
     position: relative;
     margin-top: -165px;
+    margin-bottom: 30px;
   }
 }
 @include resp-min(lg){
@@ -2919,6 +3031,9 @@ input{
 }
 .vendor-code-wrap{
   text-align: right;
+  @include resp-max(sm){
+    margin-left: -15px;
+  }
 }
 .p-i-v-b{
   padding: 0;
@@ -2974,6 +3089,11 @@ input{
   margin-bottom: 24px;
   
   position: relative;
+  @include resp-max(sm){
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
   &:after{
     content: "";
     position: absolute;
@@ -2985,6 +3105,9 @@ input{
     padding-left: 25px;
     font-size: 15px;
     @extend .regular;
+    @include resp-max(sm){
+      font-size: 14px;
+    }
   }
   &-range{
     &:after{
@@ -3029,7 +3152,7 @@ Start: SORTING SIMILIAR
     display: inline-block;
   }
   @include resp-max(xs){
-    margin-top: 20px;
+    margin-top: 8px;
     li{
       &:first-child{
         margin-left: 0;
@@ -3217,7 +3340,7 @@ Start: NEWS PAGE
     img{
       @extend %content-margin;
       @include resp-min(sm){
-        padding: 0 15px;
+        //padding: 0 15px;
         max-width: 49%;
       }
     }
@@ -3289,11 +3412,12 @@ End:  CONTACT PAGE
 
 //PRODUCT INFO BANNER
 .p-i-b{
-  padding: 7px 0 8px 15px;
+  padding: 7px 0 32px 15px;
   border-bottom: none;
   background-color: #3bbdc5;
   @include resp-min(sm){
     background-color: #1584cd; 
+    padding: 7px 0 8px 15px;
   }
   @include resp-max(sm){
     &.product-info-banner{
@@ -3301,24 +3425,27 @@ End:  CONTACT PAGE
     }
   }
   &-i-t{
-    text-align: center;
-    padding: 0;
     margin-top: 2px;
     @include resp-min(tp){
       @include resp-max(sm){
         text-align: center;
       }
     }
+    @include resp-min(sm){
+      padding: 0;
+      text-align: center;
+    }
   }
   @include resp-max(tp){
     &-img{
       float: left;
-      margin-right: 15px;
+      margin-right: 18px;
     }
     &-inf{
-      margin-top: 10px;
+      margin-top: 14px;
       overflow: hidden;
     }
+
   }
   &-img{
     position: relative;
@@ -3341,6 +3468,10 @@ End:  CONTACT PAGE
         font-size: 18px;
       }
     }
+    @include resp-max(sm){
+      margin-top: 12px;
+      margin-bottom: 7.5px;
+    }
   }
   &-subtitle{
     font-size: 14px;
@@ -3356,14 +3487,14 @@ End:  CONTACT PAGE
     }
     input{
       margin-right: 0;
-      max-width: 195px;
+      width: 195px;
     }
     input, button{
 
     }
     button{
       min-height: 38px;
-      min-width: 44px;
+      width: 44px;
       position: relative;
       right: 4px;
       top: 4px;
@@ -3394,6 +3525,9 @@ End:  CONTACT PAGE
   @extend .white;
   @extend .relative;
   top: 3px;
+  @include resp-max(sm){
+    padding-left: 12px;
+  }
 }
 //MODAL
 .modal{
@@ -3792,6 +3926,47 @@ End:  CONTACT PAGE
 .dropdown li.active {
   background: #fff;
   color: #00ace0;
+}
+.sorting-responsive{
+  &-wrap{
+    z-index: 10;
+    &.margin-default{
+      margin-top: 13px;
+      margin-bottom: 15px;
+    }
+  }
+  &-inline{
+    display: inline-block;
+    vertical-align: middle;
+    .dropdown{
+      position: relative;
+      left: 10px;
+    }
+  }
+  .dropdown{
+    border: none;
+    margin-bottom: 0;
+    li, .selected{
+      font-size: 13px;
+      padding: 0;
+    }
+    .selected{
+      color: #1584cc;
+      border-bottom: 1px dashed #7dccff;
+    }
+    .carat{
+      right: -19.2px;
+      border-top-color: #ff6600;
+      margin-top: -2px;
+    }
+    div{
+      min-width: 125px;
+      li{
+        padding: 5px;
+        font-size: 12px;
+      }
+    }
+  }
 }
 .fb{
   &-row{

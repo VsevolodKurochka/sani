@@ -59,17 +59,7 @@
 								</ul><!-- NOT DELETE -->
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-2 hidden-fixed">
-							<div class="cart-block">
-								<div class="cart-block-items">
-									<p>Товаров: <span class="bold">71</span></p>
-								</div>
-								<div class="cart-block-sum">
-									<p>На сумму: <a class="cart-block-sum-together dark-blue" href="">47 666 р.</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-2 visible-fixed">
+						<div class="col-xs-12 col-sm-2">
 							<div class="cart-block">
 								<div class="cart-block-items">
 									<p>Товаров: <span class="bold">71</span></p>
@@ -418,7 +408,39 @@
 								<div class="block-inline">
 									<p class="sort-block-title">Спецпредложения</p>
 								</div>
-								<div class="block-inline">
+								<div class="cf visible-xs sorting-responsive-wrap margin-default">
+									<div class="sorting-responsive">
+										<div class="sorting-responsive-inline">
+											<span>Сортировать: </span>
+										</div>
+										<div class="sorting-responsive-inline">
+											<select class="dropdown">
+										    <option value="1">По популярности</option>
+										    <option value="2">Новинки</option>
+										    <option value="3">Суперскидки</option>
+											</select>
+											<!-- <div class="dropdown">
+												<span class="old">
+													<select>
+														<option>По​ ​популярности</option>
+										    		<option>Новинки</option>
+										    		<option>Суперскидки</option>
+													</select>
+												</span>
+												<span class="selected">По​ ​популярности</span>
+												<span class="carat"></span>
+												<div>
+													<ul class="nav sort-block-list" role="tablist">
+														<li role="presentation"><a href="#popular" aria-controls="popular" role="tab" data-toggle="tab">По​ ​популярности</a></li>
+												    <li role="presentation"><a href="#newitems" aria-controls="newitems" role="tab" data-toggle="tab">Новинки</a></li>
+												    <li role="presentation"><a href="#sales" aria-controls="sales" role="tab" data-toggle="tab">Суперскидки</a></li>
+													</ul>
+												</div>
+											</div> -->
+										</div>
+									</div>
+								</div>
+								<div class="block-inline hidden-xs hidden-sm">
 									 <ul class="nav sort-block-list" role="tablist">
 								    <!-- <li role="presentation" class="active"><a href="#special" aria-controls="special" role="tab" data-toggle="tab">Спецпредложения</a></li> -->
 								    <li role="presentation"><a href="#popular" aria-controls="popular" role="tab" data-toggle="tab">По​ ​популярности</a></li>
@@ -1768,7 +1790,7 @@
 							<div class="footer-block-menu">
 								<ul>
 									<li><a href="">О нас</a></li>
-									<li><a href="">Акции</a></li>
+									<li class="active"><span>Акции</span></li>
 									<li><a href="">Доставка и отплата</a></li>
 									<li><a href="">Статьи</a></li>
 									<li><a href="">Отзывы </a></li>
@@ -1795,7 +1817,7 @@
 						</div>
 					</div><!-- /.col -->
 					<div class="col-xs-12 col-sm-6 col-md-3">
-						<div class="search-share-block max-md-center">
+						<div class="search-share-block">
 							<div class="cf footer-search-block-wrap">
 								<div class="footer-search-block">
 									<input type="text" name="search" value="" placeholder="Поиск" class="search-block-input">
@@ -1823,8 +1845,7 @@
 		</footer><!-- /.footer -->
 		<div class="copyright">
 			<div class="container">
-				<p class="hidden-xs">&copy; Интернет-магазин «finsani.ru» 2004–2016</p>
-				<p class="visible-xs">2013-2015 © Препараты <br>для повышения потенции Apteka-market</p>
+				<p>&copy; Интернет-магазин «finsani.ru» <br class="visible-xs">2004–2016</p>
 			</div>
 		</div>
 	</main>

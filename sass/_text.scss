@@ -48,9 +48,14 @@ span.small-title{
 }
 .big-title{
 	font-size: 20px;
-	margin: 10px 0;
 	@include resp-min(xs){
 		font-size: 24px;
 	}
 	@extend .bold;
+}
+.main-title{
+	@include resp-max(sm){
+	  margin-left: -2px;
+  	line-height: 23px;
+	}
 }

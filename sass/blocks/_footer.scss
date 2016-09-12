@@ -25,14 +25,13 @@ Start: START FOOTER
 			text-decoration: underline;
 			li{
 				margin-bottom: 15px;
+				span,
 				a{
 					@extend .white;
 					display: inline-block;
-					&:after{
-						background-color: #40c1e8;
-					}
 				}
 				&.active{
+					span,
 					a{
 						text-decoration: none;
 					}
@@ -150,7 +149,7 @@ Start: START FOOTER
 	&-btns{
 		padding-top: 10px;
 		padding-bottom: 10px;	
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 		background-color: #0095c2;
 		a{
 			position: relative;
@@ -288,7 +287,7 @@ Start: START FOOTER
 	font-size: 14px;
 	@include resp-max(sm){
 		text-align: center;
-		padding: 15px 0;
+		padding: 11px 0;
 	}
 }
 /* =====================

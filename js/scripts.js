@@ -116,6 +116,12 @@ $(document).ready(function(){
 					//FILTER
 					$(".filter-block").appendTo(".filter-responsive-wrap");
 
+					//PRODUCT
+						//TABS
+						$(".description-block").appendTo("#item-toggle-description .item-toggle-inner");
+						$(".reviews-block").appendTo("#item-toggle-reviews .item-toggle-inner");
+						$(".delivery-payment").appendTo("#item-toggle-delivery .item-toggle-inner");
+
 				}
 				else{
 
@@ -131,6 +137,12 @@ $(document).ready(function(){
 
 					//FILTER
 					$(".filter-block").appendTo(".filter-block-aside");
+
+					//PRODUCT
+						//TABS
+						$(".description-block").appendTo("#description");
+						$(".reviews-block").appendTo("#reviews");
+						$(".delivery-payment").appendTo("#delivery-payment");
 
 				}
 				
@@ -202,10 +214,28 @@ $(document).ready(function(){
 		// $(".product-image-carousel img").click(function() {
 		//     $(".product-image-big img").attr("src", $(this).attr("src"));
 		// });
+			$(".item-toggle-li").each(function(){
+				var href = $(this).attr('id');
+				console.log($(this).children().next());
+				$(this).click(function(){
+					$(".item-toggle > li").removeClass("active");
+					//$(".item-toggle > li").children().next().slideUp(1000);
+					$(this).addClass("active");
+					//$(this).children().next().slideDown(1000);
+					$('body,html').animate({
+						scrollTop: $("#" + href).offset().top - $(".header").outerHeight() - 20
+					},1000);
+				});
+			});
 
 		//FILTER
 			$(".show-filter").click(function(){
 				$(this).parent().next().slideToggle("slow");
+			});
+			$(".sorting-responsive .dropdown").easyDropDown({
+				onSelect: function(selected){
+					console.log("sadasd");
+				}
 			});
 			
 		// $(".radio-input-parent input").click(function(){

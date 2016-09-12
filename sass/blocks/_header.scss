@@ -8,7 +8,7 @@ Start: HEADER
   	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 9.5px 0;
+	padding: 11px 0;
 	background-color: #f8f9fb;
 	transition: box-shadow ease .5s;
 	@include resp-min(md){
@@ -18,7 +18,7 @@ Start: HEADER
 	}
 	&-wrapper{
 		@include resp-max(md){
-			margin-bottom: 48px;
+			margin-bottom: 66px;
 		}
 	}
 	&-fixed{
@@ -57,6 +57,7 @@ Start: HEADER
 	&-resp{
 		&-inner{
 			> div{
+				@extend .relative;
 				@extend .block-inline;
 				vertical-align: middle;
 				padding: 0 7.5px;
@@ -71,8 +72,13 @@ Start: HEADER
 		}
 		&-logo{
 			padding: 0 15px !important; 
+			a{
+				text-decoration: none;
+			}
 		}
 		&-btn-menu{
+  		top: 2px;
+  		left: -13px;
 			button{
 				@extend .sprite;
 				background-position: -303px -13px;
@@ -95,6 +101,8 @@ Start: HEADER
 			}
 		}
 		&-login{
+		  top: 3px;
+  		left: -11px;
 			span{
 				@extend .block-inline;
 				width: 12px;
@@ -104,6 +112,8 @@ Start: HEADER
 			}
 		}
 		&-search{
+		  top: 4px;
+  		left: 10px;
 			span{
 				@extend .block-inline;
 				width: 24px;
@@ -113,6 +123,8 @@ Start: HEADER
 			}
 		}
 		&-cart{
+		  top: 4px;
+  		left: 10px;
 			&-image{
 				@extend .block-inline;
 				width: 18px;
@@ -122,8 +134,8 @@ Start: HEADER
 			}
 			&-number{
 				position: absolute;
-				right: -7.5px;
-				bottom: 0px;
+				right: -6.5px;
+				bottom: 1px;
 				display: inline-block;
 				padding: 0 4px;
 				min-width: 13px;
