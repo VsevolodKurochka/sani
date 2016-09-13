@@ -991,7 +991,7 @@ Start: ITEM
         }
         &-footer{
           @extend .cf;
-          padding-left: 6px;
+          padding-left: 9px;
         }
         @include resp-max(sm){
           min-height: 286px;
@@ -2416,6 +2416,12 @@ Start: CART PAGE
         min-height: 43px;
       }
     }
+    tr{
+      border-bottom: 1px solid #f4f4f4;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
     td{
       @include resp-min(md){
         height: 63px !important;
@@ -2964,7 +2970,6 @@ input{
         }
       }
       &-link{
-        padding-left: 4px;
         line-height: 20px;
       }
       &-wrap{

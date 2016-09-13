@@ -3010,7 +3010,7 @@ Start: ITEM
   display: none;
 }
 .product-box-grid .item-b-footer {
-  padding-left: 6px;
+  padding-left: 9px;
 }
 @media (max-width: 767px) {
   .product-box-grid .item-b {
@@ -4287,6 +4287,12 @@ Start: CART PAGE
     min-height: 43px;
   }
 }
+.cart-table tr {
+  border-bottom: 1px solid #f4f4f4;
+}
+.cart-table tr:last-child {
+  margin-bottom: 0;
+}
 @media (min-width: 992px) {
   .cart-table td {
     height: 63px !important;
@@ -4799,7 +4805,6 @@ input {
   }
 }
 .product-carousel .item-b-link {
-  padding-left: 4px;
   line-height: 20px;
 }
 @media (min-width: 601px) and (max-width: 767px) {
