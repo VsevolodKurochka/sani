@@ -34,7 +34,7 @@ Start: TAB STYLES
 //   border-bottom-color: transparent;
 // }
 .border-default{
-  border: 1px solid #ededed;
+  @extend .borderDef;
 }
 .nav-tabs{
   &-registration{

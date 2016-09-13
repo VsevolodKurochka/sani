@@ -3185,7 +3185,7 @@ Start: ITEM
     margin-right: -15px;
   }
 }
-.borderDef, .item-b, .item-choose-color li a, .table-bordered, .product-image-info, .product-carousel, .filter-block, .filter-block select, .item-choose-color li img {
+.borderDef, .item-b, .item-choose-color li a, .table-bordered, .product-image-info, .product-carousel, .filter-block, .filter-block select, .item-choose-color li img, .border-default, .nav-tabs-product li, .tab-content-product {
   border: 1px solid #f4f4f4;
 }
 
@@ -7051,10 +7051,6 @@ Start: TAB STYLES
 }
 .nav-tabs > li > a {
   margin-right: 2px;
-}
-
-.border-default, .nav-tabs-product li, .tab-content-product {
-  border: 1px solid #ededed;
 }
 
 .nav-tabs-registration {
